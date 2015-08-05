@@ -88,5 +88,28 @@ def get_player_list():
 
     return goalkeepers, defenders, midfielders, forwards
 
+
+def get_clean_sheets():
+    from selenium import webdriver
+    driver = webdriver.Chrome()
+    driver.get(GOALKEEPER_CLEAN_SHEETS)
+
+    e1 = driver.find_element_by_xpath("//option[@value='Goalkeeper Stats']")
+    e2 = driver.find_element_by_xpath("//option[@value='18'][@class='gkeeper']")
+
+    print e1.text
+    print e2.text
+
+    # e1.click()
+    # e2.click()
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+    source = driver.page_source
+    print source
+
+    soup = BeautifulSoup(source)
+    print soup
+
 # print get_table_data()
 # print get_player_list()
+get_clean_sheets()
