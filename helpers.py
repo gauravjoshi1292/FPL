@@ -1,6 +1,7 @@
 __author__ = 'gj'
 
 import time
+import datetime
 import urllib2
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -144,7 +145,9 @@ def get_clean_sheets():
     :return:
     """
     clean_sheet_data = {}
-    driver = get_chrome_driver(GOALKEEPER_CLEAN_SHEETS)
+    date = datetime.datetime.strptime(str(datetime.date.today()),
+                                      "%Y-%m-%d").strftime("%d/%m/%Y")
+    driver = get_chrome_driver(GOALKEEPER_CLEAN_SHEETS.format(curr_date=date))
     scroll_to_element(driver, "footer")
     time.sleep(1)
     soup = get_soup_from_driver(driver)
@@ -156,9 +159,10 @@ def get_clean_sheets():
     for td in tds:
         try:
             if td["class"][0] == "table-playerteam-field":
-                name = td.find_next("div",
-                                    {"class": "stats-player-name"}).text.encode("ascii", "ignore")
-                team = td.find_next("div", {"class": "stats-player-team"}).text.encode("ascii", "ignore").split(" - ")[1]
+                name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
+                    "ascii", "ignore")
+                team = td.find_next("div", {"class": "stats-player-team"}).text.encode(
+                    "ascii", "ignore").split(" - ")[1]
                 continue
         except KeyError:
             if i == 0:
@@ -180,3 +184,4 @@ def get_clean_sheets():
 # print get_league_table_data()
 # print get_player_list()
 print get_clean_sheets()
+
