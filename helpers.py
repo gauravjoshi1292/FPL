@@ -5,6 +5,7 @@ import datetime
 import urllib2
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.common.exceptions import WebDriverException
 from urls import *
 
 
@@ -118,6 +119,20 @@ def get_chrome_driver(url):
     return driver
 
 
+def get_firefox_driver(url):
+    """
+    Returns a selenium firefox driver
+
+    :param url:
+    :type url: str
+
+    :return:
+    """
+    driver = webdriver.Firefox()
+    driver.get(url)
+    return driver
+
+
 def scroll_to_element(driver, tag_name):
     """
     Scroll to elements location in driver's web page
@@ -147,7 +162,18 @@ def get_clean_sheets():
     clean_sheet_data = {}
     date = datetime.datetime.strptime(str(datetime.date.today()),
                                       "%Y-%m-%d").strftime("%d/%m/%Y")
-    driver = get_chrome_driver(GOALKEEPER_CLEAN_SHEETS.format(curr_date=date))
+
+    url = GOALKEEPER_CLEAN_SHEETS.format(curr_date=date)
+
+    try:
+        driver = get_chrome_driver(url)
+    except WebDriverException:
+        try:
+            driver = get_firefox_driver(url)
+        except WebDriverException:
+            print "Could not find chromedriver and firefoxdriver on system! Quit!"
+            return
+
     scroll_to_element(driver, "footer")
     time.sleep(1)
     soup = get_soup_from_driver(driver)
