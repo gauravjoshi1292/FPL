@@ -11,3 +11,8 @@ GOALKEEPER_CLEAN_SHEETS = ("http://www.squawka.com/football-player-rankings#clea
                            "season-2015/2016#all-teams#goalkeeper#16#43#0#0#90#"
                            "08/08/2015#{curr_date}#season#1#all-matches#total#desc#total")
 
+GOALKEEPER_SAVES = ("http://www.squawka.com/football-player-rankings#saves#"
+                    "goalkeeper-stats#english-barclays-premier-league|"
+                    "season-2015/2016#all-teams#goalkeeper#16#43#0#0#90#"
+                    "08/08/2015#{curr_date}#season#1#all-matches#total#desc#total")
+

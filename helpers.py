@@ -133,6 +133,18 @@ def get_firefox_driver(url):
     return driver
 
 
+def get_driver(url):
+    try:
+        driver = get_chrome_driver(url)
+    except WebDriverException:
+        try:
+            driver = get_firefox_driver(url)
+        except WebDriverException:
+            print "Could not find chromedriver and firefoxdriver on system! Quit!"
+            return
+    return driver
+
+
 def scroll_to_element(driver, tag_name):
     """
     Scroll to elements location in driver's web page
@@ -164,15 +176,7 @@ def get_clean_sheets():
                                       "%Y-%m-%d").strftime("%d/%m/%Y")
 
     url = GOALKEEPER_CLEAN_SHEETS.format(curr_date=date)
-
-    try:
-        driver = get_chrome_driver(url)
-    except WebDriverException:
-        try:
-            driver = get_firefox_driver(url)
-        except WebDriverException:
-            print "Could not find chromedriver and firefoxdriver on system! Quit!"
-            return
+    driver = get_driver(url=url)
 
     scroll_to_element(driver, "footer")
     time.sleep(1)
@@ -207,7 +211,46 @@ def get_clean_sheets():
     driver.quit()
     return clean_sheet_data
 
+
+def get_saves():
+    """
+
+    :return:
+    """
+    saves_data = {}
+    date = datetime.datetime.strptime(str(datetime.date.today()),
+                                      "%Y-%m-%d").strftime("%d/%m/%Y")
+
+    url = GOALKEEPER_SAVES.format(curr_date=date)
+    driver = get_driver(url)
+
+    scroll_to_element(driver, "footer")
+    time.sleep(1)
+    soup = get_soup_from_driver(driver)
+    table = soup.find("table", id="ranking-stats-table")
+
+    tds = table.findAll("td")
+    i = 0
+    name, saves = "", 0
+    for td in tds:
+        try:
+            if td["class"][0] == "table-playerteam-field":
+                name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
+                    "ascii", "ignore")
+                continue
+        except KeyError:
+            if i == 5:
+                i = 0
+                saves = int(td.text)
+                saves_data[name] = {"saves": saves}
+                continue
+            else:
+                i += 1
+
+    driver.quit()
+    return saves_data
+
 # print get_league_table_data()
 # print get_player_list()
 print get_clean_sheets()
-
+print get_saves()
