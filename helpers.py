@@ -133,6 +133,20 @@ def get_firefox_driver(url):
     return driver
 
 
+def get_safari_driver(url):
+    """
+    Returns a selenium safari driver
+
+    :param url:
+    :type url: str
+
+    :return:
+    """
+    driver = webdriver.Safari()
+    driver.get(url)
+    return driver
+
+
 def get_driver(url):
     try:
         driver = get_chrome_driver(url)
@@ -140,8 +154,11 @@ def get_driver(url):
         try:
             driver = get_firefox_driver(url)
         except WebDriverException:
-            print "Could not find chromedriver and firefoxdriver on system! Quit!"
-            return
+            try:
+                driver = get_safari_driver(url)
+            except WebDriverException:
+                print "Could not find selenium web driver on system! Quit!"
+                return
     return driver
 
 
@@ -175,7 +192,7 @@ def get_clean_sheets():
     date = datetime.datetime.strptime(str(datetime.date.today()),
                                       "%Y-%m-%d").strftime("%d/%m/%Y")
 
-    url = GOALKEEPER_CLEAN_SHEETS.format(curr_date=date)
+    url = GOALKEEPING_STATS_URL.format(stats_type="clean-sheets", curr_date=date)
     driver = get_driver(url=url)
 
     scroll_to_element(driver, "footer")
@@ -221,7 +238,7 @@ def get_saves():
     date = datetime.datetime.strptime(str(datetime.date.today()),
                                       "%Y-%m-%d").strftime("%d/%m/%Y")
 
-    url = GOALKEEPER_SAVES.format(curr_date=date)
+    url = GOALKEEPING_STATS_URL.format(stats_type="saves", curr_date=date)
     driver = get_driver(url)
 
     scroll_to_element(driver, "footer")
@@ -250,7 +267,47 @@ def get_saves():
     driver.quit()
     return saves_data
 
+
+def get_goals_conceded():
+    """
+
+    :return:
+    """
+    goals_conceded_data = {}
+    date = datetime.datetime.strptime(str(datetime.date.today()),
+                                      "%Y-%m-%d").strftime("%d/%m/%Y")
+
+    url = GOALKEEPING_STATS_URL.format(stats_type="goals-conceded", curr_date=date)
+    driver = get_driver(url)
+
+    scroll_to_element(driver, "footer")
+    time.sleep(1)
+    soup = get_soup_from_driver(driver)
+    table = soup.find("table", id="ranking-stats-table")
+
+    tds = table.findAll("td")
+    i = 0
+    name, saves = "", 0
+    for td in tds:
+        try:
+            if td["class"][0] == "table-playerteam-field":
+                name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
+                    "ascii", "ignore")
+                continue
+        except KeyError:
+            if i == 8:
+                i = 0
+                goals_conceded = int(td.text)
+                goals_conceded_data[name] = {"goals_conceded": goals_conceded}
+                continue
+            else:
+                i += 1
+
+    driver.quit()
+    return goals_conceded_data
+
 # print get_league_table_data()
 # print get_player_list()
-print get_clean_sheets()
-print get_saves()
+# print get_clean_sheets()
+# print get_saves()
+print get_goals_conceded()

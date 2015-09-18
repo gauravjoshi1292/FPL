@@ -6,13 +6,8 @@ LEAGUE_TABLE_URL = ("http://www.premierleague.com/en-gb/matchday/league-table.ht
 
 PLAYER_LIST_URL = "http://fantasy.premierleague.com/player-list/"
 
-GOALKEEPER_CLEAN_SHEETS = ("http://www.squawka.com/football-player-rankings#clean-sheets#"
-                           "goalkeeper-stats#english-barclays-premier-league|"
-                           "season-2015/2016#all-teams#goalkeeper#16#43#0#0#90#"
-                           "08/08/2015#{curr_date}#season#1#all-matches#total#desc#total")
-
-GOALKEEPER_SAVES = ("http://www.squawka.com/football-player-rankings#saves#"
-                    "goalkeeper-stats#english-barclays-premier-league|"
-                    "season-2015/2016#all-teams#goalkeeper#16#43#0#0#90#"
-                    "08/08/2015#{curr_date}#season#1#all-matches#total#desc#total")
-
+GOALKEEPING_STATS_URL = ("http://www.squawka.com/football-player-rankings#"
+                         "{stats_type}#goalkeeper-stats#"
+                         "english-barclays-premier-league|season-2015/2016#all-teams#"
+                         "goalkeeper#16#45#0#0#90#08/08/2015#17/09/2015#season#1#"
+                         "all-matches#total#desc#total")
