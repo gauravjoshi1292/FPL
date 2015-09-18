@@ -29,7 +29,7 @@ def get_league_table_data():
     table_data = {}
     team_data = {}
     team_name = ""
-    soup = get_soup_from_url(LEAGUE_TABLE_URL)
+    soup = get_soup_from_url(url=LEAGUE_TABLE_URL)
     tds = soup.findAll("td")
     keys = ["played", "won", "drawn", "lost", "goals_for", "goals_against", "goal_diff",
             "points"]
@@ -67,7 +67,7 @@ def get_player_list():
     defenders = {}
     midfielders = {}
     forwards = {}
-    soup = get_soup_from_url(PLAYER_LIST_URL)
+    soup = get_soup_from_url(url=PLAYER_LIST_URL)
 
     tables = soup.findAll("table")
     i = 0
@@ -115,7 +115,7 @@ def get_chrome_driver(url):
     :return:
     """
     driver = webdriver.Chrome()
-    driver.get(url)
+    driver.get(url=url)
     return driver
 
 
@@ -129,7 +129,7 @@ def get_firefox_driver(url):
     :return:
     """
     driver = webdriver.Firefox()
-    driver.get(url)
+    driver.get(url=url)
     return driver
 
 
@@ -143,19 +143,19 @@ def get_safari_driver(url):
     :return:
     """
     driver = webdriver.Safari()
-    driver.get(url)
+    driver.get(url=url)
     return driver
 
 
 def get_driver(url):
     try:
-        driver = get_chrome_driver(url)
+        driver = get_chrome_driver(url=url)
     except WebDriverException:
         try:
-            driver = get_firefox_driver(url)
+            driver = get_firefox_driver(url=url)
         except WebDriverException:
             try:
-                driver = get_safari_driver(url)
+                driver = get_safari_driver(url=url)
             except WebDriverException:
                 print "Could not find selenium web driver on system! Quit!"
                 return
@@ -168,7 +168,7 @@ def scroll_to_element(driver, tag_name):
     :param driver:
     :type tag_name: str
     """
-    table_elem = driver.find_element_by_tag_name(tag_name)
+    table_elem = driver.find_element_by_tag_name(name=tag_name)
     webdriver.ActionChains(driver).move_to_element(table_elem).perform()
 
 
@@ -183,24 +183,41 @@ def get_soup_from_driver(driver):
     return soup
 
 
+def get_table_from_driver(url, table_id):
+    """
+
+    :param url:
+    :param table_id:
+    :return:
+    """
+    driver = get_driver(url=url)
+
+    scroll_to_element(driver=driver, tag_name="footer")
+    time.sleep(1)
+    soup = get_soup_from_driver(driver=driver)
+    table = soup.find("table", id=table_id)
+    driver.quit()
+    return table
+
+
+def get_url_for_stats(stats_type):
+    date = datetime.datetime.strptime(str(datetime.date.today()),
+                                      "%Y-%m-%d").strftime("%d/%m/%Y")
+
+    url = GOALKEEPING_STATS_URL.format(stats_type=stats_type, curr_date=date)
+    return url
+
+
 def get_clean_sheets():
     """
     Returns clean sheet data for all the keepers
     :return:
     """
     clean_sheet_data = {}
-    date = datetime.datetime.strptime(str(datetime.date.today()),
-                                      "%Y-%m-%d").strftime("%d/%m/%Y")
-
-    url = GOALKEEPING_STATS_URL.format(stats_type="clean-sheets", curr_date=date)
-    driver = get_driver(url=url)
-
-    scroll_to_element(driver, "footer")
-    time.sleep(1)
-    soup = get_soup_from_driver(driver)
-    table = soup.find("table", id="ranking-stats-table")
-
+    url = get_url_for_stats(stats_type="clean-sheets")
+    table = get_table_from_driver(url=url, table_id="ranking-stats-table")
     tds = table.findAll("td")
+
     i = 0
     name, team, matches_played, minutes_played, clean_sheets = "", "", 0, 0, 0
     for td in tds:
@@ -225,7 +242,7 @@ def get_clean_sheets():
                                           "matches_played": matches_played,
                                           "minutes_played": minutes_played,
                                           "clean_sheets": clean_sheets}
-    driver.quit()
+
     return clean_sheet_data
 
 
@@ -235,18 +252,10 @@ def get_saves():
     :return:
     """
     saves_data = {}
-    date = datetime.datetime.strptime(str(datetime.date.today()),
-                                      "%Y-%m-%d").strftime("%d/%m/%Y")
-
-    url = GOALKEEPING_STATS_URL.format(stats_type="saves", curr_date=date)
-    driver = get_driver(url)
-
-    scroll_to_element(driver, "footer")
-    time.sleep(1)
-    soup = get_soup_from_driver(driver)
-    table = soup.find("table", id="ranking-stats-table")
-
+    url = get_url_for_stats(stats_type="saves")
+    table = get_table_from_driver(url=url, table_id="ranking-stats-table")
     tds = table.findAll("td")
+
     i = 0
     name, saves = "", 0
     for td in tds:
@@ -264,7 +273,6 @@ def get_saves():
             else:
                 i += 1
 
-    driver.quit()
     return saves_data
 
 
@@ -274,17 +282,8 @@ def get_goals_conceded():
     :return:
     """
     goals_conceded_data = {}
-    date = datetime.datetime.strptime(str(datetime.date.today()),
-                                      "%Y-%m-%d").strftime("%d/%m/%Y")
-
-    url = GOALKEEPING_STATS_URL.format(stats_type="goals-conceded", curr_date=date)
-    driver = get_driver(url)
-
-    scroll_to_element(driver, "footer")
-    time.sleep(1)
-    soup = get_soup_from_driver(driver)
-    table = soup.find("table", id="ranking-stats-table")
-
+    url = get_url_for_stats(stats_type="goals-conceded")
+    table = get_table_from_driver(url=url, table_id="ranking-stats-table")
     tds = table.findAll("td")
     i = 0
     name, saves = "", 0
@@ -303,11 +302,36 @@ def get_goals_conceded():
             else:
                 i += 1
 
-    driver.quit()
     return goals_conceded_data
+
+
+def get_goalkeeper_stats():
+    """
+
+    :return:
+    """
+    goalkeeper_stats = {}
+    clean_sheet_stats = get_clean_sheets()
+    saves_stats = get_saves()
+    goals_conceded_stats = get_goals_conceded()
+
+    print clean_sheet_stats
+    print saves_stats
+    print goals_conceded_stats
+
+    # for player, clean_sheets in clean_sheet_stats.items():
+    #     print clean_sheet_stats[player]
+    #     print goals_conceded_stats[player]
+    #     t1 = saves_stats[player].update(goals_conceded_stats[player])
+    #     print t1
+    #
+    #     goalkeeper_stats[player] = clean_sheet_stats[player].update(t1)
+
+    return goalkeeper_stats
 
 # print get_league_table_data()
 # print get_player_list()
 # print get_clean_sheets()
 # print get_saves()
-print get_goals_conceded()
+# print get_goals_conceded()
+print get_goalkeeper_stats()
