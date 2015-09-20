@@ -162,14 +162,31 @@ def get_driver(url):
     return driver
 
 
-def scroll_to_element(driver, tag_name):
+def scroll_to_bottom(driver):
     """
-    Scroll to elements location in driver's web page
+    Scrolls to the bottom of web page
     :param driver:
     :type tag_name: str
     """
-    table_elem = driver.find_element_by_tag_name(name=tag_name)
-    webdriver.ActionChains(driver).move_to_element(table_elem).perform()
+    # table_elem = driver.find_element_by_tag_name(name=tag_name)
+    # webdriver.ActionChains(driver).move_to_element(table_elem).perform()
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+
+def scroll_till_page_is_loaded(driver):
+    """
+
+    :param driver:
+    :return:
+    """
+    old_source = ""
+    source = driver.page_source
+
+    while source != old_source:
+        scroll_to_bottom(driver=driver)
+        time.sleep(1)
+        old_source = source
+        source = driver.page_source
 
 
 def get_soup_from_driver(driver):
@@ -191,9 +208,7 @@ def get_table_from_driver(url, table_id):
     :return:
     """
     driver = get_driver(url=url)
-
-    scroll_to_element(driver=driver, tag_name="footer")
-    time.sleep(1)
+    scroll_till_page_is_loaded(driver=driver)
     soup = get_soup_from_driver(driver=driver)
     table = soup.find("table", id=table_id)
     driver.quit()
@@ -227,7 +242,9 @@ def get_clean_sheets():
                     "ascii", "ignore")
                 team = td.find_next("div", {"class": "stats-player-team"}).text.encode(
                     "ascii", "ignore").split(" - ")[1]
+                i = 0
                 continue
+
         except KeyError:
             if i == 0:
                 matches_played = int(td.text)
@@ -257,18 +274,22 @@ def get_saves():
     tds = table.findAll("td")
 
     i = 0
-    name, saves = "", 0
+    name, team, saves = "", "", 0
     for td in tds:
         try:
             if td["class"][0] == "table-playerteam-field":
                 name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
                     "ascii", "ignore")
+                team = td.find_next("div", {"class": "stats-player-team"}).text.encode(
+                    "ascii", "ignore").split(" - ")[1]
+                i = 0
                 continue
+
         except KeyError:
             if i == 5:
                 i = 0
                 saves = int(td.text)
-                saves_data[name] = {"saves": saves}
+                saves_data[name] = {"team": team, "saves": saves}
                 continue
             else:
                 i += 1
@@ -285,19 +306,25 @@ def get_goals_conceded():
     url = get_url_for_stats(stats_type="goals-conceded")
     table = get_table_from_driver(url=url, table_id="ranking-stats-table")
     tds = table.findAll("td")
+
     i = 0
-    name, saves = "", 0
+    name, team, saves = "", "", 0
     for td in tds:
         try:
             if td["class"][0] == "table-playerteam-field":
                 name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
                     "ascii", "ignore")
+                team = td.find_next("div", {"class": "stats-player-team"}).text.encode(
+                    "ascii", "ignore").split(" - ")[1]
+                i = 0
                 continue
+
         except KeyError:
             if i == 8:
                 i = 0
                 goals_conceded = int(td.text)
-                goals_conceded_data[name] = {"goals_conceded": goals_conceded}
+                goals_conceded_data[name] = {"team": team,
+                                             "goals_conceded": goals_conceded}
                 continue
             else:
                 i += 1
@@ -305,7 +332,45 @@ def get_goals_conceded():
     return goals_conceded_data
 
 
-def get_goalkeeper_stats():
+def get_all_goalkeepers():
+    """
+
+    :return:
+    """
+    goalkeepers = {}
+    url = get_url_for_stats(stats_type="performance-score")
+    table = get_table_from_driver(url=url, table_id="ranking-stats-table")
+    tds = table.findAll("td")
+
+    i = 0
+    name = ""
+    for td in tds:
+        try:
+            if td["class"][0] == "table-playerteam-field":
+                name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
+                    "ascii", "ignore")
+                team = td.find_next("div", {"class": "stats-player-team"}).text.encode(
+                    "ascii", "ignore").split(" - ")[1]
+                goalkeepers[name] = {"team": team, "minutes_played": 0,
+                                     "clean_sheets": 0, "matches_played": 0,
+                                     "saves": 0, "goals_conceded": 0}
+                continue
+
+        except KeyError:
+            if not name:
+                continue
+
+            if i == 0:
+                goalkeepers[name]["matches_played"] = int(td.text)
+                i += 1
+            else:
+                i = 0
+                goalkeepers[name]["minutes_played"] = int(td.text)
+
+    return goalkeepers
+
+
+def get_goalkeeper_stats(goalkeepers):
     """
 
     :return:
@@ -315,23 +380,34 @@ def get_goalkeeper_stats():
     saves_stats = get_saves()
     goals_conceded_stats = get_goals_conceded()
 
-    print clean_sheet_stats
-    print saves_stats
     print goals_conceded_stats
 
-    # for player, clean_sheets in clean_sheet_stats.items():
-    #     print clean_sheet_stats[player]
-    #     print goals_conceded_stats[player]
-    #     t1 = saves_stats[player].update(goals_conceded_stats[player])
-    #     print t1
-    #
-    #     goalkeeper_stats[player] = clean_sheet_stats[player].update(t1)
+    for player in goalkeepers:
+        goalkeeper_stats[player] = goalkeepers[player]
+        try:
+            goalkeeper_stats[player]["matches_played"] = clean_sheet_stats[player]["matches_played"]
+            goalkeeper_stats[player]["minutes_played"] = clean_sheet_stats[player]["minutes_played"]
+            goalkeeper_stats[player]["clean_sheets"] = clean_sheet_stats[player]["clean_sheets"]
+        except KeyError:
+            continue
+
+        try:
+            goalkeeper_stats[player]["saves"] = saves_stats[player]["saves"]
+        except KeyError:
+            pass
+
+        try:
+            goalkeeper_stats[player]["goals_conceded"] = goals_conceded_stats[player]["goals_conceded"]
+        except KeyError:
+            pass
 
     return goalkeeper_stats
+
 
 # print get_league_table_data()
 # print get_player_list()
 # print get_clean_sheets()
 # print get_saves()
 # print get_goals_conceded()
-print get_goalkeeper_stats()
+goalkeepers = get_all_goalkeepers()
+print get_goalkeeper_stats(goalkeepers=goalkeepers)
