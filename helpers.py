@@ -362,25 +362,28 @@ def get_all_goalkeepers():
 
             if i == 0:
                 goalkeepers[name]["matches_played"] = int(td.text)
-                i += 1
-            else:
-                i = 0
+            elif i == 1:
                 goalkeepers[name]["minutes_played"] = int(td.text)
+            elif i == 5:
+                i = 0
+                name = ""
+                continue
+
+            i += 1
 
     return goalkeepers
 
 
-def get_goalkeeper_stats(goalkeepers):
+def get_goalkeeper_stats():
     """
 
     :return:
     """
     goalkeeper_stats = {}
+    goalkeepers = get_all_goalkeepers()
     clean_sheet_stats = get_clean_sheets()
     saves_stats = get_saves()
     goals_conceded_stats = get_goals_conceded()
-
-    print goals_conceded_stats
 
     for player in goalkeepers:
         goalkeeper_stats[player] = goalkeepers[player]
@@ -389,7 +392,7 @@ def get_goalkeeper_stats(goalkeepers):
             goalkeeper_stats[player]["minutes_played"] = clean_sheet_stats[player]["minutes_played"]
             goalkeeper_stats[player]["clean_sheets"] = clean_sheet_stats[player]["clean_sheets"]
         except KeyError:
-            continue
+            pass
 
         try:
             goalkeeper_stats[player]["saves"] = saves_stats[player]["saves"]
@@ -409,5 +412,5 @@ def get_goalkeeper_stats(goalkeepers):
 # print get_clean_sheets()
 # print get_saves()
 # print get_goals_conceded()
-goalkeepers = get_all_goalkeepers()
-print get_goalkeeper_stats(goalkeepers=goalkeepers)
+
+print get_goalkeeper_stats()
