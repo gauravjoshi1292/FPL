@@ -12,18 +12,22 @@ from urls import *
 def get_soup_from_url(url):
     """
     Given a url returns a soup of page source
+
     :param url: web url
-    :return:
+    :type url: str
+
+    :rtype: bs4.BeautifulSoup
     """
     response = urllib2.urlopen(url)
     html = response.read()
     soup = BeautifulSoup(html, "html.parser")
-    return soup
+    print soup.__class__
 
 
 def get_league_table_data():
     """
     Returns a dictionary containing league table data for all the teams
+
     :rtype: dict
     """
     table_data = {}
@@ -61,6 +65,7 @@ def get_league_table_data():
 def get_player_list():
     """
     Returns dicts of players having team, price and points info
+
     :rtype: dict, dict, dict, dict
     """
     goalkeepers = {}
@@ -110,9 +115,12 @@ def get_player_list():
 def get_chrome_driver(url):
     """
     Returns a selenium chrome driver
-    :param url:
+
+    :param url: page url
     :type url: str
-    :return:
+
+
+    :rtype: selenium.webdriver.chrome.webdriver.WebDriver
     """
     driver = webdriver.Chrome()
     driver.get(url=url)
@@ -123,10 +131,10 @@ def get_firefox_driver(url):
     """
     Returns a selenium firefox driver
 
-    :param url:
+    :param url: page ur;
     :type url: str
 
-    :return:
+    :rtype: selenium.webdriver.firefox.webdriver.WebDriver
     """
     driver = webdriver.Firefox()
     driver.get(url=url)
@@ -137,10 +145,10 @@ def get_safari_driver(url):
     """
     Returns a selenium safari driver
 
-    :param url:
+    :param url: page url
     :type url: str
 
-    :return:
+    :rtype: selenium.webdriver.safari.webdriver.WebDriver
     """
     driver = webdriver.Safari()
     driver.get(url=url)
@@ -148,6 +156,16 @@ def get_safari_driver(url):
 
 
 def get_driver(url):
+    """
+    Return a selenium webdriver depending upon what's available on the system
+
+    :param url: page url
+    :type url: str
+
+    :rtype: selenium.webdriver.chrome.webdriver.WebDriver |
+            selenium.webdriver.firefox.webdriver.WebDriver |
+            selenium.webdriver.safari.webdriver.WebDriver
+    """
     try:
         driver = get_chrome_driver(url=url)
     except WebDriverException:
@@ -159,25 +177,28 @@ def get_driver(url):
             except WebDriverException:
                 print "Could not find selenium web driver on system! Quit!"
                 return
+
     return driver
 
 
 def scroll_to_bottom(driver):
     """
     Scrolls to the bottom of web page
-    :param driver:
-    :type tag_name: str
+
+    :type driver: selenium.webdriver.chrome.webdriver.WebDriver |
+                  selenium.webdriver.firefox.webdriver.WebDriver |
+                  selenium.webdriver.safari.webdriver.WebDriver
     """
-    # table_elem = driver.find_element_by_tag_name(name=tag_name)
-    # webdriver.ActionChains(driver).move_to_element(table_elem).perform()
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 
 
 def scroll_till_page_is_loaded(driver):
     """
+    Scrolls down until the complete web page is loaded
 
-    :param driver:
-    :return:
+    :type driver: selenium.webdriver.chrome.webdriver.WebDriver |
+                  selenium.webdriver.firefox.webdriver.WebDriver |
+                  selenium.webdriver.safari.webdriver.WebDriver
     """
     old_source = ""
     source = driver.page_source
@@ -192,8 +213,12 @@ def scroll_till_page_is_loaded(driver):
 def get_soup_from_driver(driver):
     """
     Given a selenium web driver return the soup
-    :param driver:
-    :return:
+
+    :type driver: selenium.webdriver.chrome.webdriver.WebDriver |
+                  selenium.webdriver.firefox.webdriver.WebDriver|
+                  selenium.webdriver.safari.webdriver.WebDriver
+
+    :rtype: bs4.BeautifulSoup
     """
     source = driver.page_source
     soup = BeautifulSoup(source, "html.parser")
@@ -202,10 +227,15 @@ def get_soup_from_driver(driver):
 
 def get_table_from_driver(url, table_id):
     """
+    Returns the table element with the given id from the web page
 
-    :param url:
-    :param table_id:
-    :return:
+    :param url: page url
+    :type url: str
+
+    :param table_id: table id
+    :type table_id: str
+
+    :rtype: bs4.element.Tag
     """
     driver = get_driver(url=url)
     scroll_till_page_is_loaded(driver=driver)
@@ -216,6 +246,14 @@ def get_table_from_driver(url, table_id):
 
 
 def get_url_for_stats(stats_type):
+    """
+    Given the type of stats construct the page url and return it
+
+    :param stats_type: type of stats, eg: saves, goals-conceded etc.
+    :type stats_type: str
+
+    :rtype: str
+    """
     date = datetime.datetime.strptime(str(datetime.date.today()),
                                       "%Y-%m-%d").strftime("%d/%m/%Y")
 
@@ -225,8 +263,9 @@ def get_url_for_stats(stats_type):
 
 def get_clean_sheets():
     """
-    Returns clean sheet data for all the keepers
-    :return:
+    Returns clean sheet stats for all the keepers
+
+    :rtype: dict
     """
     clean_sheet_data = {}
     url = get_url_for_stats(stats_type="clean-sheets")
@@ -265,8 +304,9 @@ def get_clean_sheets():
 
 def get_saves():
     """
+    Returns saves stats for all the keepers
 
-    :return:
+    :rtype: dict
     """
     saves_data = {}
     url = get_url_for_stats(stats_type="saves")
@@ -299,8 +339,9 @@ def get_saves():
 
 def get_goals_conceded():
     """
+    Returns goals conceded stats for all the keepers
 
-    :return:
+    :rtype: dict
     """
     goals_conceded_data = {}
     url = get_url_for_stats(stats_type="goals-conceded")
@@ -334,8 +375,9 @@ def get_goals_conceded():
 
 def get_all_goalkeepers():
     """
+    Returns a dictionary of all the keepers found on the site
 
-    :return:
+    :rtype: dict
     """
     goalkeepers = {}
     url = get_url_for_stats(stats_type="performance-score")
@@ -376,8 +418,9 @@ def get_all_goalkeepers():
 
 def get_goalkeeper_stats():
     """
+    Returns statistics for all the keepers from squawka
 
-    :return:
+    :rtype: dict
     """
     goalkeeper_stats = {}
     goalkeepers = get_all_goalkeepers()
@@ -406,11 +449,5 @@ def get_goalkeeper_stats():
 
     return goalkeeper_stats
 
-
-# print get_league_table_data()
-# print get_player_list()
-# print get_clean_sheets()
-# print get_saves()
-# print get_goals_conceded()
 
 print get_goalkeeper_stats()
