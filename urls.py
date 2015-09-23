@@ -11,3 +11,6 @@ GOALKEEPING_STATS_URL = ("http://www.squawka.com/football-player-rankings#"
                          "english-barclays-premier-league|season-2015/2016#all-teams#"
                          "goalkeeper#16#45#0#0#90#08/08/2015#17/09/2015#season#1#"
                          "all-matches#total#desc#total")
+
+GOALKEEPER_POINTS = ("http://fantasy.premierleague.com/stats/elements/?"
+                     "element_filter=et_1&stat_filter=total_points")
