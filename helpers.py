@@ -4,9 +4,11 @@ import time
 import socket
 import urllib2
 import datetime
+import unicodedata
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
+
 from urls import *
 
 
@@ -92,13 +94,13 @@ def get_player_list():
         j = 0
         for td in tds:
             if j == 0:
-                player_name = td.text.encode("ascii", "ignore")
+                player_name = unicodedata.normalize("NFKD", td.text).encode("ascii", "ignore")
             elif j == 1:
-                player_data["team"] = td.text.encode("ascii", "ignore")
+                player_data["team"] = unicodedata.normalize("NFKD", td.text).encode("ascii", "ignore")
             elif j == 2:
                 player_data["points"] = int(td.text)
             elif j == 3:
-                player_data["price"] = td.text.encode("ascii", "ignore")
+                player_data["price"] = float(td.text.encode("ascii", "ignore"))
             elif j > 3:
                 if i < 2:
                     goalkeepers[player_name] = player_data
@@ -110,11 +112,10 @@ def get_player_list():
                     forwards[player_name] = player_data
                 player_data = {}
                 j = 1
-                player_name = td.text.encode("utf-8")
+                player_name = unicodedata.normalize("NFKD", td.text).encode("ascii", "ignore")
                 continue
 
             j += 1
-
         i += 1
 
     return goalkeepers, defenders, midfielders, forwards
@@ -285,10 +286,10 @@ def get_clean_sheets():
     for td in tds:
         try:
             if td["class"][0] == "table-playerteam-field":
-                name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
-                    "ascii", "ignore").split()[-1]
-                team = td.find_next("div", {"class": "stats-player-team"}).text.encode(
-                    "ascii", "ignore").split(" - ")[1]
+                name = unicodedata.normalize(
+                    "NFKD", td.find_next("div", {"class": "stats-player-name"}).text).encode("ascii", "ignore").split()[-1]
+                team = unicodedata.normalize(
+                    "NFKD", td.find_next("div", {"class": "stats-player-team"}).text).encode("ascii", "ignore").split(" - ")[1]
                 i = 0
                 continue
 
@@ -326,10 +327,10 @@ def get_saves():
     for td in tds:
         try:
             if td["class"][0] == "table-playerteam-field":
-                name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
-                    "ascii", "ignore").split()[-1]
-                team = td.find_next("div", {"class": "stats-player-team"}).text.encode(
-                    "ascii", "ignore").split(" - ")[1]
+                name = unicodedata.normalize(
+                    "NFKD", td.find_next("div", {"class": "stats-player-name"}).text).encode("ascii", "ignore").split()[-1]
+                team = unicodedata.normalize(
+                    "NFKD", td.find_next("div", {"class": "stats-player-team"}).text).encode("ascii", "ignore").split(" - ")[1]
                 i = 0
                 continue
 
@@ -361,10 +362,10 @@ def get_goals_conceded():
     for td in tds:
         try:
             if td["class"][0] == "table-playerteam-field":
-                name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
-                    "ascii", "ignore").split()[-1]
-                team = td.find_next("div", {"class": "stats-player-team"}).text.encode(
-                    "ascii", "ignore").split(" - ")[1]
+                name = unicodedata.normalize(
+                    "NFKD", td.find_next("div", {"class": "stats-player-name"}).text).encode("ascii", "ignore").split()[-1]
+                team = unicodedata.normalize(
+                    "NFKD", td.find_next("div", {"class": "stats-player-team"}).text).encode("ascii", "ignore").split(" - ")[1]
                 i = 0
                 continue
 
@@ -397,10 +398,10 @@ def get_all_goalkeepers():
     for td in tds:
         try:
             if td["class"][0] == "table-playerteam-field":
-                name = td.find_next("div", {"class": "stats-player-name"}).text.encode(
-                    "ascii", "ignore").split()[-1]
-                team = td.find_next("div", {"class": "stats-player-team"}).text.encode(
-                    "ascii", "ignore").split(" - ")[1]
+                name = unicodedata.normalize(
+                    "NFKD", td.find_next("div", {"class": "stats-player-name"}).text).encode("ascii", "ignore").split()[-1]
+                team = unicodedata.normalize(
+                    "NFKD", td.find_next("div", {"class": "stats-player-team"}).text).encode("ascii", "ignore").split(" - ")[1]
                 goalkeepers[name] = {"team": team, "minutes_played": 0,
                                      "clean_sheets": 0, "matches_played": 0,
                                      "saves": 0, "goals_conceded": 0}
@@ -459,6 +460,11 @@ def get_goalkeeper_stats():
 
 
 def get_goalkeeper_data():
+    """
+    Returns a dictionary containing data for all the keepers in the league
+
+    :rtype: dict
+    """
     goalkeeper_data = {}
     all_goalkeepers = get_player_list()[0]
     goalkeeper_stats = get_goalkeeper_stats()
@@ -474,5 +480,3 @@ def get_goalkeeper_data():
         goalkeeper_data[player] = data
 
     return goalkeeper_data
-
-print get_goalkeeper_data()
