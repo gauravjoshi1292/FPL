@@ -1,7 +1,7 @@
 __author__ = 'gj'
 
 from urls import *
-from helpers import *
+from utils import *
 
 
 class Team(object):
