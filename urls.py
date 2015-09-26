@@ -7,4 +7,6 @@ LEAGUE_TABLE_URL = ("http://www.premierleague.com/en-gb/matchday/league-table.ht
 PLAYER_LIST_URL = "http://fantasy.premierleague.com/player-list/"
 
 GOALKEEPER_STATS_URL = ("http://fantasy.premierleague.com/stats/elements/?"
-                     "stat_filter={stat_type}&element_filter=et_1&page={page}")
+                        "element_filter=et_{player_type}&"
+                        "stat_filter={stat_type}&"
+                        "page={page}")
