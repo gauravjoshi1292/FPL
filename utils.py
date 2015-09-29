@@ -1,5 +1,6 @@
 __author__ = 'gj'
 
+import json
 import time
 import socket
 import urllib2
@@ -394,7 +395,7 @@ def scrape_stat_from_table(url_template, player_type, stat_type, table_class, co
                     team = normalize(td.text)
                 elif i == column:
                     value = get_stat_from_text(normalize(td.text), stat_type)
-                    data[(name, team)] = value
+                    data[str((name, team))] = value
                     name = ''
                     team = ''
                     check = False
@@ -452,4 +453,9 @@ def get_player_stats():
     return player_stats
 
 
-get_player_stats()
+def dump_as_json(data, json_file):
+    with open(json_file, "w") as outfile:
+        json.dump(data, outfile, indent=4)
+
+
+dump_as_json(data=get_player_stats(), json_file='stats.json')
