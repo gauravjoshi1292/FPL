@@ -4,24 +4,29 @@ import json
 from pymongo import MongoClient
 
 
-def create_database():
-    client = MongoClient('localhost', 27017)
-    db = client['fpl']
-    collection = db['stats']
+class FplDatabaseManager(object):
+    def __init__(self, uri, db_name, collection_names):
+        self.client = MongoClient(uri)
+        self.db = self.client[db_name]
+        for name in collection_names:
+            _ = self.db[name]
 
-    with open('stats.json', 'r') as infile:
-        data = json.load(infile)
-
-    collection.insert(data)
-
-
-def query_database():
-    client = MongoClient('localhost', 27017)
-    db = client['fpl']
-    collection = db['stats']
-
-    collection.find()
+    def insert(self, collection_name, data):
+        self.db[collection_name].insert(data)
 
 
-create_database()
+with open('stats.json', 'r') as infile:
+    data = json.load(infile)
 
+db_manager = FplDatabaseManager(uri='mongodb://localhost:27017',
+                                db_name='fpl',
+                                collection_names=['goalkeepers', 'defenders',
+                                                  'midfielders', 'forwards'])
+
+for key, player_stats in data.items():
+    db_manager.insert(collection_name=key, data=player_stats)
+
+query = db_manager.db['goalkeepers'].find({'name': 'Adrian'})
+
+for doc in query:
+    print doc

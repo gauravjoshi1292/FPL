@@ -453,9 +453,39 @@ def get_player_stats():
     return player_stats
 
 
+def get_organized_data(data):
+    """
+    Organizes the data into a proper format and returns it
+
+    :type data: dict
+
+    :rtype: dict
+    """
+    organized_data = {}
+    for player_type, all_stats in data.items():
+        organized_data[player_type] = []
+
+        for key, player_stats in all_stats.items():
+            new_player_stats = player_stats.copy()
+            print key[1:-1].split(', ')[0][1:-1]
+            new_player_stats['name'] = key[1:-1].split(', ')[0][1:-1]
+            new_player_stats['team'] = key[1:-1].split(', ')[1][1:-1]
+
+            organized_data[player_type].append(new_player_stats)
+
+    return organized_data
+
+
 def dump_as_json(data, json_file):
+    """
+    Dumps the data into a json file
+
+    :type data: dict
+
+    :type json_file: str
+    """
     with open(json_file, "w") as outfile:
         json.dump(data, outfile, indent=4)
 
-
-dump_as_json(data=get_player_stats(), json_file='stats.json')
+stats = get_organized_data(get_player_stats())
+dump_as_json(data=stats, json_file='stats.json')
