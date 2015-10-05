@@ -467,7 +467,6 @@ def get_organized_data(data):
 
         for key, player_stats in all_stats.items():
             new_player_stats = player_stats.copy()
-            print key[1:-1].split(', ')[0][1:-1]
             new_player_stats['name'] = key[1:-1].split(', ')[0][1:-1]
             new_player_stats['team'] = key[1:-1].split(', ')[1][1:-1]
 
