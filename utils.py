@@ -10,6 +10,7 @@ from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 
 from urls import *
+from mongo import FplManager
 
 
 PLAYER_TYPES = {'goalkeepers': 1, 'defenders': 2, 'midfielders': 3, 'forwards': 4}
@@ -486,5 +487,28 @@ def dump_as_json(data, json_file):
     with open(json_file, "w") as outfile:
         json.dump(data, outfile, indent=4)
 
-stats = get_organized_data(get_player_stats())
-dump_as_json(data=stats, json_file='stats.json')
+
+def create_database():
+    """
+    Creates a mongo database of player statistics
+    :return:
+    """
+    # stats = get_organized_data(get_player_stats())
+    # dump_as_json(data=stats, json_file='stats.json')
+
+    with open('stats.json', 'r') as infile:
+        data = json.load(infile)
+
+    fpl_manager = FplManager(uri='mongodb://localhost:27017')
+    fpl_manager.drop_db(db_name='fpl')
+    fpl_manager.create_db(db_name='fpl')
+    fpl_manager.create_collections(db_name='fpl',
+                                   collection_names=['goalkeepers', 'defenders',
+                                                     'midfielders', 'forwards'])
+
+    for key, player_stats in data.items():
+        fpl_manager.insert(db_name='fpl', collection_name=key, data=player_stats)
+
+    print fpl_manager.client.database_names()
+
+create_database()
