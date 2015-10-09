@@ -509,6 +509,4 @@ def create_database():
     for key, player_stats in data.items():
         fpl_manager.insert(db_name='fpl', collection_name=key, data=player_stats)
 
-    print fpl_manager.client.database_names()
-
 create_database()

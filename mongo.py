@@ -26,3 +26,6 @@ class FplManager(object):
 
     def insert(self, db_name, collection_name, data):
         self.client[db_name][collection_name].insert(data)
+
+    def close_connection(self):
+        self.client.close()
