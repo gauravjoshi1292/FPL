@@ -1,8 +1,11 @@
 __author__ = 'gj'
 
-LEAGUE_TABLE_URL = ("http://www.premierleague.com/en-gb/matchday/league-table.html?"
-                    "season=2015-2016&month=MAY&timelineView=date&toDate=1432422000000&"
-                    "tableView=CURRENT_STANDINGS")
+TEAM_STATS_URL = ("http://www.premierleague.com/en-gb/matchday/league-table.html?"
+                  "season=2015-2016&month=MAY&timelineView=date&toDate=1432422000000&"
+                  "tableView=CURRENT_STANDINGS")
+
+FIXTURES_URL = ("http://www.premierleague.com/en-gb/matchday/matches.html?"
+                "paramClubId=ALL&paramComp_8=true&view=.dateSeason")
 
 PLAYER_LIST_URL = "http://fantasy.premierleague.com/player-list/"
 

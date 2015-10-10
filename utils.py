@@ -13,7 +13,23 @@ from urls import *
 from mongo import FplManager
 
 
+DB_NAME = 'fpl'
+COLLECTION_NAMES = ['teams', 'goalkeepers', 'defenders', 'midfielders', 'forwards']
+
 PLAYER_TYPES = {'goalkeepers': 1, 'defenders': 2, 'midfielders': 3, 'forwards': 4}
+
+
+TEAMS_MAP = {'Arsenal': 'Arsenal', 'Aston Villa': 'Aston Villa',
+             'Bournemouth': 'Bournemouth', 'Chelsea': 'Chelsea',
+             'Crystal Palace': 'Crystal Palace', 'Everton': 'Everton',
+             'Leicester City': 'Leicester', 'Liverpool': 'Liverpool',
+             'Manchester United': 'Man Utd', 'Manchester City': 'Man City',
+             'Newcastle United': 'Newcastle', 'Norwich City': 'Norwich',
+             'Southampton': 'Southampton', 'Stoke City': 'Stoke',
+             'Sunderland': 'Sunderland', 'Swansea City': 'Swansea',
+             'Tottenham Hotspur': 'Spurs', 'Watford': 'Watford',
+             'West Bromwich Albion': 'West Brom', 'West Ham United': 'West Ham'
+             }
 
 
 ALL_STAT_TYPES = {'now_cost': 4, 'total_points': 6, 'event_points': 5, 'minutes': 7,
@@ -27,7 +43,7 @@ ALL_STAT_TYPES = {'now_cost': 4, 'total_points': 6, 'event_points': 5, 'minutes'
                   'cost_change_start': 7, 'cost_change_start_fall': 7,
                   'cost_change_event': 7, 'cost_change_event_fall': 7}
 
-STAT_MAPPING = {'now_cost': 'price', 'total_points': 'score',
+STAT_MAP = {'now_cost': 'price', 'total_points': 'score',
                 'event_points': 'round_score', 'minutes': 'minutes',
                 'selected_by_percent': 'selected_by', 'assists': 'assists',
                 'clean_sheets': 'clean_sheets', 'yellow_cards': 'yellow_cards',
@@ -78,44 +94,6 @@ def get_soup_from_url(url):
     html = response.read()
     soup = BeautifulSoup(html, 'html.parser')
     return soup
-
-
-def get_league_table_data():
-    """
-    Returns a dictionary containing league table data for all the teams
-
-    :rtype: dict
-    """
-    table_data = {}
-    team_data = {}
-    team_name = ''
-    soup = get_soup_from_url(url=LEAGUE_TABLE_URL)
-    tds = soup.findAll('td')
-    keys = ['played', 'won', 'drawn', 'lost', 'goals_for', 'goals_against', 'goal_diff',
-            'points']
-
-    i = 0
-    flag = False
-    for col in tds:
-        try:
-            if col['class'][0] == 'col-club':
-                flag = True
-                team_name = str(col.text)
-                continue
-        except KeyError:
-            pass
-
-        if flag:
-            team_data[keys[i]] = int(col.text)
-            i += 1
-
-        if i > 7:
-            i = 0
-            flag = False
-            table_data[team_name] = team_data
-            team_data = {}
-
-    return table_data
 
 
 def get_player_list():
@@ -423,10 +401,10 @@ def add_stat_to_dictionary(data_dict, stat, stat_type):
     """
     for player, value in stat.items():
         try:
-            data_dict[player][STAT_MAPPING[stat_type]] = value
+            data_dict[player][STAT_MAP[stat_type]] = value
         except KeyError:
             data_dict[player] = {}
-            data_dict[player][STAT_MAPPING[stat_type]] = value
+            data_dict[player][STAT_MAP[stat_type]] = value
 
 
 def get_player_stats():
@@ -476,6 +454,72 @@ def get_organized_data(data):
     return organized_data
 
 
+def get_fixtures():
+    """
+    Returns all future fixtures for teams
+
+    :rtype: list[dict]
+    """
+    fixtures = {}
+
+    soup = get_soup_from_url(url=FIXTURES_URL)
+    tds = soup.findAll('td', {'class': 'clubs'})
+
+    for td in tds:
+        match = str(td.find('a').text)
+        team1, team2 = match.split(' v ')
+
+        try:
+            fixtures[team1].append({'team': team2, 'place': 'home'})
+        except KeyError:
+            fixtures[team1] = [{'team': team2, 'place': 'home'}]
+        try:
+            fixtures[team2].append({'team': team1, 'place': 'away'})
+        except KeyError:
+            fixtures[team2] = [{'team': team1, 'place': 'away'}]
+
+    return fixtures
+
+
+def get_team_stats():
+    """
+    Returns a dictionary containing data for all the teams
+
+    :rtype: dict[str, list]
+    """
+    team_stats = {'teams': []}
+    stats = {}
+    soup = get_soup_from_url(url=TEAM_STATS_URL)
+    tds = soup.findAll('td')
+    keys = ['played', 'won', 'drawn', 'lost', 'goals_for', 'goals_against', 'goal_diff',
+            'points']
+
+    fixtures = get_fixtures()
+    i = 0
+    flag = False
+    for col in tds:
+        try:
+            if col['class'][0] == 'col-club':
+                flag = True
+                stats['team'] = TEAMS_MAP[str(col.text)]
+                continue
+        except KeyError:
+            pass
+
+        if flag:
+            stats[keys[i]] = int(col.text)
+            i += 1
+
+        if i > 7:
+            i = 0
+            flag = False
+            stats['fixtures'] = fixtures[stats['team']]
+            team_stats['teams'].append(stats)
+            stats = {}
+
+    return team_stats
+
+
 def dump_as_json(data, json_file):
     """
     Dumps the data into a json file
@@ -494,19 +538,27 @@ def create_database():
     :return:
     """
     # stats = get_organized_data(get_player_stats())
-    # dump_as_json(data=stats, json_file='stats.json')
+    # dump_as_json(data=stats, json_file='player_stats.json')
 
-    with open('stats.json', 'r') as infile:
-        data = json.load(infile)
+    with open('player_stats.json', 'r') as infile:
+        player_data = json.load(infile)
 
     fpl_manager = FplManager(uri='mongodb://localhost:27017')
-    fpl_manager.drop_db(db_name='fpl')
-    fpl_manager.create_db(db_name='fpl')
-    fpl_manager.create_collections(db_name='fpl',
-                                   collection_names=['goalkeepers', 'defenders',
-                                                     'midfielders', 'forwards'])
+    fpl_manager.drop_db(db_name=DB_NAME)
+    fpl_manager.create_db(db_name=DB_NAME)
+    fpl_manager.create_collections(db_name=DB_NAME,
+                                   collection_names=COLLECTION_NAMES)
 
-    for key, player_stats in data.items():
-        fpl_manager.insert(db_name='fpl', collection_name=key, data=player_stats)
+    for key, player_stats in player_data.items():
+        fpl_manager.insert(db_name=DB_NAME, collection_name=key, data=player_stats)
+
+    # team_stats = get_team_stats()
+    # dump_as_json(data=team_stats, json_file='team_stats.json')
+
+    with open('team_stats.json', 'r') as infile:
+        team_data = json.load(infile)
+
+    for key, team_stats in team_data.items():
+        fpl_manager.insert(db_name=DB_NAME, collection_name=key, data=team_stats)
 
 create_database()

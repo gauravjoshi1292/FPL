@@ -18,6 +18,29 @@ def get_stat_rating(val, max_val, min_val):
     return float(val-min_val)/(max_val - min_val)
 
 
+def get_fixture_rating(team_stats):
+    fixture_ratings = {}
+
+    points = {}
+    for stats in team_stats:
+        points[stats['team']] = stats['points']
+
+    team_stats.rewind()
+
+    for stats in team_stats:
+        rating = 0
+        team = stats['team']
+        fixtures = stats['fixtures']
+        for fixture in fixtures:
+            opposition = fixture['team']
+            place = fixture['place']
+            rating += points[team] - points[opposition]
+
+        fixture_ratings[team] = rating
+
+    return sorted(fixture_ratings.items(), key=lambda x: x[1], reverse=True)
+
+
 def get_goalkeeper_rating(stats, maxs, mins):
     if stats['minutes'] == 0:
         return 0
@@ -68,12 +91,16 @@ def get_max_and_min(player_stats):
 def calculate_goalkeeper_ratings(manager, db_name, collection_name):
     goalkeeper_ratings = {}
     goalkeeper_entries = manager.client[db_name][collection_name].find()
+    team_entries = manager.client[db_name]['teams'].find()
 
-    maxs, mins = get_max_and_min(goalkeeper_entries)
+    maxs, mins = get_max_and_min(player_stats=goalkeeper_entries)
+    fixture_ratings = get_fixture_rating(team_stats=team_entries)
+    print fixture_ratings
 
     goalkeeper_entries.rewind()
     for goalkeeper_entry in goalkeeper_entries:
-        rating = get_goalkeeper_rating(goalkeeper_entry, maxs, mins)
+        rating = get_goalkeeper_rating(stats=goalkeeper_entry, maxs=maxs, mins=mins)
+
         goalkeeper_ratings[(goalkeeper_entry['name'], goalkeeper_entry['team'])] = rating
 
     return sorted(goalkeeper_ratings.items(), key=lambda x: x[1], reverse=True)
