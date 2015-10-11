@@ -19,18 +19,30 @@ COLLECTION_NAMES = ['teams', 'goalkeepers', 'defenders', 'midfielders', 'forward
 PLAYER_TYPES = {'goalkeepers': 1, 'defenders': 2, 'midfielders': 3, 'forwards': 4}
 
 
-TEAMS_MAP = {'Arsenal': 'Arsenal', 'Aston Villa': 'Aston Villa',
-             'Bournemouth': 'Bournemouth', 'Chelsea': 'Chelsea',
-             'Crystal Palace': 'Crystal Palace', 'Everton': 'Everton',
-             'Leicester City': 'Leicester', 'Liverpool': 'Liverpool',
-             'Manchester United': 'Man Utd', 'Manchester City': 'Man City',
-             'Newcastle United': 'Newcastle', 'Norwich City': 'Norwich',
-             'Southampton': 'Southampton', 'Stoke City': 'Stoke',
-             'Sunderland': 'Sunderland', 'Swansea City': 'Swansea',
-             'Tottenham Hotspur': 'Spurs', 'Watford': 'Watford',
-             'West Bromwich Albion': 'West Brom', 'West Ham United': 'West Ham'
+TEAMS_MAP = {'Arsenal': 'ARS', 'Aston Villa': 'AVL',
+             'Bournemouth': 'BOU', 'Chelsea': 'CHE',
+             'Crystal Palace': 'CRY', 'Everton': 'EVE',
+             'Leicester City': 'LEI', 'Liverpool': 'LIV',
+             'Manchester United': 'MUN', 'Manchester City': 'MCI',
+             'Newcastle United': 'NEW', 'Norwich City': 'NOR',
+             'Southampton': 'SOU', 'Stoke City': 'STK',
+             'Sunderland': 'SUN', 'Swansea City': 'SWA',
+             'Tottenham Hotspur': 'TOT', 'Watford': 'WAT',
+             'West Bromwich Albion': 'WBA', 'West Ham United': 'WHU'
              }
 
+
+TEAMS_MAP2 = {'Arsenal': 'ARS', 'Aston Villa': 'AVL',
+              'Bournemouth': 'BOU', 'Chelsea': 'CHE',
+              'Crystal Palace': 'CRY', 'Everton': 'EVE',
+              'Leicester': 'LEI', 'Liverpool': 'LIV',
+              'Man Utd': 'MUN', 'Man City': 'MCI',
+              'Newcastle': 'NEW', 'Norwich': 'NOR',
+              'Southampton': 'SOU', 'Stoke': 'STK',
+              'Sunderland': 'SUN', 'Swansea': 'SWA',
+              'Spurs': 'TOT', 'Watford': 'WAT',
+              'West Brom': 'WBA', 'West Ham': 'WHU'
+              }
 
 ALL_STAT_TYPES = {'now_cost': 4, 'total_points': 6, 'event_points': 5, 'minutes': 7,
                   'selected_by_percent': 3, 'assists': 7, 'clean_sheets': 7,
@@ -467,7 +479,7 @@ def get_fixtures():
 
     for td in tds:
         match = str(td.find('a').text)
-        team1, team2 = match.split(' v ')
+        team1, team2 = map(lambda x: TEAMS_MAP2[x], match.split(' v '))
 
         try:
             fixtures[team1].append({'team': team2, 'place': 'home'})

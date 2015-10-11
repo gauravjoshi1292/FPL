@@ -7,128 +7,128 @@
             "goals_for": 19, 
             "won": 6, 
             "goals_against": 7, 
-            "team": "Man City", 
+            "team": "MCI", 
             "drawn": 0, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }
             ], 
             "points": 18
@@ -140,128 +140,128 @@
             "goals_for": 13, 
             "won": 5, 
             "goals_against": 7, 
-            "team": "Arsenal", 
+            "team": "ARS", 
             "drawn": 1, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }
             ], 
             "points": 16
@@ -273,128 +273,128 @@
             "goals_for": 12, 
             "won": 5, 
             "goals_against": 8, 
-            "team": "Man Utd", 
+            "team": "MUN", 
             "drawn": 1, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }
             ], 
             "points": 16
@@ -406,128 +406,128 @@
             "goals_for": 11, 
             "won": 5, 
             "goals_against": 7, 
-            "team": "Crystal Palace", 
+            "team": "CRY", 
             "drawn": 0, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }
             ], 
             "points": 15
@@ -539,128 +539,128 @@
             "goals_for": 17, 
             "won": 4, 
             "goals_against": 15, 
-            "team": "Leicester", 
+            "team": "LEI", 
             "drawn": 3, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }
             ], 
             "points": 15
@@ -672,128 +672,128 @@
             "goals_for": 17, 
             "won": 4, 
             "goals_against": 11, 
-            "team": "West Ham", 
+            "team": "WHU", 
             "drawn": 2, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }
             ], 
             "points": 14
@@ -805,128 +805,128 @@
             "goals_for": 12, 
             "won": 3, 
             "goals_against": 8, 
-            "team": "Everton", 
+            "team": "EVE", 
             "drawn": 4, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }
             ], 
             "points": 13
@@ -938,128 +938,128 @@
             "goals_for": 11, 
             "won": 3, 
             "goals_against": 7, 
-            "team": "Spurs", 
+            "team": "TOT", 
             "drawn": 4, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }
             ], 
             "points": 13
@@ -1071,128 +1071,128 @@
             "goals_for": 13, 
             "won": 3, 
             "goals_against": 10, 
-            "team": "Southampton", 
+            "team": "SOU", 
             "drawn": 3, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }
             ], 
             "points": 12
@@ -1204,128 +1204,128 @@
             "goals_for": 8, 
             "won": 3, 
             "goals_against": 10, 
-            "team": "Liverpool", 
+            "team": "LIV", 
             "drawn": 3, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }
             ], 
             "points": 12
@@ -1337,128 +1337,128 @@
             "goals_for": 10, 
             "won": 2, 
             "goals_against": 10, 
-            "team": "Swansea", 
+            "team": "SWA", 
             "drawn": 4, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }
             ], 
             "points": 10
@@ -1470,128 +1470,128 @@
             "goals_for": 6, 
             "won": 2, 
             "goals_against": 7, 
-            "team": "Watford", 
+            "team": "WAT", 
             "drawn": 4, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }
             ], 
             "points": 10
@@ -1603,128 +1603,128 @@
             "goals_for": 12, 
             "won": 2, 
             "goals_against": 14, 
-            "team": "Norwich", 
+            "team": "NOR", 
             "drawn": 3, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }
             ], 
             "points": 9
@@ -1736,128 +1736,128 @@
             "goals_for": 8, 
             "won": 2, 
             "goals_against": 10, 
-            "team": "Stoke", 
+            "team": "STK", 
             "drawn": 3, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }
             ], 
             "points": 9
@@ -1869,128 +1869,128 @@
             "goals_for": 10, 
             "won": 2, 
             "goals_against": 12, 
-            "team": "Bournemouth", 
+            "team": "BOU", 
             "drawn": 2, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }
             ], 
             "points": 8
@@ -2002,128 +2002,128 @@
             "goals_for": 12, 
             "won": 2, 
             "goals_against": 17, 
-            "team": "Chelsea", 
+            "team": "CHE", 
             "drawn": 2, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }
             ], 
             "points": 8
@@ -2135,128 +2135,128 @@
             "goals_for": 6, 
             "won": 2, 
             "goals_against": 11, 
-            "team": "West Brom", 
+            "team": "WBA", 
             "drawn": 2, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }
             ], 
             "points": 8
@@ -2268,128 +2268,128 @@
             "goals_for": 8, 
             "won": 1, 
             "goals_against": 13, 
-            "team": "Aston Villa", 
+            "team": "AVL", 
             "drawn": 1, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }
             ], 
             "points": 4
@@ -2401,128 +2401,128 @@
             "goals_for": 8, 
             "won": 0, 
             "goals_against": 18, 
-            "team": "Sunderland", 
+            "team": "SUN", 
             "drawn": 3, 
             "fixtures": [
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Newcastle"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }
             ], 
             "points": 3
@@ -2534,128 +2534,128 @@
             "goals_for": 6, 
             "won": 0, 
             "goals_against": 17, 
-            "team": "Newcastle", 
+            "team": "NEW", 
             "drawn": 3, 
             "fixtures": [
                 {
                     "place": "home", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "away", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Arsenal"
+                    "team": "ARS"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man Utd"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Ham"
+                    "team": "WHU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Watford"
+                    "team": "WAT"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Everton"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "West Brom"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Chelsea"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Man City"
+                    "team": "MCI"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Stoke"
+                    "team": "STK"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Bournemouth"
+                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Leicester"
+                    "team": "LEI"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Sunderland"
+                    "team": "SUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Norwich"
+                    "team": "NOR"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Southampton"
+                    "team": "SOU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Swansea"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Liverpool"
+                    "team": "LIV"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Crystal Palace"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "away", 
-                    "team": "Aston Villa"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "Spurs"
+                    "team": "TOT"
                 }
             ], 
             "points": 3
