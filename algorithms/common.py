@@ -2,22 +2,73 @@ __author__ = 'gj'
 
 
 def get_stat_rating(val, max_val, min_val):
+    """
+    Returns linearly normalized rating corresponding to the given stat value
+
+    :param val: stat value
+    :type val: int | float
+
+    :param max_val: maximum possible value for the stat
+    :type max_val: int | float
+
+    :param min_val: minimum possible value for the stat
+    :type min_val: int | float
+
+    :rtype: float
+    """
     if val == 0:
         return 0.0
     return float(val - min_val) / (max_val - min_val)
 
 
 def get_normalized_ratings(ratings, max_val, min_val, min_range=0.0, max_range=1.0):
+    """
+    Returns normalized values corresponding to passed ratings
+
+    :param ratings: rating values
+    :type ratings: dict
+
+    :param max_val: maximum possible rating value
+    :type max_val: float
+
+    :param min_val: minimum possible rating value
+    :type min_val: float
+
+    :param min_range: lower limit for the normalization range
+    :type min_range: float
+
+    :param max_range: upper limit for the normalization range
+    :type max_range: float
+
+    :rtype: dict
+    """
     normalized_ratings = {}
 
-    for team, rating in ratings.items():
+    for key, rating in ratings.items():
         normalized_val = (rating - min_val) / (max_val - min_val)
-        normalized_ratings[team] = min_range + (normalized_val * (max_range - min_range))
+        normalized_ratings[key] = min_range + (normalized_val * (max_range - min_range))
 
     return normalized_ratings
 
 
 def get_rating_for_n_fixtures(team, fixtures, points, n):
+    """
+    Returns rating for the next n fixtures based on their ease/difficulty
+
+    :param team: team name
+    :type team: str
+
+    :param fixtures: fixtures corresponding to the team
+    :type fixtures: list
+
+    :param points: league table points corresponding to all the teams
+    :type points: dict
+
+    :param n: number of fixtures to consider
+    :type n: int
+
+    :rtype: float
+    """
     if n > len(fixtures):
         n = len(fixtures)
 
@@ -43,6 +94,17 @@ def get_rating_for_n_fixtures(team, fixtures, points, n):
 
 
 def get_max_fixture_rating(points, n):
+    """
+    Returns the best possible fixture rating
+
+    :param points: league table points corresponding to all the teams
+    :type points: dict
+
+    :param n: number of fixtures to consider
+    :type n: int
+
+    :rtype: float
+    """
     table = sorted(points.items(), key=lambda x: x[1], reverse=True)
     best_team = table[0][0]
 
@@ -58,6 +120,17 @@ def get_max_fixture_rating(points, n):
 
 
 def get_min_fixture_rating(points, n):
+    """
+    Returns the worst possible fixture rating
+
+    :param points: league table points corresponding to all the teams
+    :type points: dict
+
+    :param n: number of fixtures to consider
+    :type n: int
+
+    :rtype: float
+    """
     table = sorted(points.items(), key=lambda x: x[1], reverse=True)
     worst_team = table[-1][0]
 
@@ -72,6 +145,17 @@ def get_min_fixture_rating(points, n):
 
 
 def get_fixture_rating(team_stats, n_fixtures):
+    """
+    Returns normalized fixture ratings for all the teams
+
+    :param team_stats: team statistics
+    :type team_stats: dict
+
+    :param n_fixtures: number of fixtures to consider
+    :type n_fixtures: int
+
+    :rtype: dict
+    """
     ratings = {}
 
     points = {}
@@ -97,6 +181,14 @@ def get_fixture_rating(team_stats, n_fixtures):
 
 
 def get_max_and_min(player_stats):
+    """
+    Returns maximum and minimum values corresponding to all the statistics
+
+    :param player_stats: player statistics
+    :type player_stats: dict
+
+    :rtype: dict, dict
+    """
     max_values = {}
     min_values = {}
     for stat in player_stats:

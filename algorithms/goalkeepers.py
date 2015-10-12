@@ -18,6 +18,20 @@ FIXTURES_LIM = 5
 
 
 def get_goalkeeper_rating(stats, maxs, mins):
+    """
+    Returns the absolute rating for a goalkeeper
+
+    :param stats: keeper's statistics
+    :type stats: dict
+
+    :param maxs: max_values for keeper's statistics
+    :type maxs: dict
+
+    :param mins: min_values for keeper's statistics
+    :type mins: dict
+
+    :rtype: float
+    """
     if stats['minutes'] == 0:
         return 0
 
@@ -39,6 +53,20 @@ def get_goalkeeper_rating(stats, maxs, mins):
 
 
 def calculate_goalkeeper_ratings(manager, db_name, collection_name):
+    """
+    Returns absolute and affected ratings for all the goalkeepers
+
+    :param manager: fpl database manager
+    :type manager: mongo.FplManager
+
+    :param db_name: database name
+    :type db_name: str
+
+    :param collection_name: collection name
+    :type collection_name: str
+
+    :rtype: dict
+    """
     goalkeeper_ratings = {}
     goalkeeper_entries = manager.client[db_name][collection_name].find()
     team_entries = manager.client[db_name]['teams'].find()
@@ -63,9 +91,7 @@ def calculate_goalkeeper_ratings(manager, db_name, collection_name):
 
 
 fpl_manager = FplManager(uri='mongodb://localhost:27017')
-
 gr = calculate_goalkeeper_ratings(manager=fpl_manager, db_name='fpl',
                                   collection_name='goalkeepers')
 print sorted(gr.items(), key=lambda x: x[1]['affected_rating'], reverse=True)
-
 fpl_manager.close_connection()
