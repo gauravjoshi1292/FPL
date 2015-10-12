@@ -20,12 +20,12 @@ def get_stat_rating(val, max_val, min_val):
     return float(val - min_val) / (max_val - min_val)
 
 
-def get_normalized_ratings(ratings, max_val, min_val):
+def get_normalized_ratings(ratings, max_val, min_val, min_range=0.0, max_range=1.0):
     normalized_ratings = {}
 
     for team, rating in ratings.items():
         normalized_val = (rating - min_val) / (max_val - min_val)
-        normalized_ratings[team] = normalized_val
+        normalized_ratings[team] = min_range + (normalized_val * (max_range - min_range))
 
     return normalized_ratings
 
@@ -36,7 +36,7 @@ def get_rating_for_n_fixtures(team, fixtures, points, n):
 
     rating = 0.0
     fixtures = fixtures[0:n]
-    day_factor = 10.0
+    day_factor = 1.0
 
     for fixture in fixtures:
         opposition = fixture['team']
@@ -104,7 +104,9 @@ def get_fixture_rating(team_stats):
 
     fixture_ratings = get_normalized_ratings(ratings=ratings,
                                              max_val=max_rating,
-                                             min_val=min_rating)
+                                             min_val=min_rating,
+                                             min_range=0.0,
+                                             max_range=5.0)
 
     return fixture_ratings
 
@@ -169,7 +171,7 @@ def calculate_goalkeeper_ratings(manager, db_name, collection_name):
     for goalkeeper_entry in goalkeeper_entries:
         absolute_rating = get_goalkeeper_rating(stats=goalkeeper_entry, maxs=maxs,
                                                 mins=mins)
-        affected_rating = absolute_rating * fixture_ratings[goalkeeper_entry['team']]
+        affected_rating = (absolute_rating + fixture_ratings[goalkeeper_entry['team']]) / 2.0
 
         goalkeeper_ratings[(goalkeeper_entry['name'], goalkeeper_entry['team'])] = affected_rating
 
