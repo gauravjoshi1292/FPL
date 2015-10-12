@@ -7,16 +7,18 @@ SCORE_WT = 10.0
 CS_WT = 7.0
 GC_WT = -1.0
 SAVES_WT = 1.0
-FORM_WT = 9.0
+FORM_WT = 10.0
 RS_WT = 7.0
 MINUTES_WT = 3.0
 
-WT_SUM = SCORE_WT + CS_WT + GC_WT + SAVES_WT + FORM_WT + RS_WT + MINUTES_WT
+WT_SUM = SCORE_WT + CS_WT + GC_WT + SAVES_WT + FORM_WT + RS_WT
 
 FIXTURES_LIM = 5
 
 
 def get_stat_rating(val, max_val, min_val):
+    if val == 0:
+        return 0.0
     return float(val - min_val) / (max_val - min_val)
 
 
@@ -124,11 +126,10 @@ def get_goalkeeper_rating(stats, maxs, mins):
     form_rating = get_stat_rating(stats['form'], maxs['form'], mins['form'])
     rs_rating = get_stat_rating(stats['round_score'], maxs['round_score'],
                                 mins['round_score'])
-    minutes_rating = get_stat_rating(stats['minutes'], maxs['minutes'], mins['minutes'])
 
     rating = (SCORE_WT*score_rating + CS_WT*cs_rating + GC_WT*gc_rating +
-              SAVES_WT*saves_rating + FORM_WT*form_rating + RS_WT*rs_rating +
-              MINUTES_WT*minutes_rating) * 5.0 / WT_SUM
+              SAVES_WT*saves_rating + FORM_WT*form_rating +
+              RS_WT*rs_rating) * 5.0 / WT_SUM
 
     return rating
 
@@ -169,11 +170,15 @@ def calculate_goalkeeper_ratings(manager, db_name, collection_name):
 
     goalkeeper_entries.rewind()
     for goalkeeper_entry in goalkeeper_entries:
+        mins_rating = get_stat_rating(goalkeeper_entry['minutes'], maxs['minutes'],
+                                      mins['minutes'])
         absolute_rating = get_goalkeeper_rating(stats=goalkeeper_entry, maxs=maxs,
                                                 mins=mins)
-        affected_rating = (absolute_rating + fixture_ratings[goalkeeper_entry['team']]) / 2.0
+        affected_rating = mins_rating * (
+            (absolute_rating + fixture_ratings[goalkeeper_entry['team']]) / 2.0)
 
-        goalkeeper_ratings[(goalkeeper_entry['name'], goalkeeper_entry['team'])] = affected_rating
+        goalkeeper_ratings[(goalkeeper_entry['name'], goalkeeper_entry['team'])] = {
+            'absolute_rating': absolute_rating, 'affected_rating': affected_rating}
 
     return goalkeeper_ratings
 
@@ -182,6 +187,6 @@ fpl_manager = FplManager(uri='mongodb://localhost:27017')
 
 gr = calculate_goalkeeper_ratings(manager=fpl_manager, db_name='fpl',
                                   collection_name='goalkeepers')
-print sorted(gr.items(), key=lambda x: x[1], reverse=True)
+print sorted(gr.items(), key=lambda x: x[1]['affected_rating'], reverse=True)
 
 fpl_manager.close_connection()
