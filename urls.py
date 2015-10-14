@@ -9,7 +9,9 @@ FIXTURES_URL = ("http://www.premierleague.com/en-gb/matchday/matches.html?"
 
 PLAYER_LIST_URL = "http://fantasy.premierleague.com/player-list/"
 
-GOALKEEPER_STATS_URL = ("http://fantasy.premierleague.com/stats/elements/?"
-                        "element_filter=et_{player_type}&"
-                        "stat_filter={stat_type}&"
-                        "page={page}")
+PLAYER_STATS_URL = ("http://fantasy.premierleague.com/stats/elements/?"
+                    "element_filter=et_{player_type}&"
+                    "stat_filter={stat_type}&"
+                    "page={page}")
+
+INJURIES_URL = "http://www.fantasyfootballscout.co.uk/fantasy-football-injuries/"

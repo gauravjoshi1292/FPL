@@ -27,5 +27,11 @@ class FplManager(object):
     def insert(self, db_name, collection_name, data):
         self.client[db_name][collection_name].insert(data)
 
+    def find(self, db_name, collection_name, query):
+        return self.client[db_name][collection_name].find(query)
+
+    def find_one(self, db_name, collection_name, query):
+        return self.client[db_name][collection_name].find_one(query)
+
     def close_connection(self):
         self.client.close()

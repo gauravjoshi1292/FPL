@@ -334,7 +334,7 @@ def get_table_from_url(url, table_class):
     if not table:
         return []
 
-    tds = table.findAll('td', {'class': None})
+    tds = table.findAll('td')
     return tds
 
 
@@ -431,7 +431,7 @@ def get_player_stats():
         stats = {}
 
         for stat_type, column in ALL_STAT_TYPES.items():
-            stat = scrape_stat_from_table(url_template=GOALKEEPER_STATS_URL,
+            stat = scrape_stat_from_table(url_template=PLAYER_STATS_URL,
                                           player_type=val,
                                           stat_type=stat_type,
                                           table_class='ismTable',
@@ -532,6 +532,44 @@ def get_team_stats():
     return team_stats
 
 
+def get_player_injuries():
+    player_injuries = {'injuries': []}
+    table = get_table_from_url(url=INJURIES_URL,
+                               table_class="ffs-ib ffs-ib-full-content ffs-ib-sort")
+
+    i = 0
+    critical = ['Injured', 'Disciplinary', 'On Loan', 'Unavailable', 'Doubt 50%',
+                'Doubt 75%', 'Suspended']
+    safe = {'Doubt 25%': 0.75, 'Available': 1}
+
+    name, team, availability, return_date = '', '', 1, ''
+    for row in table:
+        if i == 0:
+            name = normalize(text=row.find('img').text).split('(')[0].strip().split(' ')[-1]
+        elif i == 1:
+            team = normalize(text=row.text)
+        elif i == 2:
+            status = normalize(text=row.find('span').text)
+            if status in critical:
+                availability = 0
+            else:
+                availability = safe[status]
+        elif i == 3:
+            return_date = normalize(text=row.text)
+        elif i == 4:
+            pass
+        elif i == 5:
+            i = 0
+            player_injuries['injuries'].append({'name': name, 'team': team,
+                                                'availability': availability,
+                                                'return_date': return_date})
+            name, team, doubt, return_date = '', '', '', ''
+            continue
+        i += 1
+
+    return player_injuries
+
+
 def dump_as_json(data, json_file):
     """
     Dumps the data into a json file
@@ -544,10 +582,12 @@ def dump_as_json(data, json_file):
         json.dump(data, outfile, indent=4)
 
 
-def create_database():
+def insert_player_stats_in_db(db_manager):
     """
-    Creates a mongo database of player statistics
-    :return:
+    Inserts player statistics in the database
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.FplManager
     """
     # stats = get_organized_data(get_player_stats())
     # dump_as_json(data=stats, json_file='player_stats.json')
@@ -555,15 +595,17 @@ def create_database():
     with open('player_stats.json', 'r') as infile:
         player_data = json.load(infile)
 
-    fpl_manager = FplManager(uri='mongodb://localhost:27017')
-    fpl_manager.drop_db(db_name=DB_NAME)
-    fpl_manager.create_db(db_name=DB_NAME)
-    fpl_manager.create_collections(db_name=DB_NAME,
-                                   collection_names=COLLECTION_NAMES)
-
     for key, player_stats in player_data.items():
-        fpl_manager.insert(db_name=DB_NAME, collection_name=key, data=player_stats)
+        db_manager.insert(db_name=DB_NAME, collection_name=key, data=player_stats)
 
+
+def insert_team_stats_in_db(db_manager):
+    """
+    Inserts team statistics in the database
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.FplManager
+    """
     # team_stats = get_team_stats()
     # dump_as_json(data=team_stats, json_file='team_stats.json')
 
@@ -571,6 +613,40 @@ def create_database():
         team_data = json.load(infile)
 
     for key, team_stats in team_data.items():
-        fpl_manager.insert(db_name=DB_NAME, collection_name=key, data=team_stats)
+        db_manager.insert(db_name=DB_NAME, collection_name=key, data=team_stats)
+
+
+def insert_injuries_in_db(db_manager):
+    """
+    Inserts player injuries in the database
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.FplManager
+    """
+    # injuries = get_player_injuries()
+    # dump_as_json(data=injuries, json_file='injuries.json')
+
+    with open('injuries.json', 'r') as infile:
+        injury_data = json.load(infile)
+
+    for key, injuries in injury_data.items():
+        db_manager.insert(db_name=DB_NAME, collection_name=key, data=injuries)
+
+
+def create_database():
+    """
+    Creates a mongo database of player statistics
+    :return:
+    """
+    fpl_manager = FplManager(uri='mongodb://localhost:27017')
+    fpl_manager.drop_db(db_name=DB_NAME)
+    fpl_manager.create_db(db_name=DB_NAME)
+    fpl_manager.create_collections(db_name=DB_NAME,
+                                   collection_names=COLLECTION_NAMES)
+
+    insert_player_stats_in_db(db_manager=fpl_manager)
+    insert_team_stats_in_db(db_manager=fpl_manager)
+    insert_injuries_in_db(db_manager=fpl_manager)
+
 
 create_database()

@@ -68,20 +68,28 @@ def calculate_goalkeeper_ratings(manager, db_name, collection_name):
     :rtype: dict
     """
     goalkeeper_ratings = {}
-    goalkeeper_entries = manager.client[db_name][collection_name].find()
-    team_entries = manager.client[db_name]['teams'].find()
+    goalkeeper_entries = manager.find(db_name, 'goalkeepers', {})
+    team_entries = manager.find(db_name, 'teams', {})
+    injuries = manager.find(db_name, 'injuries', {})
 
     maxs, mins = get_max_and_min(player_stats=goalkeeper_entries)
     fixture_ratings = get_fixture_rating(team_stats=team_entries, n_fixtures=FIXTURES_LIM)
-    print fixture_ratings
 
     goalkeeper_entries.rewind()
     for goalkeeper_entry in goalkeeper_entries:
+        injury_info = manager.find_one(db_name, 'injuries',
+                                       {'name': goalkeeper_entry['name'],
+                                        'team': goalkeeper_entry['team']})
+        if injury_info:
+            availability = injury_info['availability']
+        else:
+            availability = 1
+
         minutes_rating = get_stat_rating(goalkeeper_entry['minutes'], maxs['minutes'],
                                          mins['minutes'])
         absolute_rating = get_goalkeeper_rating(stats=goalkeeper_entry, maxs=maxs,
                                                 mins=mins)
-        affected_rating = minutes_rating * (
+        affected_rating = minutes_rating * availability * (
             (absolute_rating + fixture_ratings[goalkeeper_entry['team']]) / 2.0)
 
         goalkeeper_ratings[(goalkeeper_entry['name'], goalkeeper_entry['team'])] = {

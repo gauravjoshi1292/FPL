@@ -1,0 +1,886 @@
+{
+    "injuries": [
+        {
+            "availability": 0, 
+            "name": "Akpom", 
+            "return_date": "16/05/2016", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Arteta", 
+            "return_date": "17/10/2015", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Flamini", 
+            "return_date": "17/10/2015", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0.75, 
+            "name": "Koscielny", 
+            "return_date": "17/10/2015", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Rosicky", 
+            "return_date": "17/10/2015", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Sanogo", 
+            "return_date": "16/05/2016", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Szczesny", 
+            "return_date": "16/05/2016", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Welbeck", 
+            "return_date": "Unknown", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Wilshere", 
+            "return_date": "Unknown", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Zelalem", 
+            "return_date": "09/01/2016", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Agbonlahor", 
+            "return_date": "17/10/2015", 
+            "team": "AVL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Baker", 
+            "return_date": "16/05/2016", 
+            "team": "AVL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Clark", 
+            "return_date": "17/10/2015", 
+            "team": "AVL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Gardner", 
+            "return_date": "Unknown", 
+            "team": "AVL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Ilori", 
+            "return_date": "17/10/2015", 
+            "team": "AVL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Okore", 
+            "return_date": "24/10/2015", 
+            "team": "AVL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Robinson", 
+            "return_date": "16/05/2016", 
+            "team": "AVL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Traore", 
+            "return_date": "17/10/2015", 
+            "team": "AVL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Arter", 
+            "return_date": "17/10/2015", 
+            "team": "BOU"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Elphick", 
+            "return_date": "17/10/2015", 
+            "team": "BOU"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Gradel", 
+            "return_date": "Unknown", 
+            "team": "BOU"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Mings", 
+            "return_date": "Unknown", 
+            "team": "BOU"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Wilson", 
+            "return_date": "Unknown", 
+            "team": "BOU"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Brown", 
+            "return_date": "16/05/2016", 
+            "team": "CHE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Christensen", 
+            "return_date": "16/05/2016", 
+            "team": "CHE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Courtois", 
+            "return_date": "19/12/2015", 
+            "team": "CHE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Cuadrado", 
+            "return_date": "16/05/2016", 
+            "team": "CHE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Nathan", 
+            "return_date": "16/05/2016", 
+            "team": "CHE"
+        }, 
+        {
+            "availability": 0.75, 
+            "name": "Ivanovic", 
+            "return_date": "17/10/2015", 
+            "team": "CHE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Solanke", 
+            "return_date": "16/05/2016", 
+            "team": "CHE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Appiah", 
+            "return_date": "Unknown", 
+            "team": "CPL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Chamakh", 
+            "return_date": "17/10/2015", 
+            "team": "CPL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Delaney", 
+            "return_date": "17/10/2015", 
+            "team": "CPL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Inniss", 
+            "return_date": "16/05/2016", 
+            "team": "CPL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Jedinak", 
+            "return_date": "17/10/2015", 
+            "team": "CPL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Ward", 
+            "return_date": "17/10/2015", 
+            "team": "CPL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Wickham", 
+            "return_date": "17/10/2015", 
+            "team": "CPL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Williams", 
+            "return_date": "16/01/2016", 
+            "team": "CPL"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Baines", 
+            "return_date": "25/10/2015", 
+            "team": "EVE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Besic", 
+            "return_date": "17/10/2015", 
+            "team": "EVE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Cleverley", 
+            "return_date": "25/10/2015", 
+            "team": "EVE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Garbutt", 
+            "return_date": "09/05/2016", 
+            "team": "EVE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Hibbert", 
+            "return_date": "Unknown", 
+            "team": "EVE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "McAleny", 
+            "return_date": "14/11/2015", 
+            "team": "EVE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Pienaar", 
+            "return_date": "Unknown", 
+            "team": "EVE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Stones", 
+            "return_date": "17/10/2015", 
+            "team": "EVE"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Dyer", 
+            "return_date": "03/10/2015", 
+            "team": "LEI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Hamer", 
+            "return_date": "16/05/2016", 
+            "team": "LEI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "James", 
+            "return_date": "Unknown", 
+            "team": "LEI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Konchesky", 
+            "return_date": "16/05/2016", 
+            "team": "LEI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Lawrence", 
+            "return_date": "02/01/2016", 
+            "team": "LEI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Moore", 
+            "return_date": "09/01/2016", 
+            "team": "LEI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Balotelli", 
+            "return_date": "16/05/2016", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Firmino", 
+            "return_date": "Unknown", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0.75, 
+            "name": "Benteke", 
+            "return_date": "17/10/2015", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Coutinho", 
+            "return_date": "17/10/2015", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Flanagan", 
+            "return_date": "Unknown", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Gomez", 
+            "return_date": "17/10/2015", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Henderson", 
+            "return_date": "Unknown", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Lovren", 
+            "return_date": "17/10/2015", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Markovic", 
+            "return_date": "16/05/2016", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Ojo", 
+            "return_date": "16/05/2016", 
+            "team": "LIV"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Aguero", 
+            "return_date": "21/11/2015", 
+            "team": "MCI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Clichy", 
+            "return_date": "17/10/2015", 
+            "team": "MCI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Delph", 
+            "return_date": "31/10/2015", 
+            "team": "MCI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Denayer", 
+            "return_date": "16/05/2016", 
+            "team": "MCI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Dzeko", 
+            "return_date": "Unknown", 
+            "team": "MCI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Jovetic", 
+            "return_date": "Unknown", 
+            "team": "MCI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Kolarov", 
+            "return_date": "17/10/2015", 
+            "team": "MCI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Silva", 
+            "return_date": "17/10/2015", 
+            "team": "MCI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Toure", 
+            "return_date": "17/10/2015", 
+            "team": "MCI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Blackett", 
+            "return_date": "16/05/2016", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Carrick", 
+            "return_date": "17/10/2015", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Herrera", 
+            "return_date": "17/10/2015", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Januzaj", 
+            "return_date": "16/05/2016", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0.75, 
+            "name": "McNair", 
+            "return_date": "17/10/2015", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Rojo", 
+            "return_date": "17/10/2015", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Rooney", 
+            "return_date": "09/10/2015", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Schweinsteiger", 
+            "return_date": "17/10/2015", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Shaw", 
+            "return_date": "Unknown", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Aarons", 
+            "return_date": "18/10/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Armstrong", 
+            "return_date": "16/01/2016", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Cabella", 
+            "return_date": "16/05/2016", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Colback", 
+            "return_date": "03/10/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Darlow", 
+            "return_date": "14/11/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Dummett", 
+            "return_date": "18/10/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Good", 
+            "return_date": "Unknown", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Haidara", 
+            "return_date": "18/10/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Janmaat", 
+            "return_date": "17/10/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Krul", 
+            "return_date": "Unknown", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Mbabu", 
+            "return_date": "18/10/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Obertan", 
+            "return_date": "18/10/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Riviere", 
+            "return_date": "Unknown", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Taylor", 
+            "return_date": "21/11/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Andreu", 
+            "return_date": "09/01/2016", 
+            "team": "NOR"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Bennett", 
+            "return_date": "02/01/2016", 
+            "team": "NOR"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Grabban", 
+            "return_date": "18/10/2015", 
+            "team": "NOR"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Hooper", 
+            "return_date": "Unknown", 
+            "team": "NOR"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Mulumbu", 
+            "return_date": "Unknown", 
+            "team": "NOR"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Odjidja-Ofoe", 
+            "return_date": "03/10/2015", 
+            "team": "NOR"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Forster", 
+            "return_date": "Unknown", 
+            "team": "SOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Gallagher", 
+            "return_date": "16/05/2016", 
+            "team": "SOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Gardos", 
+            "return_date": "Unknown", 
+            "team": "SOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Long", 
+            "return_date": "17/10/2015", 
+            "team": "SOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Diouf", 
+            "return_date": "17/10/2015", 
+            "team": "STO"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Given", 
+            "return_date": "17/10/2015", 
+            "team": "STO"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Shawcross", 
+            "return_date": "17/10/2015", 
+            "team": "STO"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Wilson", 
+            "return_date": "17/10/2015", 
+            "team": "STO"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Buckley", 
+            "return_date": "09/01/2016", 
+            "team": "SUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Coates", 
+            "return_date": "25/10/2015", 
+            "team": "SUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Giaccherini", 
+            "return_date": "16/05/2016", 
+            "team": "SUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Kaboul", 
+            "return_date": "17/10/2015", 
+            "team": "SUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Lens", 
+            "return_date": "25/10/2015", 
+            "team": "SUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Matthews", 
+            "return_date": "17/10/2015", 
+            "team": "SUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Vergini", 
+            "return_date": "16/05/2016", 
+            "team": "SUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Ayew", 
+            "return_date": "17/10/2015", 
+            "team": "SWA"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Fulton", 
+            "return_date": "26/12/2015", 
+            "team": "SWA"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Naughton", 
+            "return_date": "17/10/2015", 
+            "team": "SWA"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Bentaleb", 
+            "return_date": "17/10/2015", 
+            "team": "TOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Dier", 
+            "return_date": "24/10/2015", 
+            "team": "TOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Mason", 
+            "return_date": "17/10/2015", 
+            "team": "TOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Pritchard", 
+            "return_date": "Unknown", 
+            "team": "TOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Rose", 
+            "return_date": "17/10/2015", 
+            "team": "TOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Son", 
+            "return_date": "Unknown", 
+            "team": "TOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Angella", 
+            "return_date": "16/05/2016", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Anya", 
+            "return_date": "17/10/2015", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Behrami", 
+            "return_date": "17/10/2015", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Ekstrand", 
+            "return_date": "Unknown", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Fabbrini", 
+            "return_date": "16/05/2016", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Jurado", 
+            "return_date": "17/10/2015", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Layun", 
+            "return_date": "16/05/2016", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Murray", 
+            "return_date": "23/01/2016", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Nyom", 
+            "return_date": "17/10/2015", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Smith", 
+            "return_date": "03/10/2015", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Vydra", 
+            "return_date": "16/05/2016", 
+            "team": "WAT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Evans", 
+            "return_date": "17/10/2015", 
+            "team": "WBA"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Foster", 
+            "return_date": "Unknown", 
+            "team": "WBA"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Morrison", 
+            "return_date": "17/10/2015", 
+            "team": "WBA"
+        }, 
+        {
+            "availability": 0.75, 
+            "name": "Olsson", 
+            "return_date": "17/10/2015", 
+            "team": "WBA"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Amalfitano", 
+            "return_date": "Unknown", 
+            "team": "WHM"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Burke", 
+            "return_date": "26/09/2015", 
+            "team": "WHM"
+        }, 
+        {
+            "availability": 0, 
+            "name": "O'Brien", 
+            "return_date": "26/09/2015", 
+            "team": "WHM"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Ogbonna", 
+            "return_date": "17/10/2015", 
+            "team": "WHM"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Poyet", 
+            "return_date": "16/05/2016", 
+            "team": "WHM"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Reid", 
+            "return_date": "17/10/2015", 
+            "team": "WHM"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Song", 
+            "return_date": "31/10/2015", 
+            "team": "WHM"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Valencia", 
+            "return_date": "17/10/2015", 
+            "team": "WHM"
+        }
+    ]
+}
