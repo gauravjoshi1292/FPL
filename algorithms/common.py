@@ -113,8 +113,7 @@ def get_max_fixture_rating(points, n):
     for team, _ in table[:total_teams-n-1:-1]:
         fixtures.append({'team': team, 'place': 'home'})
 
-    max_fixture_rating = get_rating_for_n_fixtures(team=best_team, fixtures=fixtures,
-                                                   points=points, n=n)
+    max_fixture_rating = get_rating_for_n_fixtures(best_team, fixtures, points, n)
 
     return max_fixture_rating
 
@@ -138,8 +137,7 @@ def get_min_fixture_rating(points, n):
     for team, _ in table[:n]:
         fixtures.append({'team': team, 'place': 'away'})
 
-    min_fixture_rating = get_rating_for_n_fixtures(team=worst_team, fixtures=fixtures,
-                                                   points=points, n=n)
+    min_fixture_rating = get_rating_for_n_fixtures(worst_team, fixtures, points, n)
 
     return min_fixture_rating
 
@@ -159,23 +157,20 @@ def get_fixture_rating(team_stats, n_fixtures):
     ratings = {}
 
     points = {}
-    fixtures = {}
-    for stats in team_stats:
-        points[stats['team']] = stats['points']
-        fixtures[stats['team']] = stats['fixtures']
+    all_fixtures = {}
+    for team, stats in team_stats.items():
+        points[team] = stats['points']
+        all_fixtures[team] = stats['fixtures']
 
-    max_rating = get_max_fixture_rating(points=points, n=n_fixtures)
-    min_rating = get_min_fixture_rating(points=points, n=n_fixtures)
+    max_rating = get_max_fixture_rating(points, n_fixtures)
+    min_rating = get_min_fixture_rating(points, n_fixtures)
 
-    for team in fixtures:
+    for team, fixtures in all_fixtures.items():
         team = team
-        rating = get_rating_for_n_fixtures(team=team, fixtures=fixtures[team],
-                                           points=points, n=n_fixtures)
+        rating = get_rating_for_n_fixtures(team, fixtures, points, n_fixtures)
         ratings[team] = rating
 
-    fixture_ratings = get_normalized_ratings(ratings=ratings, max_val=max_rating,
-                                             min_val=min_rating, min_range=0.0,
-                                             max_range=5.0)
+    fixture_ratings = get_normalized_ratings(ratings, max_rating, min_rating, 0.0, 5.0)
 
     return fixture_ratings
 
@@ -191,23 +186,23 @@ def get_max_and_min(player_stats):
     """
     max_values = {}
     min_values = {}
-    for stat in player_stats:
-        for key in stat:
-            if key in ['_id', 'name', 'team']:
+    for player, stats in player_stats.items():
+        for key, val in stats.items():
+            if key == 'team':
                 continue
 
             try:
-                if stat[key] > max_values[key] and stat['minutes']:
-                    max_values[key] = stat[key]
+                if stats[key] > max_values[key] and stats['minutes']:
+                    max_values[key] = stats[key]
             except KeyError:
-                if stat['minutes']:
-                    max_values[key] = stat[key]
+                if stats['minutes']:
+                    max_values[key] = stats[key]
 
             try:
-                if stat[key] < min_values[key] and stat['minutes']:
-                    min_values[key] = stat[key]
+                if stats[key] < min_values[key] and stats['minutes']:
+                    min_values[key] = stats[key]
             except KeyError:
-                if stat['minutes']:
-                    min_values[key] = stat[key]
+                if stats['minutes']:
+                    min_values[key] = stats[key]
 
     return max_values, min_values

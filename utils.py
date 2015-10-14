@@ -10,11 +10,12 @@ from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
 
 from urls import *
-from mongo import FplManager
+from mongo import DbManager
 
 
 DB_NAME = 'fpl'
-COLLECTION_NAMES = ['teams', 'goalkeepers', 'defenders', 'midfielders', 'forwards']
+COLLECTION_NAMES = ['teams', 'goalkeepers', 'defenders', 'midfielders', 'forwards',
+                    'injuries']
 
 PLAYER_TYPES = {'goalkeepers': 1, 'defenders': 2, 'midfielders': 3, 'forwards': 4}
 
@@ -118,7 +119,7 @@ def get_player_list():
     defenders = {}
     midfielders = {}
     forwards = {}
-    soup = get_soup_from_url(url=PLAYER_LIST_URL)
+    soup = get_soup_from_url(PLAYER_LIST_URL)
 
     tables = soup.findAll('table')
     i = 0
@@ -168,7 +169,7 @@ def get_chrome_driver(url):
     :rtype: selenium.webdriver.chrome.webdriver.WebDriver
     """
     driver = webdriver.Chrome()
-    driver.get(url=url)
+    driver.get(url)
     return driver
 
 
@@ -182,7 +183,7 @@ def get_firefox_driver(url):
     :rtype: selenium.webdriver.firefox.webdriver.WebDriver
     """
     driver = webdriver.Firefox()
-    driver.get(url=url)
+    driver.get(url)
     return driver
 
 
@@ -196,7 +197,7 @@ def get_safari_driver(url):
     :rtype: selenium.webdriver.safari.webdriver.WebDriver
     """
     driver = webdriver.Safari()
-    driver.get(url=url)
+    driver.get(url)
     return driver
 
 
@@ -212,13 +213,13 @@ def get_driver(url):
             selenium.webdriver.safari.webdriver.WebDriver
     """
     try:
-        driver = get_chrome_driver(url=url)
+        driver = get_chrome_driver(url)
     except WebDriverException:
         try:
-            driver = get_firefox_driver(url=url)
+            driver = get_firefox_driver(url)
         except WebDriverException:
             try:
-                driver = get_safari_driver(url=url)
+                driver = get_safari_driver(url)
             except WebDriverException:
                 print "Could not find selenium web driver on system! Quit!"
                 return
@@ -249,7 +250,7 @@ def scroll_till_page_is_loaded(driver):
     source = driver.page_source
 
     while source != old_source:
-        scroll_to_bottom(driver=driver)
+        scroll_to_bottom(driver)
         time.sleep(1)
         old_source = source
         source = driver.page_source
@@ -282,10 +283,10 @@ def get_table_from_driver(url, table_id):
 
     :rtype: bs4.element.Tag
     """
-    driver = get_driver(url=url)
-    scroll_till_page_is_loaded(driver=driver)
-    soup = get_soup_from_driver(driver=driver)
-    table = soup.find('table', id=table_id)
+    driver = get_driver(url)
+    scroll_till_page_is_loaded(driver)
+    soup = get_soup_from_driver(driver)
+    table = soup.find('table', table_id)
     driver.quit()
     return table
 
@@ -328,7 +329,7 @@ def get_table_from_url(url, table_class):
 
     :rtype: bs4.element.ResultSet
     """
-    soup = get_soup_from_url(url=url)
+    soup = get_soup_from_url(url)
     table = soup.find('table', {'class': table_class})
 
     if not table:
@@ -363,8 +364,8 @@ def scrape_stat_from_table(url_template, player_type, stat_type, table_class, co
 
     page = 1
     while True:
-        url = url_template.format(player_type=player_type, stat_type=stat_type, page=page)
-        table = get_table_from_url(url=url, table_class=table_class)
+        url = url_template.format(player_type, stat_type, page)
+        table = get_table_from_url(url, table_class)
 
         if not table:
             break
@@ -431,13 +432,10 @@ def get_player_stats():
         stats = {}
 
         for stat_type, column in ALL_STAT_TYPES.items():
-            stat = scrape_stat_from_table(url_template=PLAYER_STATS_URL,
-                                          player_type=val,
-                                          stat_type=stat_type,
-                                          table_class='ismTable',
-                                          column=column)
+            stat = scrape_stat_from_table(PLAYER_STATS_URL, val, stat_type, 'ismTable',
+                                          column)
 
-            add_stat_to_dictionary(data_dict=stats, stat=stat, stat_type=stat_type)
+            add_stat_to_dictionary(stats, stat, stat_type)
 
         player_stats[player_type] = stats
 
@@ -474,7 +472,7 @@ def get_fixtures():
     """
     fixtures = {}
 
-    soup = get_soup_from_url(url=FIXTURES_URL)
+    soup = get_soup_from_url(FIXTURES_URL)
     tds = soup.findAll('td', {'class': 'clubs'})
 
     for td in tds:
@@ -501,7 +499,7 @@ def get_team_stats():
     """
     team_stats = {'teams': []}
     stats = {}
-    soup = get_soup_from_url(url=TEAM_STATS_URL)
+    soup = get_soup_from_url(TEAM_STATS_URL)
     tds = soup.findAll('td')
     keys = ['played', 'won', 'drawn', 'lost', 'goals_for', 'goals_against', 'goal_diff',
             'points']
@@ -534,8 +532,7 @@ def get_team_stats():
 
 def get_player_injuries():
     player_injuries = {'injuries': []}
-    table = get_table_from_url(url=INJURIES_URL,
-                               table_class="ffs-ib ffs-ib-full-content ffs-ib-sort")
+    table = get_table_from_url(INJURIES_URL, "ffs-ib ffs-ib-full-content ffs-ib-sort")
 
     i = 0
     critical = ['Injured', 'Disciplinary', 'On Loan', 'Unavailable', 'Doubt 50%',
@@ -545,17 +542,17 @@ def get_player_injuries():
     name, team, availability, return_date = '', '', 1, ''
     for row in table:
         if i == 0:
-            name = normalize(text=row.find('img').text).split('(')[0].strip().split(' ')[-1]
+            name = normalize(row.find('img').text).split('(')[0].strip().split(' ')[-1]
         elif i == 1:
-            team = normalize(text=row.text)
+            team = normalize(row.text)
         elif i == 2:
-            status = normalize(text=row.find('span').text)
+            status = normalize(row.find('span').text)
             if status in critical:
                 availability = 0
             else:
                 availability = safe[status]
         elif i == 3:
-            return_date = normalize(text=row.text)
+            return_date = normalize(row.text)
         elif i == 4:
             pass
         elif i == 5:
@@ -587,16 +584,16 @@ def insert_player_stats_in_db(db_manager):
     Inserts player statistics in the database
 
     :param db_manager: database manager handle
-    :type db_manager: mongo.FplManager
+    :type db_manager: mongo.DbManager
     """
     # stats = get_organized_data(get_player_stats())
-    # dump_as_json(data=stats, json_file='player_stats.json')
+    # dump_as_json(stats, 'player_stats.json')
 
     with open('player_stats.json', 'r') as infile:
         player_data = json.load(infile)
 
     for key, player_stats in player_data.items():
-        db_manager.insert(db_name=DB_NAME, collection_name=key, data=player_stats)
+        db_manager.insert(DB_NAME, key, player_stats)
 
 
 def insert_team_stats_in_db(db_manager):
@@ -604,16 +601,16 @@ def insert_team_stats_in_db(db_manager):
     Inserts team statistics in the database
 
     :param db_manager: database manager handle
-    :type db_manager: mongo.FplManager
+    :type db_manager: mongo.DbManager
     """
     # team_stats = get_team_stats()
-    # dump_as_json(data=team_stats, json_file='team_stats.json')
+    # dump_as_json(team_stats, 'team_stats.json')
 
     with open('team_stats.json', 'r') as infile:
         team_data = json.load(infile)
 
     for key, team_stats in team_data.items():
-        db_manager.insert(db_name=DB_NAME, collection_name=key, data=team_stats)
+        db_manager.insert(DB_NAME, key, team_stats)
 
 
 def insert_injuries_in_db(db_manager):
@@ -621,16 +618,16 @@ def insert_injuries_in_db(db_manager):
     Inserts player injuries in the database
 
     :param db_manager: database manager handle
-    :type db_manager: mongo.FplManager
+    :type db_manager: mongo.DbManager
     """
     # injuries = get_player_injuries()
-    # dump_as_json(data=injuries, json_file='injuries.json')
+    # dump_as_json(injuries, 'injuries.json')
 
     with open('injuries.json', 'r') as infile:
         injury_data = json.load(infile)
 
     for key, injuries in injury_data.items():
-        db_manager.insert(db_name=DB_NAME, collection_name=key, data=injuries)
+        db_manager.insert(DB_NAME, key, injuries)
 
 
 def create_database():
@@ -638,15 +635,14 @@ def create_database():
     Creates a mongo database of player statistics
     :return:
     """
-    fpl_manager = FplManager(uri='mongodb://localhost:27017')
-    fpl_manager.drop_db(db_name=DB_NAME)
-    fpl_manager.create_db(db_name=DB_NAME)
-    fpl_manager.create_collections(db_name=DB_NAME,
-                                   collection_names=COLLECTION_NAMES)
+    fpl_manager = DbManager('mongodb://localhost:27017')
+    fpl_manager.drop_db(DB_NAME)
+    fpl_manager.create_db(DB_NAME)
+    fpl_manager.create_collections(DB_NAME, COLLECTION_NAMES)
 
-    insert_player_stats_in_db(db_manager=fpl_manager)
-    insert_team_stats_in_db(db_manager=fpl_manager)
-    insert_injuries_in_db(db_manager=fpl_manager)
+    insert_player_stats_in_db(fpl_manager)
+    insert_team_stats_in_db(fpl_manager)
+    insert_injuries_in_db(fpl_manager)
 
 
 create_database()

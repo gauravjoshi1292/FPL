@@ -1,6 +1,6 @@
 __author__ = 'gj'
 
-from mongo import FplManager
+from mongo import DbManager
 
 from algorithms.common import get_stat_rating, get_max_and_min, get_fixture_rating
 
@@ -52,54 +52,135 @@ def get_goalkeeper_rating(stats, maxs, mins):
     return rating
 
 
-def calculate_goalkeeper_ratings(manager, db_name, collection_name):
+def get_goalkeeper_stats(db_manager, db_name, collection_name):
     """
-    Returns absolute and affected ratings for all the goalkeepers
+    Queries the database for goalkeeper entries, processes them and returns a dictionary
+    containing goalkeeper statistics
 
-    :param manager: fpl database manager
-    :type manager: mongo.FplManager
+    :param db_manager: database manager handle
+    :type db_manager: mongo.DbManager
 
-    :param db_name: database name
+    :param db_name: database to query
     :type db_name: str
 
-    :param collection_name: collection name
+    :param collection_name: collection to query
     :type collection_name: str
 
     :rtype: dict
     """
+    goalkeeper_stats = {}
+    goalkeeper_entries = db_manager.find(db_name, collection_name,{})
+
+    for entry in goalkeeper_entries:
+        name = entry['name']
+        stats = {}
+        for stat_type, val in entry.items():
+            if stat_type not in ['name', '_id']:
+                stats[stat_type] = val
+        goalkeeper_stats[name] = stats
+
+    return goalkeeper_stats
+
+
+def get_team_stats(db_manager, db_name, collection_name):
+    """
+    Queries the database for team entries, processes them and returns a dictionary
+    containing team statistics
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.DbManager
+
+    :param db_name: database to query
+    :type db_name: str
+
+    :param collection_name: collection to query
+    :type collection_name: str
+
+    :rtype: dict
+    """
+    teams_stats = {}
+    team_entries = db_manager.find(db_name, collection_name, {})
+
+    for entry in team_entries:
+        team = entry['team']
+        stats = {}
+        for stat_type, val in entry.items():
+            if stat_type not in ['team', '_id']:
+                stats[stat_type] = val
+        teams_stats[team] = stats
+
+    return teams_stats
+
+
+def get_injuries(db_manager, db_name, collection_name):
+    """
+    Queries the database for injury entries, processes them and returns a dictionary
+    containing players with injuries
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.DbManager
+
+    :param db_name: database to query
+    :type db_name: str
+
+    :param collection_name: collection to query
+    :type collection_name: str
+
+    :rtype: dict
+    """
+    injuries = {}
+    injury_entries = db_manager.find(db_name, collection_name, {})
+
+    for entry in injury_entries:
+        name = entry['name']
+        stats = {}
+        for stat_type, val in entry.items():
+            if stat_type not in ['name', '_id']:
+                stats[stat_type] = val
+        injuries[name] = stats
+
+    return injuries
+
+
+def calculate_goalkeeper_ratings(db_manager, db_name):
+    """
+    Returns absolute and affected ratings for all the goalkeepers
+
+    :param db_manager: database manager
+    :type db_manager: mongo.DbManager
+
+    :param db_name: database name
+    :type db_name: str
+
+    :rtype: dict
+    """
     goalkeeper_ratings = {}
-    goalkeeper_entries = manager.find(db_name, 'goalkeepers', {})
-    team_entries = manager.find(db_name, 'teams', {})
-    injuries = manager.find(db_name, 'injuries', {})
 
-    maxs, mins = get_max_and_min(player_stats=goalkeeper_entries)
-    fixture_ratings = get_fixture_rating(team_stats=team_entries, n_fixtures=FIXTURES_LIM)
+    goalkeeper_stats = get_goalkeeper_stats(db_manager, db_name, 'goalkeepers')
+    team_stats = get_team_stats(db_manager, db_name, 'teams')
+    injuries = get_injuries(db_manager, db_name, 'injuries')
 
-    goalkeeper_entries.rewind()
-    for goalkeeper_entry in goalkeeper_entries:
-        injury_info = manager.find_one(db_name, 'injuries',
-                                       {'name': goalkeeper_entry['name'],
-                                        'team': goalkeeper_entry['team']})
-        if injury_info:
-            availability = injury_info['availability']
-        else:
+    maxs, mins = get_max_and_min(goalkeeper_stats)
+    fixture_rating = get_fixture_rating(team_stats, FIXTURES_LIM)
+
+    for player, stats in goalkeeper_stats.items():
+        try:
+            availability = injuries[player]['availability']
+        except KeyError:
             availability = 1
 
-        minutes_rating = get_stat_rating(goalkeeper_entry['minutes'], maxs['minutes'],
-                                         mins['minutes'])
-        absolute_rating = get_goalkeeper_rating(stats=goalkeeper_entry, maxs=maxs,
-                                                mins=mins)
-        affected_rating = minutes_rating * availability * (
-            (absolute_rating + fixture_ratings[goalkeeper_entry['team']]) / 2.0)
+        team = stats['team']
+        minutes_rating = get_stat_rating(stats['minutes'], maxs['minutes'], mins['minutes'])
+        absolute_rating = get_goalkeeper_rating(stats, maxs, mins)
+        affected_rating = minutes_rating * availability * ((absolute_rating + fixture_rating[team]) / 2.0)
 
-        goalkeeper_ratings[(goalkeeper_entry['name'], goalkeeper_entry['team'])] = {
-            'absolute_rating': absolute_rating, 'affected_rating': affected_rating}
+        goalkeeper_ratings[(player, team)] = {'absolute_rating': absolute_rating,
+                                              'affected_rating': affected_rating}
 
     return goalkeeper_ratings
 
 
-fpl_manager = FplManager(uri='mongodb://localhost:27017')
-gr = calculate_goalkeeper_ratings(manager=fpl_manager, db_name='fpl',
-                                  collection_name='goalkeepers')
+fpl_manager = DbManager('mongodb://localhost:27017')
+gr = calculate_goalkeeper_ratings(fpl_manager, 'fpl')
 print sorted(gr.items(), key=lambda x: x[1]['affected_rating'], reverse=True)
 fpl_manager.close_connection()

@@ -3,7 +3,7 @@ __author__ = 'gj'
 from pymongo import MongoClient
 
 
-class FplManager(object):
+class DbManager(object):
     def __init__(self, uri):
         self.client = MongoClient(uri)
 
