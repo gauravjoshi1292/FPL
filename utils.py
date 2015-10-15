@@ -567,6 +567,16 @@ def get_player_injuries():
     return player_injuries
 
 
+def get_minutes_form():
+    kwgs = {'player_type': 1, 'stat_type': 'total_points', 'page': 1}
+    driver = get_driver(PLAYER_STATS_URL.format(**kwgs))
+    soup = get_soup_from_driver(driver)
+    print soup
+    driver.quit()
+
+get_minutes_form()
+
+
 def dump_as_json(data, json_file):
     """
     Dumps the data into a json file
