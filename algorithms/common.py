@@ -16,6 +16,8 @@ def get_stat_rating(val, max_val, min_val):
 
     :rtype: float
     """
+    if max_val == min_val:
+        return 0.5
     if val == 0:
         return 0.0
     return float(val - min_val) / (max_val - min_val)
@@ -206,3 +208,93 @@ def get_max_and_min(player_stats):
                     min_values[key] = stats[key]
 
     return max_values, min_values
+
+
+def get_player_stats(db_manager, db_name, collection_name):
+    """
+    Queries the database for player entries, processes them and returns a dictionary
+    containing player statistics
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.DbManager
+
+    :param db_name: database to query
+    :type db_name: str
+
+    :param collection_name: collection to query
+    :type collection_name: str
+
+    :rtype: dict
+    """
+    player_stats = {}
+    player_entries = db_manager.find(db_name, collection_name, {})
+
+    for entry in player_entries:
+        name = entry['name']
+        stats = {}
+        for stat_type, val in entry.items():
+            if stat_type not in ['name', '_id']:
+                stats[stat_type] = val
+        player_stats[name] = stats
+
+    return player_stats
+
+
+def get_team_stats(db_manager, db_name, collection_name):
+    """
+    Queries the database for team entries, processes them and returns a dictionary
+    containing team statistics
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.DbManager
+
+    :param db_name: database to query
+    :type db_name: str
+
+    :param collection_name: collection to query
+    :type collection_name: str
+
+    :rtype: dict
+    """
+    teams_stats = {}
+    team_entries = db_manager.find(db_name, collection_name, {})
+
+    for entry in team_entries:
+        team = entry['team']
+        stats = {}
+        for stat_type, val in entry.items():
+            if stat_type not in ['team', '_id']:
+                stats[stat_type] = val
+        teams_stats[team] = stats
+
+    return teams_stats
+
+
+def get_injuries(db_manager, db_name, collection_name):
+    """
+    Queries the database for injury entries, processes them and returns a dictionary
+    containing players with injuries
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.DbManager
+
+    :param db_name: database to query
+    :type db_name: str
+
+    :param collection_name: collection to query
+    :type collection_name: str
+
+    :rtype: dict
+    """
+    injuries = {}
+    injury_entries = db_manager.find(db_name, collection_name, {})
+
+    for entry in injury_entries:
+        name = entry['name']
+        stats = {}
+        for stat_type, val in entry.items():
+            if stat_type not in ['name', '_id']:
+                stats[stat_type] = val
+        injuries[name] = stats
+
+    return injuries

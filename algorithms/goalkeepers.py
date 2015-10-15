@@ -2,15 +2,14 @@ __author__ = 'gj'
 
 from mongo import DbManager
 
-from algorithms.common import get_stat_rating, get_max_and_min, get_fixture_rating
+from algorithms.common import *
 
 SCORE_WT = 10.0
 CS_WT = 7.0
 GC_WT = -1.0
 SAVES_WT = 1.0
 FORM_WT = 10.0
-RS_WT = 7.0
-MINUTES_WT = 3.0
+RS_WT = 8.0
 
 WT_SUM = SCORE_WT + CS_WT + GC_WT + SAVES_WT + FORM_WT + RS_WT
 
@@ -32,9 +31,6 @@ def get_goalkeeper_rating(stats, maxs, mins):
 
     :rtype: float
     """
-    if stats['minutes'] == 0:
-        return 0
-
     score_rating = get_stat_rating(stats['score'], maxs['score'], mins['score'])
     cs_rating = get_stat_rating(stats['clean_sheets'], maxs['clean_sheets'],
                                 mins['clean_sheets'])
@@ -52,96 +48,6 @@ def get_goalkeeper_rating(stats, maxs, mins):
     return rating
 
 
-def get_goalkeeper_stats(db_manager, db_name, collection_name):
-    """
-    Queries the database for goalkeeper entries, processes them and returns a dictionary
-    containing goalkeeper statistics
-
-    :param db_manager: database manager handle
-    :type db_manager: mongo.DbManager
-
-    :param db_name: database to query
-    :type db_name: str
-
-    :param collection_name: collection to query
-    :type collection_name: str
-
-    :rtype: dict
-    """
-    goalkeeper_stats = {}
-    goalkeeper_entries = db_manager.find(db_name, collection_name,{})
-
-    for entry in goalkeeper_entries:
-        name = entry['name']
-        stats = {}
-        for stat_type, val in entry.items():
-            if stat_type not in ['name', '_id']:
-                stats[stat_type] = val
-        goalkeeper_stats[name] = stats
-
-    return goalkeeper_stats
-
-
-def get_team_stats(db_manager, db_name, collection_name):
-    """
-    Queries the database for team entries, processes them and returns a dictionary
-    containing team statistics
-
-    :param db_manager: database manager handle
-    :type db_manager: mongo.DbManager
-
-    :param db_name: database to query
-    :type db_name: str
-
-    :param collection_name: collection to query
-    :type collection_name: str
-
-    :rtype: dict
-    """
-    teams_stats = {}
-    team_entries = db_manager.find(db_name, collection_name, {})
-
-    for entry in team_entries:
-        team = entry['team']
-        stats = {}
-        for stat_type, val in entry.items():
-            if stat_type not in ['team', '_id']:
-                stats[stat_type] = val
-        teams_stats[team] = stats
-
-    return teams_stats
-
-
-def get_injuries(db_manager, db_name, collection_name):
-    """
-    Queries the database for injury entries, processes them and returns a dictionary
-    containing players with injuries
-
-    :param db_manager: database manager handle
-    :type db_manager: mongo.DbManager
-
-    :param db_name: database to query
-    :type db_name: str
-
-    :param collection_name: collection to query
-    :type collection_name: str
-
-    :rtype: dict
-    """
-    injuries = {}
-    injury_entries = db_manager.find(db_name, collection_name, {})
-
-    for entry in injury_entries:
-        name = entry['name']
-        stats = {}
-        for stat_type, val in entry.items():
-            if stat_type not in ['name', '_id']:
-                stats[stat_type] = val
-        injuries[name] = stats
-
-    return injuries
-
-
 def calculate_goalkeeper_ratings(db_manager, db_name):
     """
     Returns absolute and affected ratings for all the goalkeepers
@@ -156,7 +62,7 @@ def calculate_goalkeeper_ratings(db_manager, db_name):
     """
     goalkeeper_ratings = {}
 
-    goalkeeper_stats = get_goalkeeper_stats(db_manager, db_name, 'goalkeepers')
+    goalkeeper_stats = get_player_stats(db_manager, db_name, 'goalkeepers')
     team_stats = get_team_stats(db_manager, db_name, 'teams')
     injuries = get_injuries(db_manager, db_name, 'injuries')
 
