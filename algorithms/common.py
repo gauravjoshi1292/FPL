@@ -231,11 +231,12 @@ def get_player_stats(db_manager, db_name, collection_name):
 
     for entry in player_entries:
         name = entry['name']
+        team = entry['team']
         stats = {}
         for stat_type, val in entry.items():
             if stat_type not in ['name', '_id']:
                 stats[stat_type] = val
-        player_stats[name] = stats
+        player_stats[(name, team)] = stats
 
     return player_stats
 

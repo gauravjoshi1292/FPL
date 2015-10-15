@@ -5,29 +5,28 @@ from mongo import DbManager
 from algorithms.common import *
 
 SCORE_WT = 10.0
-CS_WT = 7.0
-GC_WT = -1.0
-ASSISTS_WT = 5.0
-GOALS_WT = 7.0
+CS_WT = 1.0
+ASSISTS_WT = 7.0
+GOALS_WT = 8.0
 FORM_WT = 10.0
 RS_WT = 8.0
 
-WT_SUM = SCORE_WT + CS_WT + GC_WT + ASSISTS_WT + GOALS_WT + FORM_WT + RS_WT
+WT_SUM = SCORE_WT + CS_WT + ASSISTS_WT + GOALS_WT + FORM_WT + RS_WT
 
 FIXTURES_LIM = 5
 
 
-def get_defender_rating(stats, maxs, mins):
+def get_forward_rating(stats, maxs, mins):
     """
-    Returns the absolute rating for a defender
+    Returns the absolute rating for a forward
 
-    :param stats: defender's statistics
+    :param stats: forward's statistics
     :type stats: dict
 
-    :param maxs: max_values for defender's statistics
+    :param maxs: max_values for forward's statistics
     :type maxs: dict
 
-    :param mins: min_values for defender's statistics
+    :param mins: min_values for forward's statistics
     :type mins: dict
 
     :rtype: float
@@ -35,8 +34,6 @@ def get_defender_rating(stats, maxs, mins):
     score_rating = get_stat_rating(stats['score'], maxs['score'], mins['score'])
     cs_rating = get_stat_rating(stats['clean_sheets'], maxs['clean_sheets'],
                                 mins['clean_sheets'])
-    gc_rating = get_stat_rating(stats['goals_conceded'], maxs['goals_conceded'],
-                                mins['goals_conceded'])
     assists_rating = get_stat_rating(stats['assists'], maxs['assists'], mins['assists'])
     goals_rating = get_stat_rating(stats['goals_scored'], maxs['goals_scored'],
                                    mins['goals_scored'])
@@ -44,16 +41,15 @@ def get_defender_rating(stats, maxs, mins):
     rs_rating = get_stat_rating(stats['round_score'], maxs['round_score'],
                                 mins['round_score'])
 
-    rating = (SCORE_WT*score_rating + CS_WT*cs_rating + GC_WT*gc_rating +
-              ASSISTS_WT*assists_rating + GOALS_WT*goals_rating + FORM_WT*form_rating +
-              RS_WT*rs_rating) * 5.0 / WT_SUM
+    rating = (SCORE_WT*score_rating + CS_WT*cs_rating + ASSISTS_WT*assists_rating +
+              GOALS_WT*goals_rating + FORM_WT*form_rating + RS_WT*rs_rating) * 5.0 / WT_SUM
 
     return rating
 
 
-def calculate_defender_ratings(db_manager, db_name):
+def calculate_forward_ratings(db_manager, db_name):
     """
-    Returns absolute and affected ratings for all the defenders
+    Returns absolute and affected ratings for all the forwards
 
     :param db_manager: database manager
     :type db_manager: mongo.DbManager
@@ -63,16 +59,16 @@ def calculate_defender_ratings(db_manager, db_name):
 
     :rtype: dict
     """
-    defender_ratings = {}
+    forward_ratings = {}
 
-    defender_stats = get_player_stats(db_manager, db_name, 'defenders')
+    forward_stats = get_player_stats(db_manager, db_name, 'forwards')
     team_stats = get_team_stats(db_manager, db_name, 'teams')
     injuries = get_injuries(db_manager, db_name, 'injuries')
 
-    maxs, mins = get_max_and_min(defender_stats)
+    maxs, mins = get_max_and_min(forward_stats)
     fixture_rating = get_fixture_rating(team_stats, FIXTURES_LIM)
 
-    for key, stats in defender_stats.items():
+    for key, stats in forward_stats.items():
         player = key[0]
         team = key[1]
 
@@ -82,16 +78,17 @@ def calculate_defender_ratings(db_manager, db_name):
             availability = 1
 
         minutes_rating = get_stat_rating(stats['minutes'], maxs['minutes'], mins['minutes'])
-        absolute_rating = get_defender_rating(stats, maxs, mins)
-        affected_rating = minutes_rating * availability * ((absolute_rating + fixture_rating[team]) / 2.0)
+        absolute_rating = get_forward_rating(stats, maxs, mins)
 
-        defender_ratings[(player, team)] = {'absolute_rating': absolute_rating,
-                                            'affected_rating': affected_rating}
+        affected_rating = minutes_rating * availability * (absolute_rating + fixture_rating[team])
 
-    return defender_ratings
+        forward_ratings[(player, team)] = {'absolute_rating': absolute_rating,
+                                           'affected_rating': affected_rating}
+
+    return forward_ratings
 
 
 fpl_manager = DbManager('mongodb://localhost:27017')
-ratings = calculate_defender_ratings(fpl_manager, 'fpl')
+ratings = calculate_forward_ratings(fpl_manager, 'fpl')
 print sorted(ratings.items(), key=lambda x: x[1]['affected_rating'], reverse=True)
 fpl_manager.close_connection()
