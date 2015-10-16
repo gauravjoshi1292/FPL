@@ -589,5 +589,6 @@ def create_database():
     insert_player_stats_in_db(fpl_manager)
     insert_team_stats_in_db(fpl_manager)
     insert_injuries_in_db(fpl_manager)
+    print fpl_manager.client.database_names()
 
 create_database()

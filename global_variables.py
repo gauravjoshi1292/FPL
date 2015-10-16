@@ -1,6 +1,6 @@
 __author__ = 'gj'
 
-DB_NAME = 'fpl-gw-{0}'.format('9')
+DB_NAME = 'fpl-gw-{0}'.format('8')
 COLLECTION_NAMES = ['teams', 'goalkeepers', 'defenders', 'midfielders', 'forwards',
                     'injuries']
 
