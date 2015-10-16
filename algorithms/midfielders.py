@@ -1,7 +1,7 @@
 __author__ = 'gj'
 
 from mongo import DbManager
-
+from global_variables import *
 from algorithms.common import *
 
 SCORE_WT = 10.0
@@ -89,6 +89,6 @@ def calculate_midfielder_ratings(db_manager, db_name):
 
 
 fpl_manager = DbManager('mongodb://localhost:27017')
-ratings = calculate_midfielder_ratings(fpl_manager, 'fpl')
+ratings = calculate_midfielder_ratings(fpl_manager, DB_NAME)
 print sorted(ratings.items(), key=lambda x: x[1]['affected_rating'], reverse=True)
 fpl_manager.close_connection()
