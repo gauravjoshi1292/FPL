@@ -2,7 +2,7 @@ __author__ = 'gj'
 
 from mongo import DbManager
 from global_variables import *
-from algorithms.common import *
+from algorithms.ratings.common import *
 
 SCORE_WT = 10.0
 CS_WT = 7.0

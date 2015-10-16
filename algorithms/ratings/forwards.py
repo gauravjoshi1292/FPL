@@ -2,7 +2,7 @@ __author__ = 'gj'
 
 from mongo import DbManager
 from global_variables import *
-from algorithms.common import *
+from algorithms.ratings.common import *
 
 SCORE_WT = 10.0
 CS_WT = 1.0
@@ -16,17 +16,17 @@ WT_SUM = SCORE_WT + CS_WT + ASSISTS_WT + GOALS_WT + FORM_WT + RS_WT
 FIXTURES_LIM = 5
 
 
-def get_midfielder_rating(stats, maxs, mins):
+def get_forward_rating(stats, maxs, mins):
     """
-    Returns the absolute rating for a midfielder
+    Returns the absolute rating for a forward
 
-    :param stats: midfielder's statistics
+    :param stats: forward's statistics
     :type stats: dict
 
-    :param maxs: max_values for midfielder's statistics
+    :param maxs: max_values for forward's statistics
     :type maxs: dict
 
-    :param mins: min_values for midfielder's statistics
+    :param mins: min_values for forward's statistics
     :type mins: dict
 
     :rtype: float
@@ -47,9 +47,9 @@ def get_midfielder_rating(stats, maxs, mins):
     return rating
 
 
-def calculate_midfielder_ratings(db_manager, db_name):
+def calculate_forward_ratings(db_manager, db_name):
     """
-    Returns absolute and affected ratings for all the midfielders
+    Returns absolute and affected ratings for all the forwards
 
     :param db_manager: database manager
     :type db_manager: mongo.DbManager
@@ -59,16 +59,16 @@ def calculate_midfielder_ratings(db_manager, db_name):
 
     :rtype: dict
     """
-    midfielder_ratings = {}
+    forward_ratings = {}
 
-    midfielder_stats = get_player_stats(db_manager, db_name, 'midfielders')
+    forward_stats = get_player_stats(db_manager, db_name, 'forwards')
     team_stats = get_team_stats(db_manager, db_name, 'teams')
     injuries = get_injuries(db_manager, db_name, 'injuries')
 
-    maxs, mins = get_max_and_min(midfielder_stats)
+    maxs, mins = get_max_and_min(forward_stats)
     fixture_rating = get_fixture_rating(team_stats, FIXTURES_LIM)
 
-    for key, stats in midfielder_stats.items():
+    for key, stats in forward_stats.items():
         player = key[0]
         team = key[1]
 
@@ -78,17 +78,17 @@ def calculate_midfielder_ratings(db_manager, db_name):
             availability = 1
 
         minutes_rating = get_stat_rating(stats['minutes'], maxs['minutes'], mins['minutes'])
-        absolute_rating = get_midfielder_rating(stats, maxs, mins)
+        absolute_rating = get_forward_rating(stats, maxs, mins)
 
         affected_rating = minutes_rating * availability * (absolute_rating + fixture_rating[team])
 
-        midfielder_ratings[(player, team)] = {'absolute_rating': absolute_rating,
-                                              'affected_rating': affected_rating}
+        forward_ratings[(player, team)] = {'absolute_rating': absolute_rating,
+                                           'affected_rating': affected_rating}
 
-    return midfielder_ratings
+    return forward_ratings
 
 
 fpl_manager = DbManager('mongodb://localhost:27017')
-ratings = calculate_midfielder_ratings(fpl_manager, DB_NAME)
+ratings = calculate_forward_ratings(fpl_manager, DB_NAME)
 print sorted(ratings.items(), key=lambda x: x[1]['affected_rating'], reverse=True)
 fpl_manager.close_connection()

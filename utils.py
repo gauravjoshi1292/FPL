@@ -535,7 +535,7 @@ def insert_player_stats_in_db(db_manager):
     # stats = get_organized_data(get_player_stats())
     # dump_as_json(stats, 'player_stats.json')
 
-    with open('player_stats.json', 'r') as infile:
+    with open('data/player_stats.json', 'r') as infile:
         player_data = json.load(infile)
 
     for key, player_stats in player_data.items():
@@ -552,7 +552,7 @@ def insert_team_stats_in_db(db_manager):
     # team_stats = get_team_stats()
     # dump_as_json(team_stats, 'team_stats.json')
 
-    with open('team_stats.json', 'r') as infile:
+    with open('data/team_stats.json', 'r') as infile:
         team_data = json.load(infile)
 
     for key, team_stats in team_data.items():
@@ -569,7 +569,7 @@ def insert_injuries_in_db(db_manager):
     # injuries = get_player_injuries()
     # dump_as_json(injuries, 'injuries.json')
 
-    with open('injuries.json', 'r') as infile:
+    with open('data/injuries.json', 'r') as infile:
         injury_data = json.load(infile)
 
     for key, injuries in injury_data.items():
@@ -589,6 +589,5 @@ def create_database():
     insert_player_stats_in_db(fpl_manager)
     insert_team_stats_in_db(fpl_manager)
     insert_injuries_in_db(fpl_manager)
-    print fpl_manager.client.database_names()
 
 create_database()
