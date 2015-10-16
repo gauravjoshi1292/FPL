@@ -302,7 +302,7 @@ def scrape_stat_from_table(url_template, player_type, stat_type, table_class, co
 
     page = 1
     while True:
-        url = url_template.format(player_type, stat_type, page)
+        url = url_template.format(player_type=player_type, stat_type=stat_type, page=page)
         table = get_table_from_url(url, table_class)
 
         if not table:
@@ -344,7 +344,7 @@ def add_stat_to_dictionary(data_dict, stat, stat_type):
     :param data_dict: dictionary containing players
     :type data_dict: dict[(str, str), dict[str, int | float]]
 
-    :param stat: dictionary containing stat
+    :param stat: dictionary containing statistics
     :type stat: dict[(str, str), int | float]
 
     :param stat_type: type of stat
@@ -356,6 +356,33 @@ def add_stat_to_dictionary(data_dict, stat, stat_type):
         except KeyError:
             data_dict[player] = {}
             data_dict[player][STAT_MAP[stat_type]] = value
+
+
+def get_fixtures():
+    """
+    Returns all future fixtures for teams
+
+    :rtype: dict
+    """
+    fixtures = {}
+
+    soup = get_soup_from_url(FIXTURES_URL)
+    tds = soup.findAll('td', {'class': 'clubs'})
+
+    for td in tds:
+        match = str(td.find('a').text)
+        team1, team2 = map(lambda x: TEAMS_MAP2[x], match.split(' v '))
+
+        try:
+            fixtures[team1].append({'team': team2, 'place': 'home'})
+        except KeyError:
+            fixtures[team1] = [{'team': team2, 'place': 'home'}]
+        try:
+            fixtures[team2].append({'team': team1, 'place': 'away'})
+        except KeyError:
+            fixtures[team2] = [{'team': team1, 'place': 'away'}]
+
+    return fixtures
 
 
 def get_player_stats():
@@ -389,44 +416,20 @@ def get_organized_data(data):
     :rtype: dict
     """
     organized_data = {}
+    fixtures = get_fixtures()
     for player_type, all_stats in data.items():
         organized_data[player_type] = []
 
         for key, player_stats in all_stats.items():
             new_player_stats = player_stats.copy()
-            new_player_stats['name'] = key[1:-1].split(', ')[0][1:-1]
-            new_player_stats['team'] = key[1:-1].split(', ')[1][1:-1]
+            name, team = key[1:-1].split(', ')[0][1:-1], key[1:-1].split(', ')[1][1:-1]
+            new_player_stats['name'] = name
+            new_player_stats['team'] = team
+            new_player_stats['next_match'] = fixtures[team][0]
 
             organized_data[player_type].append(new_player_stats)
 
     return organized_data
-
-
-def get_fixtures():
-    """
-    Returns all future fixtures for teams
-
-    :rtype: list[dict]
-    """
-    fixtures = {}
-
-    soup = get_soup_from_url(FIXTURES_URL)
-    tds = soup.findAll('td', {'class': 'clubs'})
-
-    for td in tds:
-        match = str(td.find('a').text)
-        team1, team2 = map(lambda x: TEAMS_MAP2[x], match.split(' v '))
-
-        try:
-            fixtures[team1].append({'team': team2, 'place': 'home'})
-        except KeyError:
-            fixtures[team1] = [{'team': team2, 'place': 'home'}]
-        try:
-            fixtures[team2].append({'team': team1, 'place': 'away'})
-        except KeyError:
-            fixtures[team2] = [{'team': team1, 'place': 'away'}]
-
-    return fixtures
 
 
 def get_team_stats():
@@ -469,6 +472,11 @@ def get_team_stats():
 
 
 def get_player_injuries():
+    """
+    Returns a dictionary containing information about player injuries and suspensions
+
+    :rtype: dict[str, list]
+    """
     player_injuries = {'injuries': []}
     table = get_table_from_url(INJURIES_URL, "ffs-ib ffs-ib-full-content ffs-ib-sort")
 
@@ -503,16 +511,6 @@ def get_player_injuries():
         i += 1
 
     return player_injuries
-
-#
-# def get_minutes_form():
-#     kwgs = {'player_type': 1, 'stat_type': 'total_points', 'page': 1}
-#     driver = get_driver(PLAYER_STATS_URL.format(**kwgs))
-#     soup = get_soup_from_driver(driver)
-#     print soup
-#     driver.quit()
-#
-# get_minutes_form()
 
 
 def dump_as_json(data, json_file):
@@ -591,6 +589,5 @@ def create_database():
     insert_player_stats_in_db(fpl_manager)
     insert_team_stats_in_db(fpl_manager)
     insert_injuries_in_db(fpl_manager)
-    print fpl_manager.client.database_names()
 
 create_database()
