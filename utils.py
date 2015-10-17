@@ -4,6 +4,7 @@ import json
 import time
 import socket
 import urllib2
+import datetime
 import unicodedata
 from bs4 import BeautifulSoup
 from selenium import webdriver
@@ -513,6 +514,138 @@ def get_player_injuries():
     return player_injuries
 
 
+def get_match_info(spans, match_date):
+    """
+    Builds and returns post match information
+
+    :param spans: list of bs4 elements containing match data
+    :type spans: bs4.element.Tag
+
+    :param match_date: date on which the matches took place
+    :type match_date: str
+
+    :rtype: list[dict]
+    """
+    results = []
+    j, k = 0, 0
+    home_team, away_team, home_goals, away_goals = '', '', 0, 0
+    for span in spans:
+        if span['class'][0] == 'swap-text__target':
+            if j == 0:
+                home_team = normalize(span.text.strip())
+                j = 1
+            elif j == 1:
+                away_team = normalize(span.text.strip())
+                if home_goals > away_goals:
+                    win = 'home'
+                elif home_goals < away_goals:
+                    win = 'away'
+                else:
+                    win = 'draw'
+
+                match_info = {'date': match_date,
+                              'home_team': home_team,
+                              'away_team': away_team,
+                              'home_goals': home_goals,
+                              'away_goals': away_goals,
+                              'win': win}
+
+                results.append(match_info)
+                j = 0
+        elif span['class'][0] == 'matches__teamscores-side':
+            if k == 0:
+                home_goals = int(normalize(span.text.strip()))
+                k = 1
+            elif k == 1:
+                away_goals = int(normalize(span.text.strip()))
+                k = 0
+
+    return results
+
+
+def get_organized_results(results):
+    """
+    Returns organized set of results
+
+    :param results: unorganized results
+    :type results: list[dict]
+
+    :rtype: dict
+    """
+    organized_results = {}
+    for result in results:
+        team1 = result['home_team']
+        team2 = result['away_team']
+        home_goals = result['home_goals']
+        away_goals = result['away_goals']
+        win = result['win']
+        date = result['date']
+
+        try:
+            organized_results[team1].append({'team': team2, 'place': 'home',
+                                             'home_goals': home_goals, 'match_date': date,
+                                             'away_goals': away_goals, 'win': win})
+        except KeyError:
+            organized_results[team1] = [{'team': team2, 'place': 'home',
+                                         'home_goals': home_goals, 'match_date': date,
+                                         'away_goals': away_goals, 'win': win}]
+        try:
+            organized_results[team2].append({'team': team1, 'place': 'away',
+                                             'home_goals': home_goals, 'match_date': date,
+                                             'away_goals': away_goals, 'win': win})
+        except KeyError:
+            organized_results[team2] = [{'team': team1, 'place': 'away',
+                                         'home_goals': home_goals, 'match_date': date,
+                                         'away_goals': away_goals, 'win': win}]
+
+    return organized_results
+
+
+def get_results():
+    """
+    Returns results for all the matches
+
+    :rtype: dict
+    """
+    results = {'results': []}
+    curr_date = datetime.datetime.now()
+    curr_year = curr_date.strftime("%Y")
+    curr_month = curr_date.strftime("%B")
+
+    for month in MONTHS:
+        url = RESULTS_URL.format(month=month, year=curr_year)
+        soup = get_soup_from_url(url)
+        div = soup.find('div', {'class': 'matches-block__match-list'})
+
+        i = 0
+        match_date = ''
+        curr_tag = div
+        while curr_tag:
+            if i == 0:
+                curr_tag = curr_tag.find_next('h4', {'class': 'matches__group-header'})
+                if not curr_tag:
+                    break
+
+                match_date = normalize(curr_tag.text.strip())
+                i = 1
+
+            elif i == 1:
+                curr_tag = curr_tag.find_next('ul', {'class': 'matches__group'})
+                if not curr_tag:
+                    break
+
+                spans = curr_tag.find_all('span', {'class': ['swap-text__target',
+                                                             'matches__teamscores-side']})
+
+                results['results'].extend(get_match_info(spans, match_date))
+                i = 0
+
+        if month == curr_month:
+            break
+
+    return results
+
+
 def dump_as_json(data, json_file):
     """
     Dumps the data into a json file
@@ -533,7 +666,7 @@ def insert_player_stats_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     # stats = get_organized_data(get_player_stats())
-    # dump_as_json(stats, 'player_stats.json')
+    # dump_as_json(stats, 'data/player_stats.json')
 
     with open('data/player_stats.json', 'r') as infile:
         player_data = json.load(infile)
@@ -550,7 +683,7 @@ def insert_team_stats_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     # team_stats = get_team_stats()
-    # dump_as_json(team_stats, 'team_stats.json')
+    # dump_as_json(team_stats, 'data/team_stats.json')
 
     with open('data/team_stats.json', 'r') as infile:
         team_data = json.load(infile)
@@ -567,7 +700,7 @@ def insert_injuries_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     # injuries = get_player_injuries()
-    # dump_as_json(injuries, 'injuries.json')
+    # dump_as_json(injuries, 'data/injuries.json')
 
     with open('data/injuries.json', 'r') as infile:
         injury_data = json.load(infile)
@@ -576,10 +709,26 @@ def insert_injuries_in_db(db_manager):
         db_manager.insert(DB_NAME, key, injuries)
 
 
+def insert_results_in_db(db_manager):
+    """
+    Inserts results in the database
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.DbManager
+    """
+    # results = get_results()
+    # dump_as_json(results, 'data/results.json')
+
+    with open('data/results.json', 'r') as infile:
+        results_data = json.load(infile)
+
+    for key, results in results_data.items():
+        db_manager.insert(DB_NAME, key, results)
+
+
 def create_database():
     """
     Creates a mongo database of player statistics
-    :return:
     """
     fpl_manager = DbManager('mongodb://localhost:27017')
     fpl_manager.drop_db(DB_NAME)
@@ -589,5 +738,8 @@ def create_database():
     insert_player_stats_in_db(fpl_manager)
     insert_team_stats_in_db(fpl_manager)
     insert_injuries_in_db(fpl_manager)
+    insert_results_in_db(fpl_manager)
 
-create_database()
+
+if __name__ == '__main__':
+    create_database()

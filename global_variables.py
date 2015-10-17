@@ -1,6 +1,6 @@
 __author__ = 'gj'
 
-DB_NAME = 'fpl-gw-{0}'.format('8')
+DB_NAME = 'fpl-gw-{0}'.format('9')
 COLLECTION_NAMES = ['teams', 'goalkeepers', 'defenders', 'midfielders', 'forwards',
                     'injuries']
 
@@ -61,3 +61,6 @@ STAT_MAP = {'now_cost': 'price', 'total_points': 'score',
                 'cost_change_start_fall': 'price_fall',
                 'cost_change_event': 'price_rise_week',
                 'cost_change_event_fall': 'price_fall_week'}
+
+MONTHS = ['August', 'September', 'October', 'November', 'December', 'January',
+          'February', 'March', 'April', 'May', 'June']

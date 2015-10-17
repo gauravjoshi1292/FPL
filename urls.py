@@ -15,3 +15,6 @@ PLAYER_STATS_URL = ("http://fantasy.premierleague.com/stats/elements/?"
                     "page={page}")
 
 INJURIES_URL = "http://www.fantasyfootballscout.co.uk/fantasy-football-injuries/"
+
+RESULTS_URL = ("http://www.skysports.com/football/competitions/premier-league/results/"
+               "{month}-{year}")

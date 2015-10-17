@@ -88,7 +88,8 @@ def calculate_forward_ratings(db_manager, db_name):
     return forward_ratings
 
 
-fpl_manager = DbManager('mongodb://localhost:27017')
-ratings = calculate_forward_ratings(fpl_manager, DB_NAME)
-print sorted(ratings.items(), key=lambda x: x[1]['affected_rating'], reverse=True)
-fpl_manager.close_connection()
+if __name__ == '__main__':
+    fpl_manager = DbManager('mongodb://localhost:27017')
+    ratings = calculate_forward_ratings(fpl_manager, DB_NAME)
+    print sorted(ratings.items(), key=lambda x: x[1]['affected_rating'], reverse=True)
+    fpl_manager.close_connection()
