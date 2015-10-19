@@ -9,7 +9,7 @@ FIXTURES_URL = ("http://www.premierleague.com/en-gb/matchday/matches.html?"
 
 GAMEWEEK_FIXTURES_URL = "http://fantasy.premierleague.com/fixtures/"
 
-GAMEWEEK_RESULTS_URL = "http://www.premierleague.com/en-gb/matchday/results.html"
+GAMEWEEK_RESULTS_URL = "http://fantasy.premierleague.com/fixtures/"
 
 PLAYER_LIST_URL = "http://fantasy.premierleague.com/player-list/"
 

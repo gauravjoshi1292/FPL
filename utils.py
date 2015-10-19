@@ -652,11 +652,13 @@ def get_gameweek_results():
     :return:
     """
     fixtures = {'fixtures': []}
-    soup = get_soup_from_url(GAMEWEEK_RESULTS_URL)
-    print soup
-    divs = soup.find_all('div', {'class': ['megamenu-date', 'megamenu-matchName']})
-    for div in divs:
-        print div
+
+    driver = get_driver(GAMEWEEK_RESULTS_URL)
+    print driver.page_source
+    # prev_page = driver.find_element_by_class_name('ismPagPrev')
+    # prev_page.click()
+    # print driver.page_source
+
     return fixtures
 
 
@@ -679,8 +681,8 @@ def insert_player_stats_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    stats = get_organized_data(get_player_stats())
-    dump_as_json(stats, 'data/player_stats.json')
+    # stats = get_organized_data(get_player_stats())
+    # dump_as_json(stats, 'data/player_stats.json')
 
     with open('data/player_stats.json', 'r') as infile:
         player_data = json.load(infile)
@@ -745,6 +747,7 @@ def create_database():
     Creates a mongo database of player statistics
     """
     get_gameweek_results()
+
     # fpl_manager = DbManager('mongodb://localhost:{port}'.format(port=MONGODB_PORT))
     # fpl_manager.drop_db(DB_NAME)
     # fpl_manager.create_db(DB_NAME)
@@ -754,7 +757,7 @@ def create_database():
     # insert_team_stats_in_db(fpl_manager)
     # insert_injuries_in_db(fpl_manager)
     # insert_results_in_db(fpl_manager)
-
+    # print fpl_manager.client[DB_NAME].collection_names()
 
 if __name__ == '__main__':
     create_database()
