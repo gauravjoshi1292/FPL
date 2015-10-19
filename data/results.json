@@ -561,6 +561,14 @@
             "date": "Sat 12th September"
         }, 
         {
+            "home_team": "Newcastle United", 
+            "away_team": "Norwich City", 
+            "away_goals": 2, 
+            "home_goals": 6, 
+            "win": "home", 
+            "date": "Sun 18th October"
+        }, 
+        {
             "home_team": "Tottenham Hotspur", 
             "away_team": "Liverpool", 
             "away_goals": 0, 

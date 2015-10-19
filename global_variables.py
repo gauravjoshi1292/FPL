@@ -1,8 +1,11 @@
 __author__ = 'gj'
 
+MONGODB_PORT = 27020
+
 DB_NAME = 'fpl-gw-{0}'.format('9')
+
 COLLECTION_NAMES = ['teams', 'goalkeepers', 'defenders', 'midfielders', 'forwards',
-                    'injuries']
+                    'injuries', 'results']
 
 PLAYER_TYPES = {'goalkeepers': 1, 'defenders': 2, 'midfielders': 3, 'forwards': 4}
 

@@ -7,6 +7,10 @@ TEAM_STATS_URL = ("http://www.premierleague.com/en-gb/matchday/league-table.html
 FIXTURES_URL = ("http://www.premierleague.com/en-gb/matchday/matches.html?"
                 "paramClubId=ALL&paramComp_8=true&view=.dateSeason")
 
+GAMEWEEK_FIXTURES_URL = "http://fantasy.premierleague.com/fixtures/"
+
+GAMEWEEK_RESULTS_URL = "http://www.premierleague.com/en-gb/matchday/results.html"
+
 PLAYER_LIST_URL = "http://fantasy.premierleague.com/player-list/"
 
 PLAYER_STATS_URL = ("http://fantasy.premierleague.com/stats/elements/?"

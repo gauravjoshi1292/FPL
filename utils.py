@@ -646,6 +646,20 @@ def get_results():
     return results
 
 
+def get_gameweek_results():
+    """
+
+    :return:
+    """
+    fixtures = {'fixtures': []}
+    soup = get_soup_from_url(GAMEWEEK_RESULTS_URL)
+    print soup
+    divs = soup.find_all('div', {'class': ['megamenu-date', 'megamenu-matchName']})
+    for div in divs:
+        print div
+    return fixtures
+
+
 def dump_as_json(data, json_file):
     """
     Dumps the data into a json file
@@ -665,8 +679,8 @@ def insert_player_stats_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    # stats = get_organized_data(get_player_stats())
-    # dump_as_json(stats, 'data/player_stats.json')
+    stats = get_organized_data(get_player_stats())
+    dump_as_json(stats, 'data/player_stats.json')
 
     with open('data/player_stats.json', 'r') as infile:
         player_data = json.load(infile)
@@ -730,15 +744,16 @@ def create_database():
     """
     Creates a mongo database of player statistics
     """
-    fpl_manager = DbManager('mongodb://localhost:27017')
-    fpl_manager.drop_db(DB_NAME)
-    fpl_manager.create_db(DB_NAME)
-    fpl_manager.create_collections(DB_NAME, COLLECTION_NAMES)
-
-    insert_player_stats_in_db(fpl_manager)
-    insert_team_stats_in_db(fpl_manager)
-    insert_injuries_in_db(fpl_manager)
-    insert_results_in_db(fpl_manager)
+    get_gameweek_results()
+    # fpl_manager = DbManager('mongodb://localhost:{port}'.format(port=MONGODB_PORT))
+    # fpl_manager.drop_db(DB_NAME)
+    # fpl_manager.create_db(DB_NAME)
+    # fpl_manager.create_collections(DB_NAME, COLLECTION_NAMES)
+    #
+    # insert_player_stats_in_db(fpl_manager)
+    # insert_team_stats_in_db(fpl_manager)
+    # insert_injuries_in_db(fpl_manager)
+    # insert_results_in_db(fpl_manager)
 
 
 if __name__ == '__main__':
