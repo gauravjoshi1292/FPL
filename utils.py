@@ -646,20 +646,47 @@ def get_results():
     return results
 
 
-def get_gameweek_results():
+def get_gameweek_fixtures_and_results():
     """
+    Returns fixtures and results for the current gameweek
 
-    :return:
+    :rtype: dict
     """
-    fixtures = {'fixtures': []}
+    gw_fixtures_and_results = {'gw_fixtures': [], 'gw_results': []}
 
-    driver = get_driver(GAMEWEEK_RESULTS_URL)
-    print driver.page_source
-    # prev_page = driver.find_element_by_class_name('ismPagPrev')
-    # prev_page.click()
-    # print driver.page_source
+    url = GAMEWEEK_FIXTURES_AND_RESULTS_URL.format(week=WEEK)
+    table = get_table_from_url(url, 'table-matches table-matches-narrow')
 
-    return fixtures
+    date, home_team, away_team, home_goals, away_goals, win = '', '', '', 0, 0, ''
+    for td in table:
+        try:
+            if td['class'][0] == 'column-date':
+                if td.text.strip():
+                    date = normalize(td.text.strip())
+            elif td['class'][0] == 'column-team-a':
+                home_team = normalize(td.text.strip())
+            elif td['class'][0] == 'column-score':
+                score = normalize(td.text.strip())
+                home_goals, away_goals = map(int, score.split(' - '))
+                if home_goals > away_goals:
+                    win = 'home'
+                elif home_goals < away_goals:
+                    win = 'away'
+                else:
+                    win = 'draw'
+            elif td['class'][0] == 'column-team-b':
+                away_team = normalize(td.text.strip())
+                fixture = {'date': date, 'home_team': home_team, 'away_team': away_team}
+                result = {'date': date, 'home_team': home_team, 'away_team': away_team,
+                          'home_goals': home_goals, 'away_goals': away_goals, 'win': win}
+
+                gw_fixtures_and_results['gw_fixtures'].append(fixture)
+                gw_fixtures_and_results['gw_results'].append(result)
+
+        except KeyError:
+            pass
+
+    return gw_fixtures_and_results
 
 
 def dump_as_json(data, json_file):
@@ -681,8 +708,8 @@ def insert_player_stats_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    # stats = get_organized_data(get_player_stats())
-    # dump_as_json(stats, 'data/player_stats.json')
+    stats = get_organized_data(get_player_stats())
+    dump_as_json(stats, 'data/player_stats.json')
 
     with open('data/player_stats.json', 'r') as infile:
         player_data = json.load(infile)
@@ -742,22 +769,39 @@ def insert_results_in_db(db_manager):
         db_manager.insert(DB_NAME, key, results)
 
 
+def insert_gameweek_fixtures_and_results_in_db(db_manager):
+    """
+    Inserts gameweek fixtures and results in the database
+
+    :param db_manager: database manager handle
+    :type db_manager: mongo.DbManager
+    """
+    # gw_fixtures_and_results = get_gameweek_fixtures_and_results()
+    # dump_as_json(gw_fixtures_and_results, 'data/gw_fixtures_and_results.json')
+
+    with open('data/gw_fixtures_and_results.json', 'r') as infile:
+        results_data = json.load(infile)
+
+    for key, results in results_data.items():
+        db_manager.insert(DB_NAME, key, results)
+
+
 def create_database():
     """
     Creates a mongo database of player statistics
     """
-    get_gameweek_results()
+    fpl_manager = DbManager('mongodb://localhost:{port}'.format(port=MONGODB_PORT))
+    fpl_manager.drop_db(DB_NAME)
+    fpl_manager.create_db(DB_NAME)
+    fpl_manager.create_collections(DB_NAME, COLLECTION_NAMES)
 
-    # fpl_manager = DbManager('mongodb://localhost:{port}'.format(port=MONGODB_PORT))
-    # fpl_manager.drop_db(DB_NAME)
-    # fpl_manager.create_db(DB_NAME)
-    # fpl_manager.create_collections(DB_NAME, COLLECTION_NAMES)
-    #
-    # insert_player_stats_in_db(fpl_manager)
-    # insert_team_stats_in_db(fpl_manager)
-    # insert_injuries_in_db(fpl_manager)
-    # insert_results_in_db(fpl_manager)
-    # print fpl_manager.client[DB_NAME].collection_names()
+    insert_player_stats_in_db(fpl_manager)
+    insert_team_stats_in_db(fpl_manager)
+    insert_injuries_in_db(fpl_manager)
+    insert_results_in_db(fpl_manager)
+    insert_gameweek_fixtures_and_results_in_db(fpl_manager)
+    print fpl_manager.client[DB_NAME].collection_names()
+
 
 if __name__ == '__main__':
     create_database()

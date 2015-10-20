@@ -2,10 +2,12 @@ __author__ = 'gj'
 
 MONGODB_PORT = 27020
 
-DB_NAME = 'fpl-gw-{0}'.format('9')
+WEEK = 9
+
+DB_NAME = 'fpl-gw-{week}'.format(week=WEEK)
 
 COLLECTION_NAMES = ['teams', 'goalkeepers', 'defenders', 'midfielders', 'forwards',
-                    'injuries', 'results']
+                    'injuries', 'results', 'gw_fixtures', 'gw_results']
 
 PLAYER_TYPES = {'goalkeepers': 1, 'defenders': 2, 'midfielders': 3, 'forwards': 4}
 

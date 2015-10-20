@@ -561,6 +561,14 @@
             "date": "Sat 12th September"
         }, 
         {
+            "home_team": "Swansea City", 
+            "away_team": "Stoke City", 
+            "away_goals": 1, 
+            "home_goals": 0, 
+            "win": "away", 
+            "date": "Mon 19th October"
+        }, 
+        {
             "home_team": "Newcastle United", 
             "away_team": "Norwich City", 
             "away_goals": 2, 

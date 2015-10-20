@@ -1291,6 +1291,135 @@
             "points": 13
         }, 
         {
+            "lost": 3, 
+            "played": 9, 
+            "goal_diff": -1, 
+            "goals_for": 9, 
+            "won": 3, 
+            "goals_against": 10, 
+            "team": "STK", 
+            "drawn": 3, 
+            "fixtures": [
+                {
+                    "place": "home", 
+                    "team": "WAT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "CHE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SUN"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WHU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "CRY"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "EVE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WBA"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "ARS"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LEI"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "EVE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "AVL"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CHE"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WAT"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SWA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LIV"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "TOT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SUN"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CRY"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WHU"
+                }
+            ], 
+            "points": 12
+        }, 
+        {
             "lost": 4, 
             "played": 9, 
             "goal_diff": -3, 
@@ -1549,19 +1678,15 @@
             "points": 11
         }, 
         {
-            "lost": 2, 
-            "played": 8, 
-            "goal_diff": 0, 
+            "lost": 3, 
+            "played": 9, 
+            "goal_diff": -1, 
             "goals_for": 10, 
             "won": 2, 
-            "goals_against": 10, 
+            "goals_against": 11, 
             "team": "SWA", 
             "drawn": 4, 
             "fixtures": [
-                {
-                    "place": "home", 
-                    "team": "STK"
-                }, 
                 {
                     "place": "away", 
                     "team": "AVL"
@@ -1809,139 +1934,6 @@
                 }
             ], 
             "points": 10
-        }, 
-        {
-            "lost": 3, 
-            "played": 8, 
-            "goal_diff": -2, 
-            "goals_for": 8, 
-            "won": 2, 
-            "goals_against": 10, 
-            "team": "STK", 
-            "drawn": 3, 
-            "fixtures": [
-                {
-                    "place": "away", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "NEW"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "CHE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SOU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SUN"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MCI"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WHU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "CRY"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NOR"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "LEI"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "BOU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "AVL"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NEW"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CHE"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SOU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "LIV"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "TOT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "MCI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SUN"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CRY"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WHU"
-                }
-            ], 
-            "points": 9
         }, 
         {
             "lost": 4, 

@@ -1,0 +1,136 @@
+{
+    "gw_results": [
+        {
+            "home_team": "Tottenham Hotspur", 
+            "away_team": "Liverpool", 
+            "away_goals": 0, 
+            "home_goals": 0, 
+            "win": "draw", 
+            "date": "17 Oct"
+        }, 
+        {
+            "home_team": "Chelsea", 
+            "away_team": "Aston Villa", 
+            "away_goals": 0, 
+            "home_goals": 2, 
+            "win": "home", 
+            "date": "17 Oct"
+        }, 
+        {
+            "home_team": "Manchester City", 
+            "away_team": "AFC Bournemouth", 
+            "away_goals": 1, 
+            "home_goals": 5, 
+            "win": "home", 
+            "date": "17 Oct"
+        }, 
+        {
+            "home_team": "Southampton", 
+            "away_team": "Leicester City", 
+            "away_goals": 2, 
+            "home_goals": 2, 
+            "win": "draw", 
+            "date": "17 Oct"
+        }, 
+        {
+            "home_team": "Everton", 
+            "away_team": "Manchester United", 
+            "away_goals": 3, 
+            "home_goals": 0, 
+            "win": "away", 
+            "date": "17 Oct"
+        }, 
+        {
+            "home_team": "West Bromwich Albion", 
+            "away_team": "Sunderland", 
+            "away_goals": 0, 
+            "home_goals": 1, 
+            "win": "home", 
+            "date": "17 Oct"
+        }, 
+        {
+            "home_team": "Crystal Palace", 
+            "away_team": "West Ham United", 
+            "away_goals": 3, 
+            "home_goals": 1, 
+            "win": "away", 
+            "date": "17 Oct"
+        }, 
+        {
+            "home_team": "Watford", 
+            "away_team": "Arsenal", 
+            "away_goals": 3, 
+            "home_goals": 0, 
+            "win": "away", 
+            "date": "17 Oct"
+        }, 
+        {
+            "home_team": "Newcastle United", 
+            "away_team": "Norwich City", 
+            "away_goals": 2, 
+            "home_goals": 6, 
+            "win": "home", 
+            "date": "18 Oct"
+        }, 
+        {
+            "home_team": "Swansea City", 
+            "away_team": "Stoke City", 
+            "away_goals": 1, 
+            "home_goals": 0, 
+            "win": "away", 
+            "date": "19 Oct"
+        }
+    ], 
+    "gw_fixtures": [
+        {
+            "date": "17 Oct", 
+            "home_team": "Tottenham Hotspur", 
+            "away_team": "Liverpool"
+        }, 
+        {
+            "date": "17 Oct", 
+            "home_team": "Chelsea", 
+            "away_team": "Aston Villa"
+        }, 
+        {
+            "date": "17 Oct", 
+            "home_team": "Manchester City", 
+            "away_team": "AFC Bournemouth"
+        }, 
+        {
+            "date": "17 Oct", 
+            "home_team": "Southampton", 
+            "away_team": "Leicester City"
+        }, 
+        {
+            "date": "17 Oct", 
+            "home_team": "Everton", 
+            "away_team": "Manchester United"
+        }, 
+        {
+            "date": "17 Oct", 
+            "home_team": "West Bromwich Albion", 
+            "away_team": "Sunderland"
+        }, 
+        {
+            "date": "17 Oct", 
+            "home_team": "Crystal Palace", 
+            "away_team": "West Ham United"
+        }, 
+        {
+            "date": "17 Oct", 
+            "home_team": "Watford", 
+            "away_team": "Arsenal"
+        }, 
+        {
+            "date": "18 Oct", 
+            "home_team": "Newcastle United", 
+            "away_team": "Norwich City"
+        }, 
+        {
+            "date": "19 Oct", 
+            "home_team": "Swansea City", 
+            "away_team": "Stoke City"
+        }
+    ]
+}
