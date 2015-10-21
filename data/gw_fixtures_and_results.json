@@ -1,80 +1,72 @@
 {
     "gw_results": [
         {
-            "home_team": "Tottenham Hotspur", 
-            "away_team": "Liverpool", 
+            "home_team": "TOT", 
+            "away_team": "LIV", 
             "away_goals": 0, 
             "home_goals": 0, 
             "win": "draw", 
             "date": "17 Oct"
         }, 
         {
-            "home_team": "Chelsea", 
-            "away_team": "Aston Villa", 
+            "home_team": "CHE", 
+            "away_team": "AVL", 
             "away_goals": 0, 
             "home_goals": 2, 
             "win": "home", 
             "date": "17 Oct"
         }, 
         {
-            "home_team": "Manchester City", 
-            "away_team": "AFC Bournemouth", 
-            "away_goals": 1, 
-            "home_goals": 5, 
-            "win": "home", 
-            "date": "17 Oct"
-        }, 
-        {
-            "home_team": "Southampton", 
-            "away_team": "Leicester City", 
+            "home_team": "SOU", 
+            "away_team": "LEI", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "17 Oct"
         }, 
         {
-            "home_team": "Everton", 
-            "away_team": "Manchester United", 
+            "home_team": "EVE", 
+            "away_team": "MUN", 
             "away_goals": 3, 
             "home_goals": 0, 
             "win": "away", 
             "date": "17 Oct"
         }, 
         {
-            "home_team": "West Bromwich Albion", 
-            "away_team": "Sunderland", 
+            "home_team": "WBA", 
+            "away_team": "SUN", 
             "away_goals": 0, 
             "home_goals": 1, 
             "win": "home", 
             "date": "17 Oct"
         }, 
         {
-            "home_team": "Crystal Palace", 
-            "away_team": "West Ham United", 
+            "home_team": "CRY", 
+            "away_team": "WHU", 
             "away_goals": 3, 
             "home_goals": 1, 
             "win": "away", 
             "date": "17 Oct"
         }, 
         {
-            "home_team": "Watford", 
-            "away_team": "Arsenal", 
+            "home_team": "WAT", 
+            "away_team": "ARS", 
             "away_goals": 3, 
             "home_goals": 0, 
             "win": "away", 
             "date": "17 Oct"
         }, 
         {
-            "home_team": "Newcastle United", 
-            "away_team": "Norwich City", 
+            "home_team": "NEW", 
+            "away_team": "NOR", 
             "away_goals": 2, 
             "home_goals": 6, 
             "win": "home", 
             "date": "18 Oct"
         }, 
         {
-            "home_team": "Swansea City", 
-            "away_team": "Stoke City", 
+            "home_team": "SWA", 
+            "away_team": "STK", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
@@ -84,53 +76,48 @@
     "gw_fixtures": [
         {
             "date": "17 Oct", 
-            "home_team": "Tottenham Hotspur", 
-            "away_team": "Liverpool"
+            "home_team": "TOT", 
+            "away_team": "LIV"
         }, 
         {
             "date": "17 Oct", 
-            "home_team": "Chelsea", 
-            "away_team": "Aston Villa"
+            "home_team": "CHE", 
+            "away_team": "AVL"
         }, 
         {
             "date": "17 Oct", 
-            "home_team": "Manchester City", 
-            "away_team": "AFC Bournemouth"
+            "home_team": "SOU", 
+            "away_team": "LEI"
         }, 
         {
             "date": "17 Oct", 
-            "home_team": "Southampton", 
-            "away_team": "Leicester City"
+            "home_team": "EVE", 
+            "away_team": "MUN"
         }, 
         {
             "date": "17 Oct", 
-            "home_team": "Everton", 
-            "away_team": "Manchester United"
+            "home_team": "WBA", 
+            "away_team": "SUN"
         }, 
         {
             "date": "17 Oct", 
-            "home_team": "West Bromwich Albion", 
-            "away_team": "Sunderland"
+            "home_team": "CRY", 
+            "away_team": "WHU"
         }, 
         {
             "date": "17 Oct", 
-            "home_team": "Crystal Palace", 
-            "away_team": "West Ham United"
-        }, 
-        {
-            "date": "17 Oct", 
-            "home_team": "Watford", 
-            "away_team": "Arsenal"
+            "home_team": "WAT", 
+            "away_team": "ARS"
         }, 
         {
             "date": "18 Oct", 
-            "home_team": "Newcastle United", 
-            "away_team": "Norwich City"
+            "home_team": "NEW", 
+            "away_team": "NOR"
         }, 
         {
             "date": "19 Oct", 
-            "home_team": "Swansea City", 
-            "away_team": "Stoke City"
+            "home_team": "SWA", 
+            "away_team": "STK"
         }
     ]
 }

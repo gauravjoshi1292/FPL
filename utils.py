@@ -60,10 +60,10 @@ def get_player_list():
     forwards = {}
     soup = get_soup_from_url(PLAYER_LIST_URL)
 
-    tables = soup.findAll('table')
+    tables = soup.find_all('table')
     i = 0
     for table in tables:
-        tds = table.findAll('td')
+        tds = table.find_all('td')
         player_name = ''
         player_data = {}
 
@@ -274,7 +274,7 @@ def get_table_from_url(url, table_class):
     if not table:
         return []
 
-    tds = table.findAll('td')
+    tds = table.find_all('td')
     return tds
 
 
@@ -368,7 +368,7 @@ def get_fixtures():
     fixtures = {}
 
     soup = get_soup_from_url(FIXTURES_URL)
-    tds = soup.findAll('td', {'class': 'clubs'})
+    tds = soup.find_all('td', {'class': 'clubs'})
 
     for td in tds:
         match = str(td.find('a').text)
@@ -442,7 +442,7 @@ def get_team_stats():
     team_stats = {'teams': []}
     stats = {}
     soup = get_soup_from_url(TEAM_STATS_URL)
-    tds = soup.findAll('td')
+    tds = soup.find_all('td')
     keys = ['played', 'won', 'drawn', 'lost', 'goals_for', 'goals_against', 'goal_diff',
             'points']
 
@@ -532,10 +532,10 @@ def get_match_info(spans, match_date):
     for span in spans:
         if span['class'][0] == 'swap-text__target':
             if j == 0:
-                home_team = normalize(span.text.strip())
+                home_team = TEAMS_MAP[normalize(span.text.strip())]
                 j = 1
             elif j == 1:
-                away_team = normalize(span.text.strip())
+                away_team = TEAMS_MAP[normalize(span.text.strip())]
                 if home_goals > away_goals:
                     win = 'home'
                 elif home_goals < away_goals:
@@ -654,8 +654,8 @@ def get_gameweek_fixtures_and_results():
     """
     gw_fixtures_and_results = {'gw_fixtures': [], 'gw_results': []}
 
-    url = GAMEWEEK_FIXTURES_AND_RESULTS_URL.format(week=WEEK)
-    table = get_table_from_url(url, 'table-matches table-matches-narrow')
+    table = get_table_from_url(GAMEWEEK_FIXTURES_AND_RESULTS_URL,
+                               'table-matches table-matches-narrow')
 
     date, home_team, away_team, home_goals, away_goals, win = '', '', '', 0, 0, ''
     for td in table:
@@ -664,7 +664,7 @@ def get_gameweek_fixtures_and_results():
                 if td.text.strip():
                     date = normalize(td.text.strip())
             elif td['class'][0] == 'column-team-a':
-                home_team = normalize(td.text.strip())
+                home_team = TEAMS_MAP[normalize(td.text.strip())]
             elif td['class'][0] == 'column-score':
                 score = normalize(td.text.strip())
                 home_goals, away_goals = map(int, score.split(' - '))
@@ -675,7 +675,7 @@ def get_gameweek_fixtures_and_results():
                 else:
                     win = 'draw'
             elif td['class'][0] == 'column-team-b':
-                away_team = normalize(td.text.strip())
+                away_team = TEAMS_MAP[normalize(td.text.strip())]
                 fixture = {'date': date, 'home_team': home_team, 'away_team': away_team}
                 result = {'date': date, 'home_team': home_team, 'away_team': away_team,
                           'home_goals': home_goals, 'away_goals': away_goals, 'win': win}
@@ -708,8 +708,8 @@ def insert_player_stats_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    stats = get_organized_data(get_player_stats())
-    dump_as_json(stats, 'data/player_stats.json')
+    # stats = get_organized_data(get_player_stats())
+    # dump_as_json(stats, 'data/player_stats.json')
 
     with open('data/player_stats.json', 'r') as infile:
         player_data = json.load(infile)
@@ -790,7 +790,7 @@ def create_database():
     """
     Creates a mongo database of player statistics
     """
-    fpl_manager = DbManager('mongodb://localhost:{port}'.format(port=MONGODB_PORT))
+    fpl_manager = DbManager(MONGODB_URL)
     fpl_manager.drop_db(DB_NAME)
     fpl_manager.create_db(DB_NAME)
     fpl_manager.create_collections(DB_NAME, COLLECTION_NAMES)

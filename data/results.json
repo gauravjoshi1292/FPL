@@ -1,720 +1,720 @@
 {
     "results": [
         {
-            "home_team": "Southampton", 
-            "away_team": "Norwich City", 
+            "home_team": "SOU", 
+            "away_team": "NOR", 
             "away_goals": 0, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sun 30th August"
         }, 
         {
-            "home_team": "Swansea City", 
-            "away_team": "Manchester United", 
+            "home_team": "SWA", 
+            "away_team": "MUN", 
             "away_goals": 1, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sun 30th August"
         }, 
         {
-            "home_team": "Newcastle United", 
-            "away_team": "Arsenal", 
+            "home_team": "NEW", 
+            "away_team": "ARS", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 29th August"
         }, 
         {
-            "home_team": "Aston Villa", 
-            "away_team": "Sunderland", 
+            "home_team": "AVL", 
+            "away_team": "SUN", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sat 29th August"
         }, 
         {
-            "home_team": "Bournemouth", 
-            "away_team": "Leicester City", 
+            "home_team": "BOU", 
+            "away_team": "LEI", 
             "away_goals": 1, 
             "home_goals": 1, 
             "win": "draw", 
             "date": "Sat 29th August"
         }, 
         {
-            "home_team": "Chelsea", 
-            "away_team": "Crystal Palace", 
+            "home_team": "CHE", 
+            "away_team": "CRY", 
             "away_goals": 2, 
             "home_goals": 1, 
             "win": "away", 
             "date": "Sat 29th August"
         }, 
         {
-            "home_team": "Liverpool", 
-            "away_team": "West Ham United", 
+            "home_team": "LIV", 
+            "away_team": "WHU", 
             "away_goals": 3, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 29th August"
         }, 
         {
-            "home_team": "Manchester City", 
-            "away_team": "Watford", 
+            "home_team": "MCI", 
+            "away_team": "WAT", 
             "away_goals": 0, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sat 29th August"
         }, 
         {
-            "home_team": "Stoke City", 
-            "away_team": "West Bromwich Albion", 
+            "home_team": "STK", 
+            "away_team": "WBA", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 29th August"
         }, 
         {
-            "home_team": "Tottenham Hotspur", 
-            "away_team": "Everton", 
+            "home_team": "TOT", 
+            "away_team": "EVE", 
             "away_goals": 0, 
             "home_goals": 0, 
             "win": "draw", 
             "date": "Sat 29th August"
         }, 
         {
-            "home_team": "Arsenal", 
-            "away_team": "Liverpool", 
+            "home_team": "ARS", 
+            "away_team": "LIV", 
             "away_goals": 0, 
             "home_goals": 0, 
             "win": "draw", 
             "date": "Mon 24th August"
         }, 
         {
-            "home_team": "West Bromwich Albion", 
-            "away_team": "Chelsea", 
+            "home_team": "WBA", 
+            "away_team": "CHE", 
             "away_goals": 3, 
             "home_goals": 2, 
             "win": "away", 
             "date": "Sun 23rd August"
         }, 
         {
-            "home_team": "Everton", 
-            "away_team": "Manchester City", 
+            "home_team": "EVE", 
+            "away_team": "MCI", 
             "away_goals": 2, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sun 23rd August"
         }, 
         {
-            "home_team": "Watford", 
-            "away_team": "Southampton", 
+            "home_team": "WAT", 
+            "away_team": "SOU", 
             "away_goals": 0, 
             "home_goals": 0, 
             "win": "draw", 
             "date": "Sun 23rd August"
         }, 
         {
-            "home_team": "Manchester United", 
-            "away_team": "Newcastle United", 
+            "home_team": "MUN", 
+            "away_team": "NEW", 
             "away_goals": 0, 
             "home_goals": 0, 
             "win": "draw", 
             "date": "Sat 22nd August"
         }, 
         {
-            "home_team": "Crystal Palace", 
-            "away_team": "Aston Villa", 
+            "home_team": "CRY", 
+            "away_team": "AVL", 
             "away_goals": 1, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sat 22nd August"
         }, 
         {
-            "home_team": "Leicester City", 
-            "away_team": "Tottenham Hotspur", 
+            "home_team": "LEI", 
+            "away_team": "TOT", 
             "away_goals": 1, 
             "home_goals": 1, 
             "win": "draw", 
             "date": "Sat 22nd August"
         }, 
         {
-            "home_team": "Norwich City", 
-            "away_team": "Stoke City", 
+            "home_team": "NOR", 
+            "away_team": "STK", 
             "away_goals": 1, 
             "home_goals": 1, 
             "win": "draw", 
             "date": "Sat 22nd August"
         }, 
         {
-            "home_team": "Sunderland", 
-            "away_team": "Swansea City", 
+            "home_team": "SUN", 
+            "away_team": "SWA", 
             "away_goals": 1, 
             "home_goals": 1, 
             "win": "draw", 
             "date": "Sat 22nd August"
         }, 
         {
-            "home_team": "West Ham United", 
-            "away_team": "Bournemouth", 
+            "home_team": "WHU", 
+            "away_team": "BOU", 
             "away_goals": 4, 
             "home_goals": 3, 
             "win": "away", 
             "date": "Sat 22nd August"
         }, 
         {
-            "home_team": "Liverpool", 
-            "away_team": "Bournemouth", 
+            "home_team": "LIV", 
+            "away_team": "BOU", 
             "away_goals": 0, 
             "home_goals": 1, 
             "win": "home", 
             "date": "Mon 17th August"
         }, 
         {
-            "home_team": "Crystal Palace", 
-            "away_team": "Arsenal", 
+            "home_team": "CRY", 
+            "away_team": "ARS", 
             "away_goals": 2, 
             "home_goals": 1, 
             "win": "away", 
             "date": "Sun 16th August"
         }, 
         {
-            "home_team": "Manchester City", 
-            "away_team": "Chelsea", 
+            "home_team": "MCI", 
+            "away_team": "CHE", 
             "away_goals": 0, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sun 16th August"
         }, 
         {
-            "home_team": "Southampton", 
-            "away_team": "Everton", 
+            "home_team": "SOU", 
+            "away_team": "EVE", 
             "away_goals": 3, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 15th August"
         }, 
         {
-            "home_team": "Sunderland", 
-            "away_team": "Norwich City", 
+            "home_team": "SUN", 
+            "away_team": "NOR", 
             "away_goals": 3, 
             "home_goals": 1, 
             "win": "away", 
             "date": "Sat 15th August"
         }, 
         {
-            "home_team": "Swansea City", 
-            "away_team": "Newcastle United", 
+            "home_team": "SWA", 
+            "away_team": "NEW", 
             "away_goals": 0, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sat 15th August"
         }, 
         {
-            "home_team": "Tottenham Hotspur", 
-            "away_team": "Stoke City", 
+            "home_team": "TOT", 
+            "away_team": "STK", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sat 15th August"
         }, 
         {
-            "home_team": "Watford", 
-            "away_team": "West Bromwich Albion", 
+            "home_team": "WAT", 
+            "away_team": "WBA", 
             "away_goals": 0, 
             "home_goals": 0, 
             "win": "draw", 
             "date": "Sat 15th August"
         }, 
         {
-            "home_team": "West Ham United", 
-            "away_team": "Leicester City", 
+            "home_team": "WHU", 
+            "away_team": "LEI", 
             "away_goals": 2, 
             "home_goals": 1, 
             "win": "away", 
             "date": "Sat 15th August"
         }, 
         {
-            "home_team": "Aston Villa", 
-            "away_team": "Manchester United", 
+            "home_team": "AVL", 
+            "away_team": "MUN", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Fri 14th August"
         }, 
         {
-            "home_team": "West Bromwich Albion", 
-            "away_team": "Manchester City", 
+            "home_team": "WBA", 
+            "away_team": "MCI", 
             "away_goals": 3, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Mon 10th August"
         }, 
         {
-            "home_team": "Arsenal", 
-            "away_team": "West Ham United", 
+            "home_team": "ARS", 
+            "away_team": "WHU", 
             "away_goals": 2, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sun 9th August"
         }, 
         {
-            "home_team": "Newcastle United", 
-            "away_team": "Southampton", 
+            "home_team": "NEW", 
+            "away_team": "SOU", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sun 9th August"
         }, 
         {
-            "home_team": "Stoke City", 
-            "away_team": "Liverpool", 
+            "home_team": "STK", 
+            "away_team": "LIV", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sun 9th August"
         }, 
         {
-            "home_team": "Manchester United", 
-            "away_team": "Tottenham Hotspur", 
+            "home_team": "MUN", 
+            "away_team": "TOT", 
             "away_goals": 0, 
             "home_goals": 1, 
             "win": "home", 
             "date": "Sat 8th August"
         }, 
         {
-            "home_team": "Bournemouth", 
-            "away_team": "Aston Villa", 
+            "home_team": "BOU", 
+            "away_team": "AVL", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 8th August"
         }, 
         {
-            "home_team": "Everton", 
-            "away_team": "Watford", 
+            "home_team": "EVE", 
+            "away_team": "WAT", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sat 8th August"
         }, 
         {
-            "home_team": "Leicester City", 
-            "away_team": "Sunderland", 
+            "home_team": "LEI", 
+            "away_team": "SUN", 
             "away_goals": 2, 
             "home_goals": 4, 
             "win": "home", 
             "date": "Sat 8th August"
         }, 
         {
-            "home_team": "Norwich City", 
-            "away_team": "Crystal Palace", 
+            "home_team": "NOR", 
+            "away_team": "CRY", 
             "away_goals": 3, 
             "home_goals": 1, 
             "win": "away", 
             "date": "Sat 8th August"
         }, 
         {
-            "home_team": "Chelsea", 
-            "away_team": "Swansea City", 
+            "home_team": "CHE", 
+            "away_team": "SWA", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sat 8th August"
         }, 
         {
-            "home_team": "West Bromwich Albion", 
-            "away_team": "Everton", 
+            "home_team": "WBA", 
+            "away_team": "EVE", 
             "away_goals": 3, 
             "home_goals": 2, 
             "win": "away", 
             "date": "Mon 28th September"
         }, 
         {
-            "home_team": "Watford", 
-            "away_team": "Crystal Palace", 
+            "home_team": "WAT", 
+            "away_team": "CRY", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sun 27th September"
         }, 
         {
-            "home_team": "Tottenham Hotspur", 
-            "away_team": "Manchester City", 
+            "home_team": "TOT", 
+            "away_team": "MCI", 
             "away_goals": 1, 
             "home_goals": 4, 
             "win": "home", 
             "date": "Sat 26th September"
         }, 
         {
-            "home_team": "Leicester City", 
-            "away_team": "Arsenal", 
+            "home_team": "LEI", 
+            "away_team": "ARS", 
             "away_goals": 5, 
             "home_goals": 2, 
             "win": "away", 
             "date": "Sat 26th September"
         }, 
         {
-            "home_team": "Liverpool", 
-            "away_team": "Aston Villa", 
+            "home_team": "LIV", 
+            "away_team": "AVL", 
             "away_goals": 2, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sat 26th September"
         }, 
         {
-            "home_team": "Manchester United", 
-            "away_team": "Sunderland", 
+            "home_team": "MUN", 
+            "away_team": "SUN", 
             "away_goals": 0, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sat 26th September"
         }, 
         {
-            "home_team": "Southampton", 
-            "away_team": "Swansea City", 
+            "home_team": "SOU", 
+            "away_team": "SWA", 
             "away_goals": 1, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sat 26th September"
         }, 
         {
-            "home_team": "Stoke City", 
-            "away_team": "Bournemouth", 
+            "home_team": "STK", 
+            "away_team": "BOU", 
             "away_goals": 1, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sat 26th September"
         }, 
         {
-            "home_team": "West Ham United", 
-            "away_team": "Norwich City", 
+            "home_team": "WHU", 
+            "away_team": "NOR", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sat 26th September"
         }, 
         {
-            "home_team": "Newcastle United", 
-            "away_team": "Chelsea", 
+            "home_team": "NEW", 
+            "away_team": "CHE", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sat 26th September"
         }, 
         {
-            "home_team": "Tottenham Hotspur", 
-            "away_team": "Crystal Palace", 
+            "home_team": "TOT", 
+            "away_team": "CRY", 
             "away_goals": 0, 
             "home_goals": 1, 
             "win": "home", 
             "date": "Sun 20th September"
         }, 
         {
-            "home_team": "Liverpool", 
-            "away_team": "Norwich City", 
+            "home_team": "LIV", 
+            "away_team": "NOR", 
             "away_goals": 1, 
             "home_goals": 1, 
             "win": "draw", 
             "date": "Sun 20th September"
         }, 
         {
-            "home_team": "Southampton", 
-            "away_team": "Manchester United", 
+            "home_team": "SOU", 
+            "away_team": "MUN", 
             "away_goals": 3, 
             "home_goals": 2, 
             "win": "away", 
             "date": "Sun 20th September"
         }, 
         {
-            "home_team": "Chelsea", 
-            "away_team": "Arsenal", 
+            "home_team": "CHE", 
+            "away_team": "ARS", 
             "away_goals": 0, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sat 19th September"
         }, 
         {
-            "home_team": "Aston Villa", 
-            "away_team": "West Bromwich Albion", 
+            "home_team": "AVL", 
+            "away_team": "WBA", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 19th September"
         }, 
         {
-            "home_team": "Bournemouth", 
-            "away_team": "Sunderland", 
+            "home_team": "BOU", 
+            "away_team": "SUN", 
             "away_goals": 0, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sat 19th September"
         }, 
         {
-            "home_team": "Newcastle United", 
-            "away_team": "Watford", 
+            "home_team": "NEW", 
+            "away_team": "WAT", 
             "away_goals": 2, 
             "home_goals": 1, 
             "win": "away", 
             "date": "Sat 19th September"
         }, 
         {
-            "home_team": "Stoke City", 
-            "away_team": "Leicester City", 
+            "home_team": "STK", 
+            "away_team": "LEI", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sat 19th September"
         }, 
         {
-            "home_team": "Swansea City", 
-            "away_team": "Everton", 
+            "home_team": "SWA", 
+            "away_team": "EVE", 
             "away_goals": 0, 
             "home_goals": 0, 
             "win": "draw", 
             "date": "Sat 19th September"
         }, 
         {
-            "home_team": "Manchester City", 
-            "away_team": "West Ham United", 
+            "home_team": "MCI", 
+            "away_team": "WHU", 
             "away_goals": 2, 
             "home_goals": 1, 
             "win": "away", 
             "date": "Sat 19th September"
         }, 
         {
-            "home_team": "West Ham United", 
-            "away_team": "Newcastle United", 
+            "home_team": "WHU", 
+            "away_team": "NEW", 
             "away_goals": 0, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Mon 14th September"
         }, 
         {
-            "home_team": "Sunderland", 
-            "away_team": "Tottenham Hotspur", 
+            "home_team": "SUN", 
+            "away_team": "TOT", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sun 13th September"
         }, 
         {
-            "home_team": "Leicester City", 
-            "away_team": "Aston Villa", 
+            "home_team": "LEI", 
+            "away_team": "AVL", 
             "away_goals": 2, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sun 13th September"
         }, 
         {
-            "home_team": "Everton", 
-            "away_team": "Chelsea", 
+            "home_team": "EVE", 
+            "away_team": "CHE", 
             "away_goals": 1, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sat 12th September"
         }, 
         {
-            "home_team": "Arsenal", 
-            "away_team": "Stoke City", 
+            "home_team": "ARS", 
+            "away_team": "STK", 
             "away_goals": 0, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sat 12th September"
         }, 
         {
-            "home_team": "Crystal Palace", 
-            "away_team": "Manchester City", 
+            "home_team": "CRY", 
+            "away_team": "MCI", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 12th September"
         }, 
         {
-            "home_team": "Norwich City", 
-            "away_team": "Bournemouth", 
+            "home_team": "NOR", 
+            "away_team": "BOU", 
             "away_goals": 1, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sat 12th September"
         }, 
         {
-            "home_team": "Watford", 
-            "away_team": "Swansea City", 
+            "home_team": "WAT", 
+            "away_team": "SWA", 
             "away_goals": 0, 
             "home_goals": 1, 
             "win": "home", 
             "date": "Sat 12th September"
         }, 
         {
-            "home_team": "West Bromwich Albion", 
-            "away_team": "Southampton", 
+            "home_team": "WBA", 
+            "away_team": "SOU", 
             "away_goals": 0, 
             "home_goals": 0, 
             "win": "draw", 
             "date": "Sat 12th September"
         }, 
         {
-            "home_team": "Manchester United", 
-            "away_team": "Liverpool", 
+            "home_team": "MUN", 
+            "away_team": "LIV", 
             "away_goals": 1, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sat 12th September"
         }, 
         {
-            "home_team": "Swansea City", 
-            "away_team": "Stoke City", 
+            "home_team": "SWA", 
+            "away_team": "STK", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Mon 19th October"
         }, 
         {
-            "home_team": "Newcastle United", 
-            "away_team": "Norwich City", 
+            "home_team": "NEW", 
+            "away_team": "NOR", 
             "away_goals": 2, 
             "home_goals": 6, 
             "win": "home", 
             "date": "Sun 18th October"
         }, 
         {
-            "home_team": "Tottenham Hotspur", 
-            "away_team": "Liverpool", 
+            "home_team": "TOT", 
+            "away_team": "LIV", 
             "away_goals": 0, 
             "home_goals": 0, 
             "win": "draw", 
             "date": "Sat 17th October"
         }, 
         {
-            "home_team": "Chelsea", 
-            "away_team": "Aston Villa", 
+            "home_team": "CHE", 
+            "away_team": "AVL", 
             "away_goals": 0, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sat 17th October"
         }, 
         {
-            "home_team": "Crystal Palace", 
-            "away_team": "West Ham United", 
+            "home_team": "CRY", 
+            "away_team": "WHU", 
             "away_goals": 3, 
             "home_goals": 1, 
             "win": "away", 
             "date": "Sat 17th October"
         }, 
         {
-            "home_team": "Everton", 
-            "away_team": "Manchester United", 
+            "home_team": "EVE", 
+            "away_team": "MUN", 
             "away_goals": 3, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 17th October"
         }, 
         {
-            "home_team": "Manchester City", 
-            "away_team": "Bournemouth", 
+            "home_team": "MCI", 
+            "away_team": "BOU", 
             "away_goals": 1, 
             "home_goals": 5, 
             "win": "home", 
             "date": "Sat 17th October"
         }, 
         {
-            "home_team": "Southampton", 
-            "away_team": "Leicester City", 
+            "home_team": "SOU", 
+            "away_team": "LEI", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sat 17th October"
         }, 
         {
-            "home_team": "West Bromwich Albion", 
-            "away_team": "Sunderland", 
+            "home_team": "WBA", 
+            "away_team": "SUN", 
             "away_goals": 0, 
             "home_goals": 1, 
             "win": "home", 
             "date": "Sat 17th October"
         }, 
         {
-            "home_team": "Watford", 
-            "away_team": "Arsenal", 
+            "home_team": "WAT", 
+            "away_team": "ARS", 
             "away_goals": 3, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 17th October"
         }, 
         {
-            "home_team": "Everton", 
-            "away_team": "Liverpool", 
+            "home_team": "EVE", 
+            "away_team": "LIV", 
             "away_goals": 1, 
             "home_goals": 1, 
             "win": "draw", 
             "date": "Sun 4th October"
         }, 
         {
-            "home_team": "Arsenal", 
-            "away_team": "Manchester United", 
+            "home_team": "ARS", 
+            "away_team": "MUN", 
             "away_goals": 0, 
             "home_goals": 3, 
             "win": "home", 
             "date": "Sun 4th October"
         }, 
         {
-            "home_team": "Swansea City", 
-            "away_team": "Tottenham Hotspur", 
+            "home_team": "SWA", 
+            "away_team": "TOT", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sun 4th October"
         }, 
         {
-            "home_team": "Crystal Palace", 
-            "away_team": "West Bromwich Albion", 
+            "home_team": "CRY", 
+            "away_team": "WBA", 
             "away_goals": 0, 
             "home_goals": 2, 
             "win": "home", 
             "date": "Sat 3rd October"
         }, 
         {
-            "home_team": "Aston Villa", 
-            "away_team": "Stoke City", 
+            "home_team": "AVL", 
+            "away_team": "STK", 
             "away_goals": 1, 
             "home_goals": 0, 
             "win": "away", 
             "date": "Sat 3rd October"
         }, 
         {
-            "home_team": "Bournemouth", 
-            "away_team": "Watford", 
+            "home_team": "BOU", 
+            "away_team": "WAT", 
             "away_goals": 1, 
             "home_goals": 1, 
             "win": "draw", 
             "date": "Sat 3rd October"
         }, 
         {
-            "home_team": "Manchester City", 
-            "away_team": "Newcastle United", 
+            "home_team": "MCI", 
+            "away_team": "NEW", 
             "away_goals": 1, 
             "home_goals": 6, 
             "win": "home", 
             "date": "Sat 3rd October"
         }, 
         {
-            "home_team": "Norwich City", 
-            "away_team": "Leicester City", 
+            "home_team": "NOR", 
+            "away_team": "LEI", 
             "away_goals": 2, 
             "home_goals": 1, 
             "win": "away", 
             "date": "Sat 3rd October"
         }, 
         {
-            "home_team": "Sunderland", 
-            "away_team": "West Ham United", 
+            "home_team": "SUN", 
+            "away_team": "WHU", 
             "away_goals": 2, 
             "home_goals": 2, 
             "win": "draw", 
             "date": "Sat 3rd October"
         }, 
         {
-            "home_team": "Chelsea", 
-            "away_team": "Southampton", 
+            "home_team": "CHE", 
+            "away_team": "SOU", 
             "away_goals": 3, 
             "home_goals": 1, 
             "win": "away", 

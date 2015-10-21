@@ -14,6 +14,12 @@
         }, 
         {
             "availability": 0, 
+            "name": "Ramsey", 
+            "return_date": "31/10/2015", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
             "name": "Rosicky", 
             "return_date": "24/10/2015", 
             "team": "ARS"
@@ -237,7 +243,7 @@
         {
             "availability": 0, 
             "name": "Cleverley", 
-            "return_date": "07/11/2015", 
+            "return_date": "24/10/2015", 
             "team": "EVE"
         }, 
         {
@@ -261,7 +267,7 @@
         {
             "availability": 0, 
             "name": "Pienaar", 
-            "return_date": "07/11/2015", 
+            "return_date": "24/10/2015", 
             "team": "EVE"
         }, 
         {
