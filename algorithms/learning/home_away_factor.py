@@ -73,7 +73,35 @@ def get_away_results_ratio_for_team(team):
     return ratio
 
 
+def get_home_goals_per_game_for_team(team):
+    db_manger = DbManager(MONGODB_URL)
+    home_results = db_manger.find(DB_NAME, 'results', {'home_team': team})
+
+    home_goals, total = 0.0, 0.0
+    for result in home_results:
+        home_goals += result['home_goals']
+        total += 1
+
+    gpg = home_goals / total
+    return gpg
+
+
+def get_away_goals_per_game_for_team(team):
+    db_manger = DbManager(MONGODB_URL)
+    away_results = db_manger.find(DB_NAME, 'results', {'away_team': team})
+
+    away_goals, total = 0.0, 0.0
+    for result in away_results:
+        away_goals += result['away_goals']
+        total += 1
+
+    gpg = away_goals / total
+    return gpg
+
+
 if __name__ == '__main__':
     print get_home_away_wins_ratio()
     print get_home_results_ratio_for_team('ARS')
     print get_away_results_ratio_for_team('ARS')
+    print get_home_goals_per_game_for_team('ARS')
+    print get_away_goals_per_game_for_team('ARS')
