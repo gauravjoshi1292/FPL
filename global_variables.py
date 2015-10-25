@@ -1,27 +1,40 @@
 __author__ = 'gj'
 
 MONGODB_PORT = 27020
+YEAR = 2015
+WEEK = 10
 
-WEEK = 9
+GW_DB = 'gw-{week}'.format(week=WEEK)
 
-DB_NAME = 'fpl-gw-{week}'.format(week=WEEK)
+RESULTS_DB = 'results'
 
-COLLECTION_NAMES = ['teams', 'goalkeepers', 'defenders', 'midfielders', 'forwards',
-                    'injuries', 'results', 'gw_fixtures', 'gw_results']
+PLAYERS_COLLECTIONS = ['goalkeepers', 'defenders', 'midfielders', 'forwards', 'teams']
+
+TEAMS_COLLECTIONS = ['teams']
+
+INJURIES_COLLECTIONS = ['injuries']
+
+GW_FIXTURES_AND_RESULTS_COLLECTIONS = ['fixtures', 'results']
 
 PLAYER_TYPES = {'goalkeepers': 1, 'defenders': 2, 'midfielders': 3, 'forwards': 4}
 
 
-TEAMS_MAP = {'Arsenal': 'ARS', 'Aston Villa': 'AVL',
-             'Bournemouth': 'BOU', 'Chelsea': 'CHE',
-             'Crystal Palace': 'CRY', 'Everton': 'EVE',
-             'Leicester City': 'LEI', 'Liverpool': 'LIV',
-             'Manchester United': 'MUN', 'Manchester City': 'MCI',
-             'Newcastle United': 'NEW', 'Norwich City': 'NOR',
+TEAMS_MAP = {'Arsenal': 'ARS', 'Aston Villa': 'AVL', 'Birmingham City': 'BIR',
+             'Blackburn Rovers': 'BBR', 'Blackpool': 'BLA',
+             'Bolton Wanderers': 'BOL', 'Bournemouth': 'BOU',
+             'Burnley': 'BUR', 'Cardiff City': 'CAR',
+             'Chelsea': 'CHE', 'Crystal Palace': 'CRY',
+             'Everton': 'EVE', 'Fulham': 'FUL',
+             'Hull City': 'HUL', 'Leicester City': 'LEI',
+             'Liverpool': 'LIV', 'Manchester United': 'MUN',
+             'Manchester City': 'MCI', 'Newcastle United': 'NEW',
+             'Norwich City': 'NOR', 'Queens Park Rangers': 'QPR',
+             'Reading': 'REA',
              'Southampton': 'SOU', 'Stoke City': 'STK',
              'Sunderland': 'SUN', 'Swansea City': 'SWA',
              'Tottenham Hotspur': 'TOT', 'Watford': 'WAT',
-             'West Bromwich Albion': 'WBA', 'West Ham United': 'WHU'
+             'West Bromwich Albion': 'WBA', 'West Ham United': 'WHU',
+             'Wigan Athletic': 'WIG', 'Wolverhampton Wanderers': 'WOL'
              }
 
 

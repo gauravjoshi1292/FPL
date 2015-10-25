@@ -2,8 +2,10 @@ __author__ = 'gj'
 
 from datetime import datetime
 
-from utils import *
-from global_variables import *
+from mongo import DbManager
+from urls import MONGODB_URL, RESULTS_URL
+from global_variables import YEAR, RESULTS_DB
+from utils import normalize, get_driver, get_soup_from_driver, scroll_till_page_is_loaded
 
 
 def build_results(day_results, team_a, team_b, score, location, date, kickoff, comp):
@@ -81,10 +83,6 @@ def get_results_for_year(url):
     scroll_till_page_is_loaded(driver)
     soup = get_soup_from_driver(driver)
     driver.quit()
-    #
-    # with open('data/soup.txt', 'r') as fp:
-    #     from bs4 import BeautifulSoup
-    #     soup = BeautifulSoup(fp.read(), 'html.parser')
 
     tables = soup.find_all('table', {'class': 'contentTable'})
     for table in tables:
@@ -117,14 +115,14 @@ def get_results():
 
 def create_results_database():
     results_db_manager = DbManager(MONGODB_URL)
-    # results_db_manager.drop_db(RESULTS_DB)
-    # results_db_manager.create_db(RESULTS_DB)
-    #
-    # results = get_results()
-    #
-    # for team, data in results.items():
-    #     results_db_manager.create_collection(RESULTS_DB, team)
-    #     results_db_manager.insert(RESULTS_DB, team, data)
+    results_db_manager.drop_db(RESULTS_DB)
+    results_db_manager.create_db(RESULTS_DB)
+
+    results = get_results()
+
+    for team, data in results.items():
+        results_db_manager.create_collection(RESULTS_DB, team)
+        results_db_manager.insert(RESULTS_DB, team, data)
 
     print results_db_manager.client[RESULTS_DB].collection_names()
 

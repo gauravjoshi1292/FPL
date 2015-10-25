@@ -24,5 +24,7 @@ PLAYER_STATS_URL = ("http://fantasy.premierleague.com/stats/elements/?"
 
 INJURIES_URL = "http://www.fantasyfootballscout.co.uk/fantasy-football-injuries/"
 
-RESULTS_URL = ("http://www.skysports.com/football/competitions/premier-league/results/"
-               "{month}-{year}")
+RESULTS_URL = ("http://www.premierleague.com/content/premierleague/en-gb/matchday/"
+               "results.html?paramClubId=ALL&paramComp_8=true&paramComp_1=true&"
+               "paramComp_2=true&paramComp_5=true&paramComp_6=true&"
+               "paramSeasonId={year}&view=.dateSeason")
