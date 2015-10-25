@@ -2,10 +2,10 @@ __author__ = 'gj'
 
 from datetime import datetime
 
-from mongo import DbManager
-from urls import MONGODB_URL, RESULTS_URL
+from urls import RESULTS_URL
 from global_variables import YEAR, RESULTS_DB
-from utils import normalize, get_driver, get_soup_from_driver, scroll_till_page_is_loaded
+from utils import normalize, dump_as_json, load_as_json
+from utils import get_driver, get_soup_from_driver, scroll_till_page_is_loaded
 
 
 def build_results(day_results, team_a, team_b, score, location, date, kickoff, comp):
@@ -113,19 +113,18 @@ def get_results():
     return results
 
 
-def create_results_database():
-    results_db_manager = DbManager(MONGODB_URL)
-    results_db_manager.drop_db(RESULTS_DB)
-    results_db_manager.create_db(RESULTS_DB)
+def insert_results_in_db(db_manager):
+    """
+    Inserts results in the database
 
+    :param db_manager: database manager handle
+    :type db_manager: mongo.DbManager
+    """
     results = get_results()
+    dump_as_json(results, 'data/results.json')
 
-    for team, data in results.items():
-        results_db_manager.create_collection(RESULTS_DB, team)
-        results_db_manager.insert(RESULTS_DB, team, data)
+    results_data = load_as_json('data/results.json')
 
-    print results_db_manager.client[RESULTS_DB].collection_names()
-
-
-if __name__ == '__main__':
-    create_results_database()
+    for team, team_results in results_data.items():
+        db_manager.create_collection(RESULTS_DB, team)
+        db_manager.insert(RESULTS_DB, team, team_results)

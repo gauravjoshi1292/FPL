@@ -1,12 +1,10 @@
 __author__ = 'gj'
 
-import json
+from urls import TEAM_STATS_URL
+from global_variables import TEAMS_MAP, GW_DB
+from utils import get_soup_from_url, dump_as_json, load_as_json
 
-from mongo import DbManager
 from fixtures_crawler import get_fixtures
-from urls import TEAM_STATS_URL, MONGODB_URL
-from utils import get_soup_from_url, dump_as_json
-from global_variables import TEAMS_MAP, GW_DB, TEAMS_COLLECTIONS
 
 
 def get_team_stats():
@@ -55,19 +53,11 @@ def insert_team_stats_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    # team_stats = get_team_stats()
-    # dump_as_json(team_stats, '../data/team_stats.json')
+    team_stats = get_team_stats()
+    dump_as_json(team_stats, 'data/team_stats.json')
 
-    with open('../data/team_stats.json', 'r') as infile:
-        team_data = json.load(infile)
+    team_data = load_as_json('data/team_stats.json')
 
     for key, team_stats in team_data.items():
+        db_manager.create_collection(GW_DB, key)
         db_manager.insert(GW_DB, key, team_stats)
-
-
-if __name__ == '__main__':
-    db_manager = DbManager(MONGODB_URL)
-    db_manager.drop_db(GW_DB)
-    db_manager.create_db(GW_DB)
-    db_manager.create_collections(GW_DB, TEAMS_COLLECTIONS)
-    insert_team_stats_in_db(db_manager)

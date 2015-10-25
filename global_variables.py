@@ -8,14 +8,6 @@ GW_DB = 'gw-{week}'.format(week=WEEK)
 
 RESULTS_DB = 'results'
 
-PLAYERS_COLLECTIONS = ['goalkeepers', 'defenders', 'midfielders', 'forwards', 'teams']
-
-TEAMS_COLLECTIONS = ['teams']
-
-INJURIES_COLLECTIONS = ['injuries']
-
-GW_FIXTURES_AND_RESULTS_COLLECTIONS = ['fixtures', 'results']
-
 PLAYER_TYPES = {'goalkeepers': 1, 'defenders': 2, 'midfielders': 3, 'forwards': 4}
 
 

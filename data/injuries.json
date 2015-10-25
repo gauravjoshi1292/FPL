@@ -8,20 +8,32 @@
         }, 
         {
             "availability": 0, 
-            "name": "Ospina", 
-            "return_date": "24/10/2015", 
-            "team": "ARS"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Ramsey", 
+            "name": "Arteta", 
             "return_date": "31/10/2015", 
             "team": "ARS"
         }, 
         {
             "availability": 0, 
+            "name": "Mertesacker", 
+            "return_date": "31/10/2015", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Ospina", 
+            "return_date": "21/11/2015", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Ramsey", 
+            "return_date": "21/11/2015", 
+            "team": "ARS"
+        }, 
+        {
+            "availability": 0, 
             "name": "Rosicky", 
-            "return_date": "24/10/2015", 
+            "return_date": "Unknown", 
             "team": "ARS"
         }, 
         {
@@ -56,38 +68,14 @@
         }, 
         {
             "availability": 0, 
-            "name": "Agbonlahor", 
-            "return_date": "24/10/2015", 
-            "team": "AVL"
-        }, 
-        {
-            "availability": 0, 
             "name": "Baker", 
             "return_date": "16/05/2016", 
             "team": "AVL"
         }, 
         {
             "availability": 0, 
-            "name": "Clark", 
-            "return_date": "24/10/2015", 
-            "team": "AVL"
-        }, 
-        {
-            "availability": 0, 
             "name": "Cole", 
             "return_date": "21/11/2015", 
-            "team": "AVL"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Gardner", 
-            "return_date": "Unknown", 
-            "team": "AVL"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Okore", 
-            "return_date": "24/10/2015", 
             "team": "AVL"
         }, 
         {
@@ -99,7 +87,7 @@
         {
             "availability": 0, 
             "name": "Arter", 
-            "return_date": "24/10/2015", 
+            "return_date": "25/10/2015", 
             "team": "BOU"
         }, 
         {
@@ -124,6 +112,12 @@
             "availability": 0, 
             "name": "Mings", 
             "return_date": "Unknown", 
+            "team": "BOU"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Tomlin", 
+            "return_date": "25/10/2015", 
             "team": "BOU"
         }, 
         {
@@ -171,13 +165,13 @@
         {
             "availability": 0, 
             "name": "Remy", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "CHE"
         }, 
         {
             "availability": 0, 
             "name": "Pedro", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "CHE"
         }, 
         {
@@ -195,13 +189,7 @@
         {
             "availability": 0, 
             "name": "Chamakh", 
-            "return_date": "17/10/2015", 
-            "team": "CPL"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Gayle", 
-            "return_date": "28/10/2015", 
+            "return_date": "Unknown", 
             "team": "CPL"
         }, 
         {
@@ -212,14 +200,14 @@
         }, 
         {
             "availability": 0, 
-            "name": "Ward", 
-            "return_date": "24/10/2015", 
+            "name": "Souare", 
+            "return_date": "31/10/2015", 
             "team": "CPL"
         }, 
         {
             "availability": 0, 
             "name": "Wickham", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "CPL"
         }, 
         {
@@ -242,12 +230,6 @@
         }, 
         {
             "availability": 0, 
-            "name": "Cleverley", 
-            "return_date": "24/10/2015", 
-            "team": "EVE"
-        }, 
-        {
-            "availability": 0, 
             "name": "Garbutt", 
             "return_date": "09/05/2016", 
             "team": "EVE"
@@ -260,6 +242,12 @@
         }, 
         {
             "availability": 0, 
+            "name": "Jagielka", 
+            "return_date": "31/10/2015", 
+            "team": "EVE"
+        }, 
+        {
+            "availability": 0, 
             "name": "McAleny", 
             "return_date": "14/11/2015", 
             "team": "EVE"
@@ -267,13 +255,19 @@
         {
             "availability": 0, 
             "name": "Pienaar", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "EVE"
         }, 
         {
             "availability": 0, 
             "name": "Hamer", 
             "return_date": "16/05/2016", 
+            "team": "LEI"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Hammond", 
+            "return_date": "02/01/2016", 
             "team": "LEI"
         }, 
         {
@@ -303,25 +297,13 @@
         {
             "availability": 0, 
             "name": "Ulloa", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "LEI"
         }, 
         {
             "availability": 0, 
             "name": "Balotelli", 
             "return_date": "16/05/2016", 
-            "team": "LIV"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Firmino", 
-            "return_date": "Unknown", 
-            "team": "LIV"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Benteke", 
-            "return_date": "24/10/2015", 
             "team": "LIV"
         }, 
         {
@@ -346,12 +328,6 @@
             "availability": 0, 
             "name": "Ings", 
             "return_date": "Unknown", 
-            "team": "LIV"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Lovren", 
-            "return_date": "24/10/2015", 
             "team": "LIV"
         }, 
         {
@@ -387,7 +363,7 @@
         {
             "availability": 0, 
             "name": "Clichy", 
-            "return_date": "25/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "MCI"
         }, 
         {
@@ -423,7 +399,7 @@
         {
             "availability": 0, 
             "name": "Nasri", 
-            "return_date": "25/10/2015", 
+            "return_date": "21/11/2015", 
             "team": "MCI"
         }, 
         {
@@ -447,7 +423,7 @@
         {
             "availability": 0, 
             "name": "McNair", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "MUN"
         }, 
         {
@@ -459,14 +435,8 @@
         {
             "availability": 0, 
             "name": "Young", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "MUN"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Aarons", 
-            "return_date": "18/10/2015", 
-            "team": "NEW"
         }, 
         {
             "availability": 0, 
@@ -478,6 +448,12 @@
             "availability": 0, 
             "name": "Cabella", 
             "return_date": "16/05/2016", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Colback", 
+            "return_date": "31/10/2015", 
             "team": "NEW"
         }, 
         {
@@ -500,14 +476,8 @@
         }, 
         {
             "availability": 0, 
-            "name": "Mbabu", 
-            "return_date": "25/10/2015", 
-            "team": "NEW"
-        }, 
-        {
-            "availability": 0, 
             "name": "Obertan", 
-            "return_date": "25/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "NEW"
         }, 
         {
@@ -536,14 +506,8 @@
         }, 
         {
             "availability": 0, 
-            "name": "Grabban", 
-            "return_date": "24/10/2015", 
-            "team": "NOR"
-        }, 
-        {
-            "availability": 0, 
             "name": "Hooper", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "NOR"
         }, 
         {
@@ -578,20 +542,26 @@
         }, 
         {
             "availability": 0, 
+            "name": "Isgrove", 
+            "return_date": "09/01/2016", 
+            "team": "SOT"
+        }, 
+        {
+            "availability": 0, 
             "name": "Long", 
             "return_date": "07/11/2015", 
             "team": "SOT"
         }, 
         {
             "availability": 0, 
-            "name": "Stekelenburg", 
+            "name": "Rodriguez", 
             "return_date": "25/10/2015", 
             "team": "SOT"
         }, 
         {
             "availability": 0, 
-            "name": "Diouf", 
-            "return_date": "24/10/2015", 
+            "name": "Cameron", 
+            "return_date": "31/10/2015", 
             "team": "STO"
         }, 
         {
@@ -602,15 +572,9 @@
         }, 
         {
             "availability": 0, 
-            "name": "Shawcross", 
-            "return_date": "19/10/2015", 
-            "team": "STO"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Walters", 
-            "return_date": "24/10/2015", 
-            "team": "STO"
+            "name": "Borini", 
+            "return_date": "01/11/2015", 
+            "team": "SUN"
         }, 
         {
             "availability": 0, 
@@ -627,19 +591,25 @@
         {
             "availability": 0, 
             "name": "Matthews", 
-            "return_date": "25/10/2015", 
+            "return_date": "01/11/2015", 
+            "team": "SUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "O'Shea", 
+            "return_date": "01/11/2015", 
             "team": "SUN"
         }, 
         {
             "availability": 0, 
             "name": "Rodwell", 
-            "return_date": "25/10/2015", 
+            "return_date": "01/11/2015", 
             "team": "SUN"
         }, 
         {
-            "availability": 0.75, 
+            "availability": 0, 
             "name": "Toivonen", 
-            "return_date": "25/10/2015", 
+            "return_date": "01/11/2015", 
             "team": "SUN"
         }, 
         {
@@ -650,14 +620,14 @@
         }, 
         {
             "availability": 0, 
-            "name": "Watmore", 
-            "return_date": "25/10/2015", 
-            "team": "SUN"
+            "name": "Fulton", 
+            "return_date": "26/12/2015", 
+            "team": "SWA"
         }, 
         {
             "availability": 0, 
-            "name": "Fulton", 
-            "return_date": "26/12/2015", 
+            "name": "Routledge", 
+            "return_date": "31/10/2015", 
             "team": "SWA"
         }, 
         {
@@ -668,8 +638,20 @@
         }, 
         {
             "availability": 0, 
+            "name": "Carroll", 
+            "return_date": "24/10/2015", 
+            "team": "TOT"
+        }, 
+        {
+            "availability": 0, 
             "name": "Chadli", 
             "return_date": "05/12/2015", 
+            "team": "TOT"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Fazio", 
+            "return_date": "31/10/2015", 
             "team": "TOT"
         }, 
         {
@@ -747,7 +729,7 @@
         {
             "availability": 0, 
             "name": "Morrison", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "WBA"
         }, 
         {
@@ -764,12 +746,6 @@
         }, 
         {
             "availability": 0, 
-            "name": "Moses", 
-            "return_date": "31/10/2015", 
-            "team": "WHM"
-        }, 
-        {
-            "availability": 0, 
             "name": "Poyet", 
             "return_date": "16/05/2016", 
             "team": "WHM"
@@ -777,7 +753,7 @@
         {
             "availability": 0, 
             "name": "Reid", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "WHM"
         }, 
         {

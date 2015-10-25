@@ -5,13 +5,10 @@ import time
 import socket
 import urllib2
 import unicodedata
+from bson import json_util
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.common.exceptions import WebDriverException
-
-from urls import *
-from mongo import DbManager
-from global_variables import *
 
 
 def normalize(text):
@@ -211,4 +208,19 @@ def dump_as_json(data, json_file):
     :type json_file: str
     """
     with open(json_file, "w") as outfile:
-        json.dump(data, outfile, indent=4)
+        json.dump(data, outfile, indent=4, default=json_util.default)
+
+
+def load_as_json(json_file):
+    """
+    Loads the json file and returns a json object
+
+    :param json_file: input json file
+    :type json_file: str
+
+    :rtype: dict
+    """
+    with open(json_file, "r") as infile:
+        data = json.load(infile, object_hook=json_util.object_hook)
+
+    return data

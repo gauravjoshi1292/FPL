@@ -1,11 +1,10 @@
 __author__ = 'gj'
 
-import json
+from datetime import datetime
 
-from mongo import DbManager
-from utils import normalize, get_table_from_url
-from urls import MONGODB_URL, GAMEWEEK_FIXTURES_AND_RESULTS_URL
-from global_variables import TEAMS_MAP, GW_DB, GW_FIXTURES_AND_RESULTS_COLLECTIONS
+from urls import GAMEWEEK_FIXTURES_AND_RESULTS_URL
+from global_variables import TEAMS_MAP, GW_DB, YEAR
+from utils import normalize, get_table_from_url, dump_as_json, load_as_json
 
 
 def get_gameweek_fixtures_and_results():
@@ -24,7 +23,8 @@ def get_gameweek_fixtures_and_results():
         try:
             if td['class'][0] == 'column-date':
                 if td.text.strip():
-                    date = normalize(td.text.strip())
+                    text = '{0} {1}'.format(normalize(td.text.strip()), YEAR)
+                    date = datetime.strptime(text, '%d %b %Y')
             elif td['class'][0] == 'column-team-a':
                 home_team = TEAMS_MAP[normalize(td.text.strip())]
             elif td['class'][0] == 'column-score':
@@ -59,18 +59,10 @@ def insert_gameweek_fixtures_and_results_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     # gw_fixtures_and_results = get_gameweek_fixtures_and_results()
-    # dump_as_json(gw_fixtures_and_results, '../data/gw_fixtures_and_results.json')
+    # dump_as_json(gw_fixtures_and_results, 'data/gw_fixtures_and_results.json')
 
-    with open('../data/gw_fixtures_and_results.json', 'r') as infile:
-        results_data = json.load(infile)
+    gw_data = load_as_json('data/gw_fixtures_and_results.json')
 
-    for key, results in results_data.items():
-        db_manager.insert(GW_DB, key, results)
-
-
-if __name__ == '__main__':
-    db_manager = DbManager(MONGODB_URL)
-    db_manager.drop_db(GW_DB)
-    db_manager.create_db(GW_DB)
-    db_manager.create_collections(GW_DB, GW_FIXTURES_AND_RESULTS_COLLECTIONS)
-    insert_gameweek_fixtures_and_results_in_db(db_manager)
+    for key, data in gw_data.items():
+        db_manager.create_collection(GW_DB, key)
+        db_manager.insert(GW_DB, key, data)

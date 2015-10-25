@@ -1,13 +1,11 @@
 __author__ = 'gj'
 
-import json
 import unicodedata
 
-from mongo import DbManager
 from fixtures_crawler import get_fixtures
-from urls import PLAYER_LIST_URL, PLAYER_STATS_URL, MONGODB_URL
-from utils import normalize, get_soup_from_url, get_table_from_url, dump_as_json
-from global_variables import STAT_MAP, ALL_STAT_TYPES, PLAYER_TYPES, GW_DB, PLAYERS_COLLECTIONS
+from urls import PLAYER_LIST_URL, PLAYER_STATS_URL
+from global_variables import STAT_MAP, ALL_STAT_TYPES, PLAYER_TYPES, GW_DB
+from utils import normalize, get_soup_from_url, get_table_from_url, dump_as_json, load_as_json
 
 
 def get_player_list():
@@ -220,19 +218,11 @@ def insert_player_stats_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    # stats = get_organized_data(get_player_stats())
-    # dump_as_json(stats, '../data/player_stats.json')
+    stats = get_organized_data(get_player_stats())
+    dump_as_json(stats, 'data/player_stats.json')
 
-    with open('../data/player_stats.json', 'r') as infile:
-        player_data = json.load(infile)
+    player_data = load_as_json('data/player_stats.json')
 
     for key, player_stats in player_data.items():
+        db_manager.create_collection(GW_DB, key)
         db_manager.insert(GW_DB, key, player_stats)
-
-
-if __name__ == '__main__':
-    db_manager = DbManager(MONGODB_URL)
-    db_manager.drop_db(GW_DB)
-    db_manager.create_db(GW_DB)
-    db_manager.create_collections(GW_DB, PLAYERS_COLLECTIONS)
-    insert_player_stats_in_db(db_manager)
