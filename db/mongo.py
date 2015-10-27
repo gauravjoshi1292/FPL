@@ -33,14 +33,17 @@ class DbManager(object):
     def drop_db(self, db_name):
         self.client.drop_database(db_name)
 
+    def drop_collection(self, db_name, collection_name):
+        self.client[db_name].drop_collection(collection_name)
+
     def insert(self, db_name, collection_name, data):
         self.client[db_name][collection_name].insert(data)
 
-    def find(self, db_name, collection_name, query):
-        return self.client[db_name][collection_name].find(query)
+    def find(self, db_name, collection_name, query, *args, **kwargs):
+        return self.client[db_name][collection_name].find(query, *args, **kwargs)
 
-    def find_one(self, db_name, collection_name, query):
-        return self.client[db_name][collection_name].find_one(query)
+    def find_one(self, db_name, collection_name, query, *args, **kwargs):
+        return self.client[db_name][collection_name].find_one(query, *args, **kwargs)
 
     def close_connection(self):
         self.client.close()
@@ -54,17 +57,17 @@ if __name__ == "__main__":
     #
     # db_manager.create_db(GW_DB)
     # db_manager.create_db(RESULTS_DB)
-    #
+
     # insert_player_stats_in_db(db_manager)
     # insert_team_stats_in_db(db_manager)
     # insert_results_in_db(db_manager)
     # insert_injuries_in_db(db_manager)
-    # insert_gameweek_fixtures_and_results_in_db(db_manager)
+    insert_gameweek_fixtures_and_results_in_db(db_manager)
 
     print db_manager.client.database_names()
     print db_manager.find_one(GW_DB, 'goalkeepers', {'name': 'Cech'})
     print db_manager.find_one(GW_DB, 'teams', {'team': 'ARS'})
     print db_manager.find_one(RESULTS_DB, 'Arsenal', {'opposition': 'Everton'})
     print db_manager.find_one(GW_DB, 'injuries', {'team': 'LIV'})
-    print db_manager.find_one(GW_DB, 'gw_results', {})
+    print db_manager.find_one(GW_DB, 'gw_results', {}, {'_id': 0})
     print db_manager.find_one(GW_DB, 'gw_fixtures', {})

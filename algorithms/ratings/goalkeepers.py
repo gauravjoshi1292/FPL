@@ -1,8 +1,7 @@
 __author__ = 'gj'
 
 from urls import *
-from mongo import DbManager
-from global_variables import *
+from db.mongo import DbManager
 from algorithms.ratings.common import *
 
 SCORE_WT = 10.0
@@ -91,6 +90,6 @@ def calculate_goalkeeper_ratings(db_manager, db_name):
 
 if __name__ == '__main__':
     fpl_manager = DbManager(MONGODB_URL)
-    ratings = calculate_goalkeeper_ratings(fpl_manager, DB_NAME)
+    ratings = calculate_goalkeeper_ratings(fpl_manager, GW_DB)
     print sorted(ratings.items(), key=lambda x: x[1]['affected_rating'], reverse=True)
     fpl_manager.close_connection()
