@@ -58,8 +58,8 @@ def insert_gameweek_fixtures_and_results_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    # gw_fixtures_and_results = get_gameweek_fixtures_and_results()
-    # dump_as_json(gw_fixtures_and_results, 'data/gw_fixtures_and_results.json')
+    gw_fixtures_and_results = get_gameweek_fixtures_and_results()
+    dump_as_json(gw_fixtures_and_results, 'data/gw_fixtures_and_results.json')
 
     gw_data = load_as_json('data/gw_fixtures_and_results.json')
 

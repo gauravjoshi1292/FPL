@@ -14,12 +14,6 @@
         }, 
         {
             "availability": 0, 
-            "name": "Mertesacker", 
-            "return_date": "31/10/2015", 
-            "team": "ARS"
-        }, 
-        {
-            "availability": 0, 
             "name": "Ospina", 
             "return_date": "21/11/2015", 
             "team": "ARS"
@@ -87,13 +81,7 @@
         {
             "availability": 0, 
             "name": "Arter", 
-            "return_date": "25/10/2015", 
-            "team": "BOU"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Boruc", 
-            "return_date": "25/10/2015", 
+            "return_date": "01/11/2015", 
             "team": "BOU"
         }, 
         {
@@ -117,7 +105,7 @@
         {
             "availability": 0, 
             "name": "Tomlin", 
-            "return_date": "25/10/2015", 
+            "return_date": "01/11/2015", 
             "team": "BOU"
         }, 
         {
@@ -243,7 +231,7 @@
         {
             "availability": 0, 
             "name": "Jagielka", 
-            "return_date": "31/10/2015", 
+            "return_date": "26/12/2015", 
             "team": "EVE"
         }, 
         {
@@ -351,7 +339,7 @@
         {
             "availability": 0, 
             "name": "Sturridge", 
-            "return_date": "24/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "LIV"
         }, 
         {
@@ -434,6 +422,12 @@
         }, 
         {
             "availability": 0, 
+            "name": "Valencia", 
+            "return_date": "31/10/2015", 
+            "team": "MUN"
+        }, 
+        {
+            "availability": 0, 
             "name": "Young", 
             "return_date": "31/10/2015", 
             "team": "MUN"
@@ -453,7 +447,13 @@
         {
             "availability": 0, 
             "name": "Colback", 
-            "return_date": "31/10/2015", 
+            "return_date": "07/11/2015", 
+            "team": "NEW"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Coloccini", 
+            "return_date": "07/11/2015", 
             "team": "NEW"
         }, 
         {
@@ -512,6 +512,12 @@
         }, 
         {
             "availability": 0, 
+            "name": "Mbokani", 
+            "return_date": "27/10/2015", 
+            "team": "NOR"
+        }, 
+        {
+            "availability": 0, 
             "name": "Mulumbu", 
             "return_date": "Unknown", 
             "team": "NOR"
@@ -555,7 +561,7 @@
         {
             "availability": 0, 
             "name": "Rodriguez", 
-            "return_date": "25/10/2015", 
+            "return_date": "31/10/2015", 
             "team": "SOT"
         }, 
         {
@@ -566,8 +572,14 @@
         }, 
         {
             "availability": 0, 
-            "name": "Given", 
-            "return_date": "19/10/2015", 
+            "name": "Bojan", 
+            "return_date": "31/10/2015", 
+            "team": "STO"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Muniesa", 
+            "return_date": "31/10/2015", 
             "team": "STO"
         }, 
         {
@@ -586,6 +598,12 @@
             "availability": 0, 
             "name": "Giaccherini", 
             "return_date": "16/05/2016", 
+            "team": "SUN"
+        }, 
+        {
+            "availability": 0, 
+            "name": "Kaboul", 
+            "return_date": "01/11/2015", 
             "team": "SUN"
         }, 
         {
@@ -633,13 +651,13 @@
         {
             "availability": 0, 
             "name": "Bentaleb", 
-            "return_date": "25/10/2015", 
+            "return_date": "02/11/2015", 
             "team": "TOT"
         }, 
         {
             "availability": 0, 
             "name": "Carroll", 
-            "return_date": "24/10/2015", 
+            "return_date": "02/11/2015", 
             "team": "TOT"
         }, 
         {
@@ -652,12 +670,6 @@
             "availability": 0, 
             "name": "Fazio", 
             "return_date": "31/10/2015", 
-            "team": "TOT"
-        }, 
-        {
-            "availability": 0, 
-            "name": "Mason", 
-            "return_date": "25/10/2015", 
             "team": "TOT"
         }, 
         {

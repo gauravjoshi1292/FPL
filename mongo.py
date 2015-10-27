@@ -49,17 +49,17 @@ class DbManager(object):
 if __name__ == "__main__":
     db_manager = DbManager(MONGODB_URL)
 
-    db_manager.drop_db(GW_DB)
-    db_manager.drop_db(RESULTS_DB)
-
-    db_manager.create_db(GW_DB)
-    db_manager.create_db(RESULTS_DB)
-
-    insert_player_stats_in_db(db_manager)
-    insert_team_stats_in_db(db_manager)
-    insert_results_in_db(db_manager)
-    insert_injuries_in_db(db_manager)
-    insert_gameweek_fixtures_and_results_in_db(db_manager)
+    # db_manager.drop_db(GW_DB)
+    # db_manager.drop_db(RESULTS_DB)
+    #
+    # db_manager.create_db(GW_DB)
+    # db_manager.create_db(RESULTS_DB)
+    #
+    # insert_player_stats_in_db(db_manager)
+    # insert_team_stats_in_db(db_manager)
+    # insert_results_in_db(db_manager)
+    # insert_injuries_in_db(db_manager)
+    # insert_gameweek_fixtures_and_results_in_db(db_manager)
 
     print db_manager.client.database_names()
     print db_manager.find_one(GW_DB, 'goalkeepers', {'name': 'Cech'})
