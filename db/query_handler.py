@@ -27,7 +27,7 @@ class QueryHandler(object):
         return self.db_manager.find(GW_DB, 'forwards',
                                     {}).sort('round_score', pymongo.DESCENDING).limit(n)
 
-    def get_last_n_results(self, team, place=None, opposition=None, comp=None):
+    def get_last_n_results(self, team, n, opposition=None, place=None, comp=None):
         query = {}
         if place:
             query['place'] = place
@@ -36,7 +36,7 @@ class QueryHandler(object):
         if comp:
             query['comp'] = comp
 
-        return self.db_manager.find(RESULTS_DB, team, query).sort('time', pymongo.DESCENDING).limit(5)
+        return self.db_manager.find(RESULTS_DB, team, query).sort('time', pymongo.DESCENDING).limit(n)
 
 
 if __name__ == '__main__':
@@ -45,7 +45,7 @@ if __name__ == '__main__':
     print [(g['name'], g['round_score']) for g in fpl_manager.get_top_defenders(5)]
     print [(g['name'], g['round_score']) for g in fpl_manager.get_top_midfielders(5)]
     print [(g['name'], g['round_score']) for g in fpl_manager.get_top_forwards(5)]
-    print [r for r in fpl_manager.get_last_n_results('Arsenal')]
-    print [r for r in fpl_manager.get_last_n_results('Arsenal', 'home')]
-    print [r for r in fpl_manager.get_last_n_results('Arsenal', 'home', comp='Barclays Premier League')]
-    print [r for r in fpl_manager.get_last_n_results('Arsenal', 'home', 'Everton', 'Barclays Premier League')]
+    print [r for r in fpl_manager.get_last_n_results('Arsenal', 5)]
+    print [r for r in fpl_manager.get_last_n_results('Arsenal', 5, 'home')]
+    print [r for r in fpl_manager.get_last_n_results('Arsenal', 5, 'home', comp='Barclays Premier League')]
+    print [r for r in fpl_manager.get_last_n_results('Arsenal', 5, 'home', 'Everton', 'Barclays Premier League')]
