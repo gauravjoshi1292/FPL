@@ -62,6 +62,7 @@ if __name__ == "__main__":
     # insert_team_stats_in_db(db_manager)
     # insert_results_in_db(db_manager)
     # insert_injuries_in_db(db_manager)
+    db_manager.client[GW_DB].drop_collection('gw_fixtures')
     insert_gameweek_fixtures_and_results_in_db(db_manager)
 
     print db_manager.client.database_names()

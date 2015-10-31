@@ -3,11 +3,11 @@ __author__ = 'gj'
 from datetime import datetime
 
 from urls import GAMEWEEK_FIXTURES_AND_RESULTS_URL
-from global_variables import TEAMS_MAP, GW_DB, YEAR
+from global_variables import TEAMS_MAP, GW_DB, YEAR, WEEK
 from utils import normalize, get_table_from_url, dump_as_json, load_as_json
 
 
-def get_gameweek_fixtures_and_results():
+def get_gameweek_fixtures_and_results(week):
     """
     Returns fixtures and results for the current gameweek
 
@@ -15,7 +15,7 @@ def get_gameweek_fixtures_and_results():
     """
     gw_fixtures_and_results = {'gw_fixtures': [], 'gw_results': []}
 
-    table = get_table_from_url(GAMEWEEK_FIXTURES_AND_RESULTS_URL,
+    table = get_table_from_url(GAMEWEEK_FIXTURES_AND_RESULTS_URL.format(week=week),
                                'table-matches table-matches-narrow')
 
     date, home_team, away_team, home_goals, away_goals, win = '', '', '', 0, 0, ''
@@ -58,7 +58,7 @@ def insert_gameweek_fixtures_and_results_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    gw_fixtures_and_results = get_gameweek_fixtures_and_results()
+    gw_fixtures_and_results = get_gameweek_fixtures_and_results(week=WEEK)
     dump_as_json(gw_fixtures_and_results, 'data/gw_fixtures_and_results.json')
 
     gw_data = load_as_json('data/gw_fixtures_and_results.json')

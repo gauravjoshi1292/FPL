@@ -13,7 +13,7 @@ FIXTURES_URL = ("http://www.premierleague.com/en-gb/matchday/matches.html?"
 
 GAMEWEEK_FIXTURES_AND_RESULTS_URL = ("http://www.livefootball.co.uk/premier-league/"
                                      "2015-2016/regular-season/"
-                                     "gameweek-{week}".format(week=WEEK))
+                                     "gameweek-{week}")
 
 PLAYER_LIST_URL = "http://fantasy.premierleague.com/player-list/"
 

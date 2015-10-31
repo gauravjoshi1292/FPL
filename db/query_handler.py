@@ -27,7 +27,7 @@ class QueryHandler(object):
         return self.db_manager.find(GW_DB, 'forwards',
                                     {}).sort('round_score', pymongo.DESCENDING).limit(n)
 
-    def get_last_n_results(self, team, n, opposition=None, place=None, comp=None):
+    def get_last_n_results(self, team, n, place=None, opposition=None, comp=None):
         query = {}
         if place:
             query['place'] = place
@@ -37,6 +37,9 @@ class QueryHandler(object):
             query['comp'] = comp
 
         return self.db_manager.find(RESULTS_DB, team, query).sort('time', pymongo.DESCENDING).limit(n)
+
+    def get_gw_fixtures(self):
+        return self.db_manager.find(GW_DB, 'gw_fixtures', {})
 
 
 if __name__ == '__main__':
