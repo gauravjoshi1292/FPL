@@ -59,9 +59,9 @@ def insert_gameweek_fixtures_and_results_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     gw_fixtures_and_results = get_gameweek_fixtures_and_results(week=WEEK)
-    dump_as_json(gw_fixtures_and_results, 'data/gw_fixtures_and_results.json')
+    dump_as_json(gw_fixtures_and_results, '../data/gw_fixtures_and_results.json')
 
-    gw_data = load_as_json('data/gw_fixtures_and_results.json')
+    gw_data = load_as_json('../data/gw_fixtures_and_results.json')
 
     for key, data in gw_data.items():
         db_manager.create_collection(GW_DB, key)

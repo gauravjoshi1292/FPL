@@ -120,11 +120,12 @@ def insert_results_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    results = get_results()
-    dump_as_json(results, 'data/results.json')
+    # results = get_results()
+    # dump_as_json(results, '../data/results.json')
 
-    results_data = load_as_json('data/results.json')
+    results_data = load_as_json('../data/results.json')
 
     for team, team_results in results_data.items():
+        print team
         db_manager.create_collection(RESULTS_DB, team)
         db_manager.insert(RESULTS_DB, team, team_results)

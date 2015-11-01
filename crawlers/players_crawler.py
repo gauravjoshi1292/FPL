@@ -219,9 +219,9 @@ def insert_player_stats_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     stats = get_organized_data(get_player_stats())
-    dump_as_json(stats, 'data/player_stats.json')
+    dump_as_json(stats, '../data/player_stats.json')
 
-    player_data = load_as_json('data/player_stats.json')
+    player_data = load_as_json('../data/player_stats.json')
 
     for key, player_stats in player_data.items():
         db_manager.create_collection(GW_DB, key)

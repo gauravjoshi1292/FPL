@@ -55,9 +55,9 @@ def insert_injuries_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     injuries = get_player_injuries()
-    dump_as_json(injuries, 'data/injuries.json')
+    dump_as_json(injuries, '../data/injuries.json')
 
-    injury_data = load_as_json('data/injuries.json')
+    injury_data = load_as_json('../data/injuries.json')
 
     for key, injuries in injury_data.items():
         db_manager.create_collection(GW_DB, key)

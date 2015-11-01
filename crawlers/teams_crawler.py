@@ -54,9 +54,9 @@ def insert_team_stats_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     team_stats = get_team_stats()
-    dump_as_json(team_stats, 'data/team_stats.json')
+    dump_as_json(team_stats, '../data/team_stats.json')
 
-    team_data = load_as_json('data/team_stats.json')
+    team_data = load_as_json('../data/team_stats.json')
 
     for key, team_stats in team_data.items():
         db_manager.create_collection(GW_DB, key)
