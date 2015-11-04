@@ -1,5 +1,7 @@
 __author__ = 'gj'
 
+import os
+
 from urls import TEAM_STATS_URL
 from global_variables import TEAMS_MAP, GW_DB
 from utils import get_soup_from_url, dump_as_json, load_as_json
@@ -54,9 +56,10 @@ def insert_team_stats_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     team_stats = get_team_stats()
-    dump_as_json(team_stats, '../data/team_stats.json')
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/team_stats.json'))
 
-    team_data = load_as_json('../data/team_stats.json')
+    dump_as_json(team_stats, file_path)
+    team_data = load_as_json(file_path)
 
     for key, team_stats in team_data.items():
         db_manager.create_collection(GW_DB, key)

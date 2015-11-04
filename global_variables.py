@@ -2,7 +2,7 @@ __author__ = 'gj'
 
 MONGODB_PORT = 27020
 YEAR = 2015
-WEEK = 10
+WEEK = 11
 
 GW_DB = 'gw-{week}'.format(week=WEEK)
 

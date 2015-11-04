@@ -1,5 +1,7 @@
 __author__ = 'gj'
 
+import os
+
 from urls import INJURIES_URL
 from global_variables import GW_DB
 from utils import normalize, get_table_from_url, dump_as_json, load_as_json
@@ -55,9 +57,10 @@ def insert_injuries_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     injuries = get_player_injuries()
-    dump_as_json(injuries, '../data/injuries.json')
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/injuries.json'))
 
-    injury_data = load_as_json('../data/injuries.json')
+    dump_as_json(injuries, file_path)
+    injury_data = load_as_json(file_path)
 
     for key, injuries in injury_data.items():
         db_manager.create_collection(GW_DB, key)

@@ -2,18 +2,14 @@
     "teams": [
         {
             "lost": 2, 
-            "played": 10, 
-            "goal_diff": 16, 
-            "goals_for": 24, 
-            "won": 7, 
-            "goals_against": 8, 
+            "played": 11, 
+            "goal_diff": 17, 
+            "goals_for": 26, 
+            "won": 8, 
+            "goals_against": 9, 
             "team": "MCI", 
             "drawn": 1, 
             "fixtures": [
-                {
-                    "place": "home", 
-                    "team": "NOR"
-                }, 
                 {
                     "place": "away", 
                     "team": "AVL"
@@ -123,23 +119,19 @@
                     "team": "SWA"
                 }
             ], 
-            "points": 22
+            "points": 25
         }, 
         {
             "lost": 2, 
-            "played": 10, 
-            "goal_diff": 10, 
-            "goals_for": 18, 
-            "won": 7, 
+            "played": 11, 
+            "goal_diff": 13, 
+            "goals_for": 21, 
+            "won": 8, 
             "goals_against": 8, 
             "team": "ARS", 
             "drawn": 1, 
             "fixtures": [
                 {
-                    "place": "away", 
-                    "team": "SWA"
-                }, 
-                {
                     "place": "home", 
                     "team": "TOT"
                 }, 
@@ -246,149 +238,141 @@
                 {
                     "place": "home", 
                     "team": "AVL"
+                }
+            ], 
+            "points": 25
+        }, 
+        {
+            "lost": 1, 
+            "played": 11, 
+            "goal_diff": 4, 
+            "goals_for": 23, 
+            "won": 6, 
+            "goals_against": 19, 
+            "team": "LEI", 
+            "drawn": 4, 
+            "fixtures": [
+                {
+                    "place": "home", 
+                    "team": "WAT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SWA"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "CHE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "EVE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LIV"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "TOT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "AVL"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "STK"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "LIV"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "ARS"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WBA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WAT"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CRY"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SUN"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WHU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SWA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "EVE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CHE"
                 }
             ], 
             "points": 22
         }, 
         {
             "lost": 2, 
-            "played": 10, 
-            "goal_diff": 9, 
-            "goals_for": 22, 
-            "won": 6, 
-            "goals_against": 13, 
-            "team": "WHU", 
-            "drawn": 2, 
-            "fixtures": [
-                {
-                    "place": "away", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "TOT"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "STK"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "AVL"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SOU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "LIV"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "BOU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "NEW"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MCI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "AVL"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SOU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "NOR"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SUN"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "TOT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CHE"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "CRY"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "LEI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "STK"
-                }
-            ], 
-            "points": 20
-        }, 
-        {
-            "lost": 2, 
-            "played": 10, 
+            "played": 11, 
             "goal_diff": 7, 
             "goals_for": 15, 
             "won": 6, 
             "goals_against": 8, 
             "team": "MUN", 
-            "drawn": 2, 
+            "drawn": 3, 
             "fixtures": [
-                {
-                    "place": "away", 
-                    "team": "CRY"
-                }, 
                 {
                     "place": "home", 
                     "team": "WBA"
@@ -496,329 +480,212 @@
                 {
                     "place": "home", 
                     "team": "BOU"
+                }
+            ], 
+            "points": 21
+        }, 
+        {
+            "lost": 1, 
+            "played": 11, 
+            "goal_diff": 10, 
+            "goals_for": 19, 
+            "won": 5, 
+            "goals_against": 9, 
+            "team": "TOT", 
+            "drawn": 5, 
+            "fixtures": [
+                {
+                    "place": "away", 
+                    "team": "ARS"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WHU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "CHE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WBA"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SOU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WAT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "EVE"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "LEI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SUN"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CRY"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WAT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SWA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WHU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "ARS"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "AVL"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LIV"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "STK"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WBA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CHE"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "NEW"
                 }
             ], 
             "points": 20
         }, 
         {
-            "lost": 1, 
-            "played": 10, 
-            "goal_diff": 3, 
-            "goals_for": 20, 
-            "won": 5, 
-            "goals_against": 17, 
-            "team": "LEI", 
-            "drawn": 4, 
+            "lost": 3, 
+            "played": 11, 
+            "goal_diff": 7, 
+            "goals_for": 22, 
+            "won": 6, 
+            "goals_against": 15, 
+            "team": "WHU", 
+            "drawn": 2, 
             "fixtures": [
                 {
-                    "place": "away", 
-                    "team": "WBA"
-                }, 
-                {
                     "place": "home", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "NEW"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "CHE"
-                }, 
-                {
-                    "place": "away", 
                     "team": "EVE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "LIV"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MCI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "BOU"
                 }, 
                 {
                     "place": "away", 
                     "team": "TOT"
                 }, 
                 {
+                    "place": "home", 
+                    "team": "WBA"
+                }, 
+                {
                     "place": "away", 
-                    "team": "AVL"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
                     "team": "STK"
                 }, 
                 {
-                    "place": "home", 
-                    "team": "LIV"
-                }, 
-                {
                     "place": "away", 
-                    "team": "MCI"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NOR"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NEW"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CRY"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SOU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SUN"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WHU"
-                }, 
-                {
-                    "place": "home", 
                     "team": "SWA"
                 }, 
                 {
                     "place": "away", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CHE"
-                }
-            ], 
-            "points": 19
-        }, 
-        {
-            "lost": 1, 
-            "played": 10, 
-            "goal_diff": 8, 
-            "goals_for": 16, 
-            "won": 4, 
-            "goals_against": 8, 
-            "team": "TOT", 
-            "drawn": 5, 
-            "fixtures": [
-                {
-                    "place": "home", 
-                    "team": "AVL"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WHU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "CHE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NEW"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SOU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NOR"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "LEI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SUN"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CRY"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "NOR"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "MCI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WHU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "away", 
                     "team": "AVL"
                 }, 
                 {
                     "place": "home", 
-                    "team": "BOU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "LIV"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "STK"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CHE"
-                }, 
-                {
-                    "place": "home", 
                     "team": "SOU"
                 }, 
                 {
-                    "place": "away", 
-                    "team": "NEW"
-                }
-            ], 
-            "points": 17
-        }, 
-        {
-            "lost": 5, 
-            "played": 10, 
-            "goal_diff": 1, 
-            "goals_for": 12, 
-            "won": 5, 
-            "goals_against": 11, 
-            "team": "CRY", 
-            "drawn": 0, 
-            "fixtures": [
-                {
                     "place": "home", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "away", 
                     "team": "LIV"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SUN"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NEW"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SOU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
                     "team": "BOU"
                 }, 
                 {
-                    "place": "home", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "CHE"
-                }, 
-                {
                     "place": "away", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "home", 
                     "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "MCI"
+                    "team": "SOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
                     "team": "TOT"
                 }, 
                 {
-                    "place": "home", 
-                    "team": "BOU"
-                }, 
-                {
                     "place": "away", 
-                    "team": "SWA"
+                    "team": "EVE"
                 }, 
                 {
                     "place": "home", 
@@ -826,70 +693,50 @@
                 }, 
                 {
                     "place": "away", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SUN"
+                    "team": "CHE"
                 }, 
                 {
                     "place": "home", 
-                    "team": "LIV"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "MUN"
+                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
-                    "team": "LEI"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WHU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NOR"
-                }, 
-                {
-                    "place": "away", 
                     "team": "ARS"
                 }, 
                 {
+                    "place": "away", 
+                    "team": "LEI"
+                }, 
+                {
                     "place": "home", 
-                    "team": "EVE"
+                    "team": "MUN"
                 }, 
                 {
                     "place": "away", 
-                    "team": "NEW"
+                    "team": "WBA"
                 }, 
                 {
                     "place": "home", 
+                    "team": "SWA"
+                }, 
+                {
+                    "place": "away", 
                     "team": "STK"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SOU"
                 }
             ], 
-            "points": 15
+            "points": 20
         }, 
         {
             "lost": 2, 
-            "played": 10, 
-            "goal_diff": 3, 
-            "goals_for": 16, 
-            "won": 3, 
+            "played": 11, 
+            "goal_diff": 5, 
+            "goals_for": 18, 
+            "won": 4, 
             "goals_against": 13, 
             "team": "SOU", 
             "drawn": 5, 
             "fixtures": [
                 {
-                    "place": "home", 
-                    "team": "BOU"
-                }, 
-                {
                     "place": "away", 
                     "team": "SUN"
                 }, 
@@ -998,23 +845,19 @@
                     "team": "CRY"
                 }
             ], 
-            "points": 14
+            "points": 17
         }, 
         {
             "lost": 2, 
-            "played": 10, 
-            "goal_diff": -2, 
-            "goals_for": 9, 
-            "won": 3, 
-            "goals_against": 11, 
+            "played": 11, 
+            "goal_diff": 0, 
+            "goals_for": 12, 
+            "won": 4, 
+            "goals_against": 12, 
             "team": "LIV", 
             "drawn": 5, 
             "fixtures": [
                 {
-                    "place": "away", 
-                    "team": "CHE"
-                }, 
-                {
                     "place": "home", 
                     "team": "CRY"
                 }, 
@@ -1123,148 +966,19 @@
                     "team": "WBA"
                 }
             ], 
-            "points": 14
-        }, 
-        {
-            "lost": 4, 
-            "played": 10, 
-            "goal_diff": -3, 
-            "goals_for": 8, 
-            "won": 4, 
-            "goals_against": 11, 
-            "team": "WBA", 
-            "drawn": 2, 
-            "fixtures": [
-                {
-                    "place": "home", 
-                    "team": "LEI"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WHU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "TOT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "LIV"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "BOU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NEW"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "STK"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CHE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SOU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "AVL"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "NEW"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "CRY"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "LEI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NOR"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SUN"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "MCI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "TOT"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WHU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "BOU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "LIV"
-                }
-            ], 
-            "points": 14
+            "points": 17
         }, 
         {
             "lost": 3, 
-            "played": 10, 
-            "goal_diff": 0, 
-            "goals_for": 13, 
-            "won": 3, 
-            "goals_against": 13, 
+            "played": 11, 
+            "goal_diff": 4, 
+            "goals_for": 19, 
+            "won": 4, 
+            "goals_against": 15, 
             "team": "EVE", 
             "drawn": 4, 
             "fixtures": [
                 {
-                    "place": "home", 
-                    "team": "SUN"
-                }, 
-                {
                     "place": "away", 
                     "team": "WHU"
                 }, 
@@ -1373,57 +1087,21 @@
                     "team": "NOR"
                 }
             ], 
-            "points": 13
+            "points": 16
         }, 
         {
-            "lost": 3, 
-            "played": 10, 
-            "goal_diff": 0, 
+            "lost": 5, 
+            "played": 11, 
+            "goal_diff": 1, 
             "goals_for": 12, 
-            "won": 3, 
-            "goals_against": 12, 
-            "team": "SWA", 
-            "drawn": 4, 
+            "won": 5, 
+            "goals_against": 11, 
+            "team": "CRY", 
+            "drawn": 1, 
             "fixtures": [
-                {
-                    "place": "home", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "NOR"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "BOU"
-                }, 
                 {
                     "place": "away", 
                     "team": "LIV"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "LEI"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "MCI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WHU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CRY"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "MUN"
                 }, 
                 {
                     "place": "home", 
@@ -1431,19 +1109,11 @@
                 }, 
                 {
                     "place": "home", 
-                    "team": "WAT"
+                    "team": "NEW"
                 }, 
                 {
                     "place": "away", 
                     "team": "EVE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "CRY"
                 }, 
                 {
                     "place": "home", 
@@ -1451,15 +1121,7 @@
                 }, 
                 {
                     "place": "away", 
-                    "team": "TOT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "NOR"
+                    "team": "STK"
                 }, 
                 {
                     "place": "away", 
@@ -1467,11 +1129,7 @@
                 }, 
                 {
                     "place": "home", 
-                    "team": "AVL"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "STK"
+                    "team": "SWA"
                 }, 
                 {
                     "place": "home", 
@@ -1479,11 +1137,35 @@
                 }, 
                 {
                     "place": "away", 
-                    "team": "NEW"
+                    "team": "AVL"
                 }, 
                 {
                     "place": "away", 
-                    "team": "LEI"
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "TOT"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SWA"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WAT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WBA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SUN"
                 }, 
                 {
                     "place": "home", 
@@ -1491,30 +1173,54 @@
                 }, 
                 {
                     "place": "away", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "LEI"
+                }, 
+                {
+                    "place": "away", 
                     "team": "WHU"
                 }, 
                 {
                     "place": "home", 
-                    "team": "MCI"
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "ARS"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "EVE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "STK"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SOU"
                 }
             ], 
-            "points": 13
+            "points": 16
         }, 
         {
             "lost": 3, 
-            "played": 10, 
-            "goal_diff": -2, 
-            "goals_for": 8, 
-            "won": 3, 
+            "played": 11, 
+            "goal_diff": 0, 
+            "goals_for": 10, 
+            "won": 4, 
             "goals_against": 10, 
             "team": "WAT", 
             "drawn": 4, 
             "fixtures": [
                 {
-                    "place": "home", 
-                    "team": "WHU"
-                }, 
-                {
                     "place": "away", 
                     "team": "LEI"
                 }, 
@@ -1623,22 +1329,260 @@
                     "team": "SUN"
                 }
             ], 
+            "points": 16
+        }, 
+        {
+            "lost": 5, 
+            "played": 11, 
+            "goal_diff": -4, 
+            "goals_for": 10, 
+            "won": 4, 
+            "goals_against": 14, 
+            "team": "WBA", 
+            "drawn": 2, 
+            "fixtures": [
+                {
+                    "place": "away", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "ARS"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WHU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "TOT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LIV"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SWA"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "STK"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CHE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SOU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "AVL"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SWA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "EVE"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "CRY"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LEI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "ARS"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SUN"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WAT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "TOT"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WHU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "LIV"
+                }
+            ], 
+            "points": 14
+        }, 
+        {
+            "lost": 4, 
+            "played": 11, 
+            "goal_diff": -3, 
+            "goals_for": 12, 
+            "won": 3, 
+            "goals_against": 15, 
+            "team": "SWA", 
+            "drawn": 4, 
+            "fixtures": [
+                {
+                    "place": "away", 
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LIV"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "LEI"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WHU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WBA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CRY"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SUN"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WAT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "EVE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WBA"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "CRY"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "TOT"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "ARS"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "AVL"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "STK"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "CHE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "NEW"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LEI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "LIV"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WHU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MCI"
+                }
+            ], 
             "points": 13
         }, 
         {
             "lost": 4, 
-            "played": 10, 
+            "played": 11, 
             "goal_diff": -3, 
             "goals_for": 9, 
             "won": 3, 
             "goals_against": 12, 
             "team": "STK", 
-            "drawn": 3, 
+            "drawn": 4, 
             "fixtures": [
-                {
-                    "place": "away", 
-                    "team": "NEW"
-                }, 
                 {
                     "place": "home", 
                     "team": "CHE"
@@ -1748,22 +1692,18 @@
                     "team": "WHU"
                 }
             ], 
-            "points": 12
+            "points": 13
         }, 
         {
-            "lost": 5, 
-            "played": 10, 
-            "goal_diff": -4, 
-            "goals_for": 15, 
+            "lost": 6, 
+            "played": 11, 
+            "goal_diff": -6, 
+            "goals_for": 16, 
             "won": 3, 
-            "goals_against": 19, 
+            "goals_against": 22, 
             "team": "CHE", 
             "drawn": 2, 
             "fixtures": [
-                {
-                    "place": "home", 
-                    "team": "LIV"
-                }, 
                 {
                     "place": "away", 
                     "team": "STK"
@@ -1876,19 +1816,15 @@
             "points": 11
         }, 
         {
-            "lost": 5, 
-            "played": 10, 
-            "goal_diff": -7, 
-            "goals_for": 14, 
+            "lost": 6, 
+            "played": 11, 
+            "goal_diff": -8, 
+            "goals_for": 15, 
             "won": 2, 
-            "goals_against": 21, 
+            "goals_against": 23, 
             "team": "NOR", 
             "drawn": 3, 
             "fixtures": [
-                {
-                    "place": "away", 
-                    "team": "MCI"
-                }, 
                 {
                     "place": "home", 
                     "team": "SWA"
@@ -2001,19 +1937,15 @@
             "points": 9
         }, 
         {
-            "lost": 6, 
-            "played": 10, 
-            "goal_diff": -10, 
+            "lost": 7, 
+            "played": 11, 
+            "goal_diff": -12, 
             "goals_for": 12, 
             "won": 2, 
-            "goals_against": 22, 
+            "goals_against": 24, 
             "team": "BOU", 
             "drawn": 2, 
             "fixtures": [
-                {
-                    "place": "away", 
-                    "team": "SOU"
-                }, 
                 {
                     "place": "home", 
                     "team": "NEW"
@@ -2127,18 +2059,135 @@
         }, 
         {
             "lost": 6, 
-            "played": 10, 
-            "goal_diff": -8, 
-            "goals_for": 11, 
+            "played": 11, 
+            "goal_diff": -10, 
+            "goals_for": 12, 
             "won": 1, 
-            "goals_against": 19, 
-            "team": "SUN", 
-            "drawn": 3, 
+            "goals_against": 22, 
+            "team": "NEW", 
+            "drawn": 4, 
             "fixtures": [
+                {
+                    "place": "away", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "LEI"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CRY"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "LIV"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "TOT"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "AVL"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "EVE"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WBA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "ARS"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MUN"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "WHU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "WAT"
+                }, 
                 {
                     "place": "away", 
                     "team": "EVE"
                 }, 
+                {
+                    "place": "home", 
+                    "team": "WBA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "CHE"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "MCI"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "STK"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "BOU"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LEI"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SUN"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "NOR"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "SOU"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "SWA"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "LIV"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "CRY"
+                }, 
+                {
+                    "place": "away", 
+                    "team": "AVL"
+                }, 
+                {
+                    "place": "home", 
+                    "team": "TOT"
+                }
+            ], 
+            "points": 7
+        }, 
+        {
+            "lost": 7, 
+            "played": 11, 
+            "goal_diff": -12, 
+            "goals_for": 13, 
+            "won": 1, 
+            "goals_against": 25, 
+            "team": "SUN", 
+            "drawn": 3, 
+            "fixtures": [
                 {
                     "place": "home", 
                     "team": "SOU"
@@ -2251,144 +2300,15 @@
             "points": 6
         }, 
         {
-            "lost": 6, 
-            "played": 10, 
+            "lost": 9, 
+            "played": 11, 
             "goal_diff": -10, 
-            "goals_for": 12, 
+            "goals_for": 10, 
             "won": 1, 
-            "goals_against": 22, 
-            "team": "NEW", 
-            "drawn": 3, 
-            "fixtures": [
-                {
-                    "place": "home", 
-                    "team": "STK"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "BOU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "LEI"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CRY"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "LIV"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "TOT"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "AVL"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "ARS"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MUN"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WHU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "WAT"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "EVE"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "WBA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "CHE"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "MCI"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "STK"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "BOU"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "LEI"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SUN"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "NOR"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "SOU"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "SWA"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "LIV"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "CRY"
-                }, 
-                {
-                    "place": "away", 
-                    "team": "AVL"
-                }, 
-                {
-                    "place": "home", 
-                    "team": "TOT"
-                }
-            ], 
-            "points": 6
-        }, 
-        {
-            "lost": 8, 
-            "played": 10, 
-            "goal_diff": -8, 
-            "goals_for": 9, 
-            "won": 1, 
-            "goals_against": 17, 
+            "goals_against": 20, 
             "team": "AVL", 
             "drawn": 1, 
             "fixtures": [
-                {
-                    "place": "away", 
-                    "team": "TOT"
-                }, 
                 {
                     "place": "home", 
                     "team": "MCI"

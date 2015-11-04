@@ -1,5 +1,6 @@
 __author__ = 'gj'
 
+import os
 from datetime import datetime
 
 from urls import RESULTS_URL
@@ -120,10 +121,11 @@ def insert_results_in_db(db_manager):
     :param db_manager: database manager handle
     :type db_manager: mongo.DbManager
     """
-    # results = get_results()
-    # dump_as_json(results, '../data/results.json')
+    results = get_results()
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/results.json'))
 
-    results_data = load_as_json('../data/results.json')
+    dump_as_json(results, file_path)
+    results_data = load_as_json(file_path)
 
     for team, team_results in results_data.items():
         print team

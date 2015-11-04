@@ -1,5 +1,6 @@
 __author__ = 'gj'
 
+import os
 import unicodedata
 
 from fixtures_crawler import get_fixtures
@@ -219,9 +220,10 @@ def insert_player_stats_in_db(db_manager):
     :type db_manager: mongo.DbManager
     """
     stats = get_organized_data(get_player_stats())
-    dump_as_json(stats, '../data/player_stats.json')
+    file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), '../data/player_stats.json'))
 
-    player_data = load_as_json('../data/player_stats.json')
+    dump_as_json(stats, file_path)
+    player_data = load_as_json(file_path)
 
     for key, player_stats in player_data.items():
         db_manager.create_collection(GW_DB, key)
