@@ -127,16 +127,7 @@ def predict_result(home_team, away_team):
     hg = round(home_gspg_score + away_gcpg_score / 2.0)
     ag = round(away_gspg_score + home_gcpg_score / 2.0)
 
-    print '\n'
+    print hg, ag, '\n'
 
 if __name__ == '__main__':
-    predict_result('Chelsea', 'Liverpool')
-    predict_result('Crystal Palace', 'Manchester United')
-    predict_result('Manchester City', 'Norwich City')
-    predict_result('Newcastle United', 'Stoke City')
-    predict_result('Swansea City', 'Arsenal')
-    predict_result('Watford', 'West Ham United')
-    predict_result('West Bromwich Albion', 'Leicester City')
-    predict_result('Everton', 'Sunderland')
-    predict_result('Southampton', 'Bournemouth')
-    predict_result('Tottenham Hotspurs', 'Aston Villa')
+    predict_result('Stoke City', 'Chelsea')

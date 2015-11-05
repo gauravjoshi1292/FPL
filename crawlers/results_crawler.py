@@ -128,6 +128,5 @@ def insert_results_in_db(db_manager):
     results_data = load_as_json(file_path)
 
     for team, team_results in results_data.items():
-        print team
         db_manager.create_collection(RESULTS_DB, team)
         db_manager.insert(RESULTS_DB, team, team_results)

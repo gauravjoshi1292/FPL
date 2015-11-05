@@ -137,7 +137,7 @@ def scroll_till_page_is_loaded(driver):
 
     while source != old_source:
         scroll_to_bottom(driver)
-        time.sleep(1)
+        time.sleep(5)
         old_source = source
         source = driver.page_source
 
