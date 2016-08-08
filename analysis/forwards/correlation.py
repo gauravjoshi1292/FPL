@@ -11,6 +11,12 @@ def attack_score_v_points_correlation():
     return r
 
 
+def attack_score_v_price_correlation():
+    data = get_plot_data('total_shots', 'price')
+    r = pearsonr(data['total_shots'], data['price'])
+    return r
+
+
 def shot_accuracy_v_points_correlation():
     data = get_plot_data('shot_accuracy', 'points')
     r = pearsonr(data['shot_accuracy'], data['points'])
@@ -23,6 +29,18 @@ def total_shots_v_points_correlation():
     return r
 
 
+def shots_inside_box_v_points_correlation():
+    data = get_plot_data('shots_inside_box', 'points')
+    r = pearsonr(data['shots_inside_box'], data['points'])
+    return r
+
+
+def shots_inside_box_v_price_correlation():
+    data = get_plot_data('shots_inside_box', 'price')
+    r = pearsonr(data['shots_inside_box'], data['price'])
+    return r
+
+
 def total_accurate_shots_v_points_correlation():
     data = get_plot_data('total_shots', 'points')
     total_shots_data = data['total_shots']
@@ -30,12 +48,6 @@ def total_accurate_shots_v_points_correlation():
     shot_accuracy_data = get_plot_data('shot_accuracy', 'points')['shot_accuracy']
     accurate_shots = [total_shots_data[i]*shot_accuracy_data[i] for i in range(len(total_shots_data))]
     r = pearsonr(accurate_shots, points)
-    return r
-
-
-def attack_score_v_price_correlation():
-    data = get_plot_data('total_shots', 'price')
-    r = pearsonr(data['total_shots'], data['price'])
     return r
 
 
@@ -50,8 +62,11 @@ def total_accurate_shots_v_price_correlation():
 
 
 print(attack_score_v_points_correlation())
+print(attack_score_v_price_correlation())
 print(shot_accuracy_v_points_correlation())
 print(total_shots_v_points_correlation())
+print(shots_inside_box_v_points_correlation())
+print(shots_inside_box_v_price_correlation())
 print(total_accurate_shots_v_points_correlation())
-print(attack_score_v_price_correlation())
 print(total_accurate_shots_v_price_correlation())
+
