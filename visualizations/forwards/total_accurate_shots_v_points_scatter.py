@@ -2,9 +2,9 @@ __author__ = 'gj'
 
 from bokeh.plotting import figure, output_file, show
 
-from utils.forwards import get_plot_data
+from utils.read_data import get_plot_data
 
-data = get_plot_data('total_shots', 'points')
+data = get_plot_data('forwards', 'total_shots', 'points')
 total_shots_data = data['total_shots']
 points = data['points']
 shot_accuracy_data = get_plot_data('shot_accuracy', 'points')['shot_accuracy']
